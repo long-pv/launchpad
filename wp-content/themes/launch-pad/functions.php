@@ -1,4 +1,5 @@
 <?php
+
 /**
  * launch-pad functions and definitions
  *
@@ -7,9 +8,9 @@
  * @package launch-pad
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if (! defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define('_S_VERSION', '1.0.0');
 }
 
 /**
@@ -19,17 +20,18 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function launch_pad_setup() {
+function launch_pad_setup()
+{
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on launch-pad, use a find and replace
 		* to change 'launch-pad' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'launch-pad', get_template_directory() . '/languages' );
+	load_theme_textdomain('launch-pad', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	add_theme_support('automatic-feed-links');
 
 	/*
 		* Let WordPress manage the document title.
@@ -37,19 +39,19 @@ function launch_pad_setup() {
 		* hard-coded <title> tag in the document head, and expect WordPress to
 		* provide it for us.
 		*/
-	add_theme_support( 'title-tag' );
+	add_theme_support('title-tag');
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'launch-pad' ),
+			'menu-1' => esc_html__('Primary', 'launch-pad'),
 		)
 	);
 
@@ -83,7 +85,7 @@ function launch_pad_setup() {
 	);
 
 	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+	add_theme_support('customize-selective-refresh-widgets');
 
 	/**
 	 * Add support for core custom logo.
@@ -100,7 +102,7 @@ function launch_pad_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'launch_pad_setup' );
+add_action('after_setup_theme', 'launch_pad_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +111,24 @@ add_action( 'after_setup_theme', 'launch_pad_setup' );
  *
  * @global int $content_width
  */
-function launch_pad_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'launch_pad_content_width', 640 );
+function launch_pad_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('launch_pad_content_width', 640);
 }
-add_action( 'after_setup_theme', 'launch_pad_content_width', 0 );
+add_action('after_setup_theme', 'launch_pad_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function launch_pad_widgets_init() {
+function launch_pad_widgets_init()
+{
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'launch-pad' ),
+			'name'          => esc_html__('Sidebar', 'launch-pad'),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'launch-pad' ),
+			'description'   => esc_html__('Add widgets here.', 'launch-pad'),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -132,47 +136,71 @@ function launch_pad_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'launch_pad_widgets_init' );
+add_action('widgets_init', 'launch_pad_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
-function launch_pad_scripts() {
-	wp_enqueue_style( 'launch-pad-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'launch-pad-style', 'rtl', 'replace' );
+function launch_pad_scripts()
+{
+	wp_enqueue_style('launch-pad-style', get_stylesheet_uri(), array(), _S_VERSION);
 
-	wp_enqueue_script( 'launch-pad-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// bootstrap js
+	wp_enqueue_script('launch-pad-script-bootstrap_bundle', get_template_directory_uri() . '/assets/inc/bootstrap/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true);
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	// jquery ui
+	wp_enqueue_style('launch-pad-style-jquery-ui', get_template_directory_uri() . '/assets/inc/jquery-ui/jquery-ui.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-jquery-ui', get_template_directory_uri() . '/assets/inc/jquery-ui/jquery-ui.js', array('jquery'), _S_VERSION, true);
+
+	// matchHeight
+	wp_enqueue_script('launch-pad-script-matchHeight', get_template_directory_uri() . '/assets/inc/matchHeight/jquery.matchHeight.js', array('jquery'), _S_VERSION, true);
+
+	// validate
+	wp_enqueue_script('launch-pad-script-validate', get_template_directory_uri() . '/assets/inc/validate/validate.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('launch-pad-script-validate_custom', get_template_directory_uri() . '/assets/js/validate.js', array('jquery'), _S_VERSION, true);
+
+	// scroll smooth hash id element
+	wp_enqueue_script('launch-pad-script-scroll_smooth', get_template_directory_uri() . '/assets/js/scroll_smooth.js', array('jquery'), _S_VERSION, true);
+
+	// wow - effect
+	wp_enqueue_style('launch-pad-style-wow', get_template_directory_uri() . '/assets/inc/wow/wow.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-wow', get_template_directory_uri() . '/assets/inc/wow/wow.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('launch-pad-script-wow_custom', get_template_directory_uri() . '/assets/inc/wow/index.js', array('jquery'), _S_VERSION, true);
+	// end
+
+	// intlTelInput
+	wp_enqueue_style('launch-pad-style-intlTelInput', get_template_directory_uri() . '/assets/inc/intlTelInput/intlTelInput.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-intlTelInput', get_template_directory_uri() . '/assets/inc/intlTelInput/intlTelInput.js', array('jquery'), _S_VERSION, true);
+
+	// select2
+	wp_enqueue_style('launch-pad-style-select2', get_template_directory_uri() . '/assets/inc/select2/select2.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-select2', get_template_directory_uri() . '/assets/inc/select2/select2.js', array('jquery'), _S_VERSION, true);
+
+	// fancybox
+	wp_enqueue_style('launch-pad-style-select2', get_template_directory_uri() . '/assets/inc/fancybox/fancybox.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-select2', get_template_directory_uri() . '/assets/inc/fancybox/fancybox.js', array('jquery'), _S_VERSION, true);
+
+	// slick
+	wp_enqueue_style('launch-pad-style-slick-theme', get_template_directory_uri() . '/assets/inc/slick/slick-theme.css', array(), _S_VERSION);
+	wp_enqueue_style('launch-pad-style-slick', get_template_directory_uri() . '/assets/inc/slick/slick.css', array(), _S_VERSION);
+	wp_enqueue_script('launch-pad-script-slick', get_template_directory_uri() . '/assets/inc/slick/slick.min.js', array('jquery'), _S_VERSION, true);
+
+	// readmore Component
+	wp_enqueue_script('launch-pad-script-readmore', get_template_directory_uri() . '/assets/js/readmore.js', array('jquery'), _S_VERSION, true);
+
+	//add custom main css/js
+	$main_css_file_path = get_template_directory() . '/assets/css/main.css';
+	$main_js_file_path = get_template_directory() . '/assets/js/main.js';
+	$ver_main_css = file_exists($main_css_file_path) ? filemtime($main_css_file_path) : '1.0.0';
+	$ver_main_js = file_exists($main_js_file_path) ? filemtime($main_js_file_path) : '1.0.0';
+	wp_enqueue_style('launch-pad-style-main', get_template_directory_uri() . '/assets/css/main.css', array(), $ver_main_css);
+	wp_enqueue_script('launch-pad-script-main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), $ver_main_js, true);
 }
-add_action( 'wp_enqueue_scripts', 'launch_pad_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+add_action('wp_enqueue_scripts', 'launch_pad_scripts');
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
+require get_template_directory() . '/inc/auto_active_plugin.php';
+require get_template_directory() . '/inc/cpt_custom.php';

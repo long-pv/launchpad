@@ -1,0 +1,16 @@
+/**
+ * Global reset
+ */
+@import 'fonts';
+@import 'variables';
+@import 'bootstrap/bootstrap';
+
+//template css
+@import 'general';
+@import 'contents/header';
+@import 'contents/footer';
+@import 'contents/slick';
+@import 'contents/pagination';
+@import 'contents/breadcrumbs';
+@import 'contents/editor';
+@import 'contents/accordion';
