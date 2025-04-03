@@ -45,7 +45,6 @@ get_header();
 <!-- Button Style -->
 <section class="secSpace">
     <div class="container">
-
         <div class="text-center m-4" style="font-weight: 700;">
             BUTTON
         </div>
@@ -57,21 +56,61 @@ get_header();
 
         <!-- style 3 -->
         <button type="button" class="button_1 button_1__active">Read more</button>
-
     </div>
 </section>
 
 <!-- Banner -->
-<div class="banner">
-    <div class="banner__content">
-        <div class="banner__social">
-            <a href="#" class="banner__social-icon banner__social-icon--facebook"></a>
-            <a href="#" class="banner__social-icon banner__social-icon--youtube"></a>
-            <a href="#" class="banner__social-icon banner__social-icon--telegram"></a>
+<section class="secSpace">
+    <div class="container">
+        <div class="text-center m-4" style="font-weight: 700;">
+            BANNER
+        </div>
+
+        <div class="banner">
+            <div class="banner__content">
+                <div class="banner__social">
+                    <a href="#" class="banner__social-icon banner__social-icon--facebook"></a>
+                    <a href="#" class="banner__social-icon banner__social-icon--youtube"></a>
+                    <a href="#" class="banner__social-icon banner__social-icon--telegram"></a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
+<!-- Gallery -->
+
+<!-- Table -->
+<section class="secSpace">
+    <div class="container">
+        <div class="text-center m-4" style="font-weight: 700;">
+            TABLE
+        </div>
+
+        <table class="table_info">
+            <thead>
+                <th>Program</th>
+                <th>Per Semester</th>
+                <th>Per Year</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</section>
+
+<!--  -->
 
 <?php
 // footer template
