@@ -148,45 +148,13 @@ function launch_pad_scripts()
 	// bootstrap js
 	wp_enqueue_script('launch-pad-script-bootstrap_bundle', get_template_directory_uri() . '/assets/inc/bootstrap/bootstrap.bundle.min.js', array('jquery'), _S_VERSION, true);
 
-	// jquery ui
-	wp_enqueue_style('launch-pad-style-jquery-ui', get_template_directory_uri() . '/assets/inc/jquery-ui/jquery-ui.css', array(), _S_VERSION);
-	wp_enqueue_script('launch-pad-script-jquery-ui', get_template_directory_uri() . '/assets/inc/jquery-ui/jquery-ui.js', array('jquery'), _S_VERSION, true);
-
 	// matchHeight
 	wp_enqueue_script('launch-pad-script-matchHeight', get_template_directory_uri() . '/assets/inc/matchHeight/jquery.matchHeight.js', array('jquery'), _S_VERSION, true);
-
-	// validate
-	wp_enqueue_script('launch-pad-script-validate', get_template_directory_uri() . '/assets/inc/validate/validate.js', array('jquery'), _S_VERSION, true);
-	wp_enqueue_script('launch-pad-script-validate_custom', get_template_directory_uri() . '/assets/js/validate.js', array('jquery'), _S_VERSION, true);
-
-	// scroll smooth hash id element
-	wp_enqueue_script('launch-pad-script-scroll_smooth', get_template_directory_uri() . '/assets/js/scroll_smooth.js', array('jquery'), _S_VERSION, true);
-
-	// wow - effect
-	wp_enqueue_style('launch-pad-style-wow', get_template_directory_uri() . '/assets/inc/wow/wow.css', array(), _S_VERSION);
-	wp_enqueue_script('launch-pad-script-wow', get_template_directory_uri() . '/assets/inc/wow/wow.js', array('jquery'), _S_VERSION, true);
-	wp_enqueue_script('launch-pad-script-wow_custom', get_template_directory_uri() . '/assets/inc/wow/index.js', array('jquery'), _S_VERSION, true);
-	// end
-
-	// intlTelInput
-	wp_enqueue_style('launch-pad-style-intlTelInput', get_template_directory_uri() . '/assets/inc/intlTelInput/intlTelInput.css', array(), _S_VERSION);
-	wp_enqueue_script('launch-pad-script-intlTelInput', get_template_directory_uri() . '/assets/inc/intlTelInput/intlTelInput.js', array('jquery'), _S_VERSION, true);
-
-	// select2
-	wp_enqueue_style('launch-pad-style-select2', get_template_directory_uri() . '/assets/inc/select2/select2.css', array(), _S_VERSION);
-	wp_enqueue_script('launch-pad-script-select2', get_template_directory_uri() . '/assets/inc/select2/select2.js', array('jquery'), _S_VERSION, true);
-
-	// fancybox
-	wp_enqueue_style('launch-pad-style-select2', get_template_directory_uri() . '/assets/inc/fancybox/fancybox.css', array(), _S_VERSION);
-	wp_enqueue_script('launch-pad-script-select2', get_template_directory_uri() . '/assets/inc/fancybox/fancybox.js', array('jquery'), _S_VERSION, true);
 
 	// slick
 	wp_enqueue_style('launch-pad-style-slick-theme', get_template_directory_uri() . '/assets/inc/slick/slick-theme.css', array(), _S_VERSION);
 	wp_enqueue_style('launch-pad-style-slick', get_template_directory_uri() . '/assets/inc/slick/slick.css', array(), _S_VERSION);
 	wp_enqueue_script('launch-pad-script-slick', get_template_directory_uri() . '/assets/inc/slick/slick.min.js', array('jquery'), _S_VERSION, true);
-
-	// readmore Component
-	wp_enqueue_script('launch-pad-script-readmore', get_template_directory_uri() . '/assets/js/readmore.js', array('jquery'), _S_VERSION, true);
 
 	//add custom main css/js
 	$main_css_file_path = get_template_directory() . '/assets/css/main.css';

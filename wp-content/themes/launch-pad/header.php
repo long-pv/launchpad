@@ -19,6 +19,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
@@ -27,7 +31,24 @@
 
 	<div class="container_full_screen">
 		<header class="header" id="header">
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci accusamus illum quae, reprehenderit eius laborum eveniet nulla veritatis provident non repudiandae, vero dolorem. Quidem provident quis error ipsam similique natus!
+			<div class="header_inner">
+				<div class="header_form">
+					xxx
+				</div>
+				<div class="header_nav">
+					<div class="menu">
+						<a class="menu_item menu_item_home" href="#">
+							Home
+						</a>
+						<a class="menu_item menu_item_res" href="#">
+							Resources
+						</a>
+						<a class="menu_item menu_item_login" href="#">
+							Login
+						</a>
+					</div>
+				</div>
+			</div>
 		</header>
 
 		<div class="sidebar_left">

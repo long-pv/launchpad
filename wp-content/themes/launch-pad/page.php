@@ -17,7 +17,8 @@
 get_header();
 ?>
 <div class="container">
-    <div class="page_inner">
+    <div class="page_wrap">
+        <div class="page_inner">    
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.

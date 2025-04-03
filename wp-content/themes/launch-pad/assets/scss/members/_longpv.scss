@@ -1,5 +1,14 @@
-.page_inner {
+.page_wrap {
     padding-left: 340px;
+}
+
+.page_inner {
+    background-color: #ECEDF1;
+    border-radius: 20px 0px 0px 20px;
+    height: 100vh;
+    overflow: hidden;
+    box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.15);
+    padding: 20px;
     padding-top: 80px;
 }
 
@@ -17,6 +26,6 @@
     top: 0px;
     width: 340px;
     height: 100vh;
-    background-color: #fff;
+    background-color: transparent;
     padding-right: 30px;
 }
