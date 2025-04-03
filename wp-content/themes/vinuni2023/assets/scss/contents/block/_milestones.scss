@@ -1,0 +1,273 @@
+.milestones {
+
+    &__inner {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 70px;
+            left: 0px;
+            width: 100%;
+            height: 1px;
+            background-color: $silver;
+        }
+    }
+
+    &__item {
+        height: 140px;
+        position: relative;
+    }
+
+    &__year {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        font-weight: 700;
+        color: $secondary;
+        position: relative;
+        transition: all 0.3s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 48px;
+            height: 48px;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            border: 0.5px solid $silver;
+            transition: all 0.3s;
+            box-sizing: content-box;
+            background-color: $white;
+            z-index: -1;
+        }
+    }
+
+    &__itemInner {
+        width: 68px;
+        height: 68px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s;
+    }
+
+    &__itemInner--active {
+        width: 140px;
+        height: 140px;
+
+        .milestones {
+            &__year {
+                font-size: 28px;
+
+                &::before {
+                    width: 98px;
+                    height: 98px;
+                }
+            }
+        }
+    }
+
+    &__itemContent {
+        display: none !important;
+    }
+
+    .slick {
+        &-arrow {
+            transform: translateY(-50%);
+            top: 48% !important;
+            z-index: 999;
+        }
+
+        &-next {
+            right: -36px;
+
+            @include media-breakpoint-up(lg) {
+                right: -70px;
+            }
+        }
+
+        &-prev {
+            left: -36px;
+
+            @include media-breakpoint-up(lg) {
+                left: -70px;
+            }
+        }
+
+        &-disabled {
+            display: none !important;
+        }
+
+        &-dots {
+            display: flex;
+            background-color: $silver;
+            bottom: -22px;
+            width: calc(100% - 32px);
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            li {
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+                height: 4px;
+                position: relative;
+
+                button {
+                    display: block;
+                    padding: 0px;
+                    margin: 0px;
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 16px;
+
+                    @include media-breakpoint-up(lg) {
+                        position: absolute;
+                        width: 50%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: all 0.5s;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        background-color: $success;
+
+                        @include media-breakpoint-up(lg) {
+                            width: 100%;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-slide {
+            &:last-child {
+                .milestones__eventItem {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__eventWrap {
+        border-radius: 4px;
+        background: $bg-light;
+        padding: 16px 16px 32px;
+        margin-top: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 40px;
+            padding: 32px 24px;
+        }
+    }
+
+    &__event {
+        margin-bottom: 0px !important;
+        margin-left: -16px;
+        margin-right: -16px;
+
+        .slick {
+            &-arrow {
+                border: 1px solid $silver;
+
+                @include media-breakpoint-up(lg) {
+                    &:hover {
+                        transition: all 0.5s;
+                        border: 1px solid $secondary;
+                        background-color: $white !important;
+                    }
+                }
+            }
+
+            &-prev {
+                &::before {
+                    transition: all 0.5s;
+                    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.57 5.92969L3.5 11.9997L9.57 18.0697' stroke='%23C0C0C0' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.5019 12H3.67188' stroke='%23C0C0C0' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                }
+
+                @include media-breakpoint-up(lg) {
+                    &:hover {
+                        &::before {
+                            transition: all 0.5s;
+                            content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.57 5.92969L3.5 11.9997L9.57 18.0697' stroke='%23C72127' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20.5019 12H3.67188' stroke='%23C72127' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+            }
+
+            &-next {
+                &::before {
+                    transition: all 0.5s;
+                    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.43 5.92969L20.5 11.9997L14.43 18.0697' stroke='%23C0C0C0' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.49813 12H20.3281' stroke='%23C0C0C0' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                }
+
+                @include media-breakpoint-up(lg) {
+                    &:hover {
+                        &::before {
+                            transition: all 0.5s;
+                            content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.43 5.92969L20.5 11.9997L14.43 18.0697' stroke='%23C72127' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.49813 12H20.3281' stroke='%23C72127' stroke-width='1.5' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__eventItem {
+        padding: 0px 16px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            &::before {
+                content: '';
+                width: 1px;
+                height: 100%;
+                right: 0px;
+                position: absolute;
+                background-color: $silver;
+            }
+        }
+    }
+
+    &__eventInner {
+        padding-bottom: 8px;
+    }
+
+    &__eventTitle {
+        font-weight: 700;
+        color: $secondary;
+        margin-bottom: 16px;
+    }
+
+    &__eventWrap--smallItem {
+
+        .milestones__event {
+            display: flex;
+        }
+
+        .milestones__eventItem {
+            width: 100%;
+
+            &:last-child {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}

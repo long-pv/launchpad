@@ -1,0 +1,13 @@
+.blockTabs{
+    &__item{
+        margin-top: 24px;
+        @include media-breakpoint-up(lg){
+            margin-top: 48px;
+        }
+    }
+    &__tabItem{
+        .nav-link{
+            color: $body !important;
+        }
+    }
+}

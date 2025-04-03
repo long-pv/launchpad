@@ -1,0 +1,124 @@
+.jobs {
+    &__list {
+        margin-bottom: 24px;
+    }
+
+    &__inner {
+        margin-right: -10px;
+        margin-left: -10px;
+
+        &>div {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
+
+    &__headTitle {
+        color: $primary-color;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__result {
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(lg) {
+            text-align: right;
+        }
+    }
+}
+
+.jobsItem {
+
+    &:last-child {
+        border-bottom: 1px solid $silver;
+
+        @include media-breakpoint-up(lg) {
+            border-bottom: none;
+        }
+
+        .jobsItem__title,
+        .jobsItem__deadline {
+            @include media-breakpoint-up(lg) {
+                border-bottom: 1px solid $silver;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 0px;
+    }
+
+    &__inner {
+        margin-right: -10px;
+        margin-left: -10px;
+
+        &>div {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        font-weight: 700;
+        padding: 16px 0;
+        color: $body;
+        display: block;
+
+        &:hover {
+            // text-decoration: none;
+            // color: $secondary;
+            text-decoration: underline;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 26px 0;
+        }
+    }
+
+    &__title,
+    &__deadline,
+    &__btnWrap {
+        height: 100%;
+    }
+
+    &__title{
+        border-top: 1px solid $silver;
+    }
+
+    &__deadline {
+        color: $secondary;
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+
+        @include media-breakpoint-up(lg) {
+            border-top: 1px solid $silver;
+            justify-content: flex-end;
+            font-size: 22px;
+        }
+    }
+
+    &__btnWrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 8px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__btn {
+        height: unset;
+    }
+}

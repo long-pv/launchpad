@@ -1,0 +1,44 @@
+.factFigure {
+    &__item {
+        display: inline-flex;
+        column-gap: 16px;
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    &__content {
+        a {
+            color: $primary !important;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__icon {
+        img {
+            width: 64px;
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+    }
+
+    &__image {
+        margin-top: 16px;
+        padding-bottom: 155%;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.whyWorking {
+	&__list {
+		row-gap: 24px;
+
+		@include media-breakpoint-up(lg) {
+			row-gap: 30px;
+		}
+	}
+
+	&__item {
+		position: relative;
+		overflow: hidden;
+
+		@include media-breakpoint-up(lg) {
+
+			&::before,
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: '';
+			}
+
+			&::before {
+				background: rgba(255, 255, 255, 0.5);
+				transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -150%, 0);
+				z-index: 10;
+				width: 150%;
+				height: 40%;
+				transition: all 0.8s;
+			}
+
+			&::after {
+				opacity: 0;
+				background: $primary;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				transition: all 1s;
+			}
+
+			&:hover {
+				opacity: 0.95;
+
+				&::before {
+					transition: all 0.8s;
+					transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 300%, 0);
+				}
+
+				&::after {
+					opacity: 0.2;
+					transition: all 1s;
+				}
+			}
+		}
+	}
+
+	&__img {
+		transition: all 1s;
+		height: 0px;
+		padding-bottom: 62.4%;
+	}
+
+	&__link {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+	}
+
+	&--hover {
+		@include media-breakpoint-up(lg) {
+
+			// Only hover when has the link
+			&:hover {
+				cursor: pointer;
+
+				.whyWorking {
+					&__img {
+						transform: scale(1);
+					}
+
+					&__title {
+						a {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		position: absolute;
+		padding: 15px;
+		margin: 0px;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+
+		@include media-breakpoint-up(lg) {
+			padding: 24px;
+		}
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+		margin-bottom: 8px;
+		z-index: 200;
+		position: relative;
+
+		@include media-breakpoint-up(lg) {
+			width: 32px;
+			height: 32px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__title {
+		color: white;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin-bottom: 0px;
+		z-index: 200;
+		position: relative;
+
+		a {
+			color: white;
+			transition: all 0.5s;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+.pageArticle__content {
+    .secSpace {
+        &:first-child {
+            margin-top: 0px !important;
+        }
+    }
+
+    .secSpace {
+        margin-top: 0px;
+
+        &:not(:last-child) {
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    .space {
+        @include media-breakpoint-up(lg) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .secHeading {
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 32px;
+        }
+
+        &__title {
+            line-height: 1.3 !important;
+            margin-bottom: 16px;
+        }
+
+        &__link {
+            margin-top: 0px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.governanceAdvisory {
+    &__list {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background: $white;
+        }
+    }
+
+    &__gutters {
+        row-gap: 24px;
+    }
+
+    &__item {
+        position: relative;
+        padding: 8px 8px 24px 0px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            background: $silver;
+        }
+    }
+
+    &__title {
+        padding: 0px;
+        margin-bottom: 16px;
+    }
+
+    &__link {
+        font-weight: 700;
+        color: $body;
+        display: block;
+
+        // &:hover {
+        //     text-decoration: none;
+
+        //     @include media-breakpoint-up(lg) {
+        //         color: $secondary;
+        //     }
+        // }
+    }
+
+    &__position {
+        margin-bottom: 0px;
+    }
+}

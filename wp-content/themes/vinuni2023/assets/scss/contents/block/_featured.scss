@@ -1,0 +1,43 @@
+.featured {
+    &__gutters {
+        row-gap: 32px;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+
+        img {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    &__title, &__desc {
+        text-align: center;
+        padding: 0px 16px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 8px;
+        height: 100%;
+    }
+
+    &__btn {
+        margin-top: 24px;
+        display: flex;
+        justify-content: center;
+
+        .btnCTA {
+            font-weight: 700;
+            text-transform: uppercase;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

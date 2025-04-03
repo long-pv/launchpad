@@ -1,0 +1,36 @@
+.sectionForm {
+    &__group {
+        margin-bottom: 30px;
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid $silver;
+            border-radius: 4px;
+            outline: none;
+
+            &::placeholder {
+                color: $success;
+            }
+
+            &:focus {
+                border: 1px solid $primary;
+            }
+        }
+    }
+    &__btn {
+        margin-top: 16px;
+
+        p {
+            display: flex;
+        }
+
+        .btnCTA {
+            font-weight: 700;
+        }
+    }
+
+    .wpcf7-not-valid-tip {
+        color: $secondary;
+    }
+}

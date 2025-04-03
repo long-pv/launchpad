@@ -1,0 +1,138 @@
+// Block testimonials
+.testimonials {
+	&__slider {
+		margin: 0px -15px;
+
+		.slick-track {
+            margin-left: unset;
+        }
+	}
+}
+
+// Single testimonial item
+.testimonialItem {
+	padding: 0px 15px;
+
+	&__wrap {
+		position: relative;
+		color: $body;
+		box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.15);
+		margin-bottom: 16px;
+	}
+
+	&__linkContent {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__inner {
+		background-color: $white;
+		padding: 24px 24px 32px;
+		position: relative;
+		transition: background-color 1s;
+
+		&::before {
+			content: "";
+			position: absolute;
+			border-style: solid;
+			top: -13px;
+			border-width: 0 13px 18px 13px;
+			border-color: transparent transparent $white transparent;
+			transition: all 1s;
+			z-index: 9;
+		}
+	}
+
+	&--hover {
+		&:hover {
+			@include media-breakpoint-up(lg) {
+				.testimonialItem__inner {
+					background-color: $secondary;
+					color: $white;
+					transition: background-color 1s;
+
+					&::before {
+						content: "";
+						border-color: transparent transparent $secondary transparent;
+						transition: all 1s;
+					}
+
+					.testimonialItem__title,
+					a {
+						color: $white;
+						transition: all 1s;
+					}
+
+					.testimonialItem__link {
+						transition: all 1s;
+						color: $white;
+
+						&::before {
+							transition: all 1s;
+							content: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.83195 6.7343L1.70711 0.609451C1.07714 -0.0205141 0 0.425652 0 1.31656V13.5663C0 14.4572 1.07714 14.9033 1.70711 14.2734L7.83196 8.14851C8.22248 7.75799 8.22248 7.12482 7.83195 6.7343Z' fill='white'/%3E%3C/svg%3E%0A");
+						}
+
+						&::after {
+							transition: all 1s;
+							background: $white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__link {
+		transition: all 1s;
+		z-index: 1;
+		margin-top: 16px;
+	}
+
+	&__img {
+		padding-bottom: 65%;
+		z-index: 1;
+	}
+
+	&__position {
+		transition: all 1s;
+		font-weight: 700;
+		margin-bottom: 24px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		color: $body;
+		font-weight: 700;
+		transition: all 1s;
+
+		a {
+			transition: all 1s;
+			color: $body;
+
+			&:hover {
+				// text-decoration: none;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__content {
+		margin-bottom: 16px;
+		transition: all 1s;
+	}
+}
+
+.testimonialItem--new {
+	.testimonialItem {
+		&__position {
+			font-weight: 400;
+		}
+
+		&__title {
+			text-transform: unset;
+		}
+	}
+}

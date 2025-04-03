@@ -1,0 +1,14 @@
+.service{
+    &__slider{
+        margin: 0px -15px;
+    }
+}
+.serviceItem{
+    &__title{
+        margin-bottom: 16px;
+    }
+    &__desc{
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+}

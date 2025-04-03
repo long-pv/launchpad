@@ -1,0 +1,95 @@
+.whyVinuni {
+    &__list {
+        padding: 0px 15px;
+
+        @include media-breakpoint-up(sm) {
+            padding-right: 0px;
+        }
+    }
+
+    &__slide {
+        margin: 0 -15px;
+
+        @include media-breakpoint-up(sm) {
+            margin: 0;
+        }
+
+        .slick-track {
+            margin-left: unset;
+        }
+    }
+
+    &__item {
+        padding: 0 15px;
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(sm) {
+            padding-left: 0;
+            padding-right: 30px;
+            margin-bottom: 0;
+        }
+
+        &--colorContent {
+            color: $white;
+
+            .whyVinuni__content {
+                --bg-slide-color: white;
+                background-color: var(--bg-slide-color);
+            }
+        }
+
+        &--colorImg {
+            .whyVinuni__imgWrap {
+                position: relative;
+                --bg-slide-color: white;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    height: calc(100% - 65px);
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: var(--bg-slide-color);
+                }
+            }
+        }
+    }
+
+    &__imgWrap {
+        margin-top: -65px;
+        padding: 0 16px 16px;
+        border-radius: 0 0 16px 16px;
+        overflow: hidden;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: calc(100% - 65px);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $white;
+        }
+    }
+
+    &__image {
+        padding-bottom: 94%;
+        border-radius: 16px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &__content {
+        padding: 32px 24px 89px;
+        border-radius: 16px 16px 0 0;
+        background-color: $white;
+    }
+
+}

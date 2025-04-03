@@ -1,0 +1,152 @@
+// block highlights
+.highlights {
+	&__img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transition: all 1s;
+		transform: translate(-50%, -50%) scale(1);
+		top: 50%;
+		left: 50%;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		background-position: center center !important;
+	}
+
+	&__itemInner {
+		position: relative;
+		height: 0px;
+		padding-bottom: 136.3%;
+
+		@include media-breakpoint-up(lg) {
+			&::before,
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: '';
+				transition: all 1s;
+			}
+
+			&::before {
+				background: rgba(255,255,255,0.5);
+				transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -150%, 0);
+				z-index: 20;
+				width: 150%;
+				height: 40%;
+			}
+
+			&::after {
+				opacity: 0;
+				background: $primary;
+				z-index: 10;
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+	}
+
+	&__link {
+		opacity: 0 !important;
+	}
+
+	&--hover {
+		@include media-breakpoint-up(lg) {
+			// Only hover when has the link
+			&:hover {
+				cursor: pointer;
+				opacity: 0.95;
+
+				&::before {
+					transition: all 1s;
+					transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 250%, 0);
+				}
+
+				&::after {
+					opacity: 0.2;
+					transition: all 1s;
+				}
+
+				.highlights {
+					&__img {
+						transform: translate(-50%, -50%) scale(1);
+						transition: all 1s;
+					}
+
+					&__title {
+						opacity: 1 !important;
+						transition: all 1s;
+					}
+				}
+			}
+		}
+	}
+
+	&__slider {
+		margin: 0px -15px;
+	}
+
+	&__item {
+		padding: 0px 15px;
+	}
+
+	&__itemInner {
+		overflow: hidden;
+	}
+
+	&__content {
+		padding: 24px;
+		position: absolute;
+		bottom: 0;
+		z-index: 100;
+	}
+
+	&__link {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		display: inline;
+		opacity: 0;
+		color: transparent;
+		z-index: 200;
+
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+
+	&__galleryList {
+		height: 0px;
+		overflow: hidden;
+	}
+
+	&__title {
+		color: white;
+		font-size: 16px;
+		font-weight: 700;
+		transition: all 1s;
+		position: absolute;
+		text-transform: uppercase;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		padding: 24px;
+		margin: 0px;
+		z-index: 190;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 18px;
+		}
+	}
+
+	// Check case center block info
+	.block_info--center {
+		.secHeading__title {
+			padding: 0;
+		}
+	}
+}

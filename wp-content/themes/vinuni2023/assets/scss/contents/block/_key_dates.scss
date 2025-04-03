@@ -1,0 +1,76 @@
+.keyDatesList {
+    &__gutters {
+        row-gap: 20px;
+
+        @include media-breakpoint-up(lg) {
+            row-gap: 40px;
+        }
+    }
+}
+
+.keyDates {
+    display: flex;
+    height: 74px;
+
+    &__date {
+        width: 65px;
+        height: 64px;
+        position: relative;
+
+        &::after {
+            content: '';
+            top: 0px;
+            height: 64px;
+            width: 1px;
+            left: 64px;
+            background-color: $success;
+            position: absolute;
+        }
+    }
+
+    &__month,
+    &__day {
+        font-weight: 700;
+        width: 64px;
+        text-align: center;
+    }
+
+    &__month {
+        font-size: 16px;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    &__day {
+        font-size: 36px;
+        color: $primary-color;
+    }
+
+    &__title {
+        margin: 0px;
+        padding-left: 24px;
+
+        a,
+        span {
+            color: $body;
+            line-height: 1.5;
+            font-size: 14px;
+            font-weight: 400;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 16px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+
+            @include media-breakpoint-up(lg) {
+                &:hover {
+                    // color: $secondary;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,417 @@
+#sectionCoreValues {
+	.secHeading {
+		margin-bottom: 0px;
+	}
+}
+
+.coreValue {
+	position: relative;
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: 30px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		padding-bottom: 35px;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		padding-bottom: 42px;
+	}
+
+	&__imgWrap {
+		margin-top: 40px;
+
+		@include media-breakpoint-up(md) {
+			margin-top: 60px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 0px;
+			display: block;
+			bottom: 0px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: -1;
+		}
+
+		@include media-breakpoint-up(xl) {
+			bottom: 0px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			bottom: 0px;
+		}
+	}
+
+	&__imgInner {
+		position: relative;
+	}
+
+	&__imgContentWrap {
+		position: absolute;
+		left: 25px;
+		bottom: 25px;
+		width: 400px;
+		color: $white;
+		width: 300px;
+
+		@include media-breakpoint-up(md) {
+			width: 450px;
+		}
+
+		div {
+			margin: 0px;
+		}
+	}
+
+	&__imgTitle {
+		font-weight: 700;
+		font-size: 18px;
+		text-transform: uppercase;
+		padding-bottom: 8px;
+
+		@include media-breakpoint-up(md) {
+			font-size: 20px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: 24px;
+		}
+	}
+
+	&__imgContent {
+		height: 72px;
+
+		@include media-breakpoint-up(md) {
+			height: 80px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			height: 83px;
+			top: 50px;
+		}
+	}
+
+	&__imgHighlights {
+		font-weight: 700;
+		font-size: 16px;
+		padding-bottom: 8px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 18px;
+		}
+	}
+
+	&__textHighlight {
+		text-transform: uppercase;
+	}
+
+	&__imgDesc {
+		font-size: 14px;
+		padding: 0px;
+		height: 40px;
+
+		@include media-breakpoint-up(md) {
+			font-size: 16px;
+			height: 48px;
+		}
+	}
+
+	&__img {
+		background-size: cover !important;
+		width: 100%;
+		height: 0px;
+		padding-bottom: 50%;
+
+		@include media-breakpoint-up(lg) {
+			clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-bottom: calc(50% + 4px);
+			clip-path: polygon(0 0, 49.5% 0, 100% 100%, 0% 100%);
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-bottom: calc(51% + 4px);
+			clip-path: polygon(0 0, 48.8% 0, 100% 100%, 0% 100%);
+		}
+	}
+
+	&__inner {
+		padding: 50px 0 35px;
+		position: relative;
+
+		@include media-breakpoint-up(lg) {
+			padding: 35px 0 50px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-bottom: 70px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding: 40px 0 93px;
+		}
+	}
+
+	&__diamond {
+		display: flex;
+		column-gap: 40px;
+		row-gap: 33px;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 345px;
+		margin: 0 auto;
+
+		@include media-breakpoint-up(sm) {
+			width: 500px;
+			column-gap: 60px;
+			row-gap: 25px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 640px;
+			column-gap: 68px;
+			row-gap: 18px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: 100%;
+			column-gap: 80px;
+			row-gap: 10px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			margin: 0 0 0 auto;
+			column-gap: 94px;
+			row-gap: 3px;
+		}
+	}
+
+	&__patten {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border: 1px solid #848484;
+		transform: rotate(45deg);
+		overflow: hidden;
+		cursor: pointer;
+
+		&::after,
+		&::before {
+			content: "";
+			width: 142%;
+			height: 142%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(-45deg);
+			transition: all 1s;
+		}
+
+		&::before {
+			clip-path: polygon(50% 0%, 50% 50%, 50% 100%, 0% 50%);
+			background-color: $deep_blue;
+		}
+
+		&::after {
+			clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 50% 50%);
+			background-color: $primary-color;
+		}
+	}
+
+	&__item {
+		width: 83px;
+		height: 83px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			.coreValue {
+				&__patten {
+					&::before,
+					&::after {
+						background-color: $white;
+					}
+				}
+
+				&__highlights {
+					color: $deep_blue;
+				}
+
+				&__title {
+					color: $body;
+				}
+			}
+		}
+
+		@include media-breakpoint-up(sm) {
+			width: 120px;
+			height: 120px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 140px;
+			height: 140px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			width: 170px;
+			height: 170px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			width: 200px;
+			height: 200px;
+		}
+
+		&:nth-child(4),
+		&:nth-child(5) {
+			.coreValue {
+				&__content {
+					position: absolute;
+					top: -15px;
+					left: 50%;
+					transform: translate(-50%, -50%);
+
+					@include media-breakpoint-up(sm) {
+						top: 0;
+					}
+
+					@include media-breakpoint-up(xl) {
+						top: 30px;
+					}
+				}
+
+				&__patten {
+					transform: rotate(45deg) translate(-39px, -39px);
+				}
+			}
+		}
+	}
+
+	&__content {
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+	}
+
+	&__highlights {
+		color: $white;
+		font-size: 20px;
+		font-weight: 700;
+
+		@include media-breakpoint-up(md) {
+			font-size: 36px;
+		}
+
+		@include media-breakpoint-up(md) {
+			font-size: 54px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			font-size: 72px;
+			letter-spacing: 7.2px;
+			line-height: 1.3;
+		}
+	}
+
+	&__title {
+		font-size: 8px;
+		font-weight: 700;
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		height: 24px;
+		text-transform: capitalize;
+		color: $white;
+
+		@include media-breakpoint-up(md) {
+			width: 109px;
+			font-size: 12px;
+			height: 36px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 120px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			font-size: 16px;
+			width: 140px;
+			height: 48px
+		}
+
+		@include media-breakpoint-up(xxl) {
+			width: 170px;
+		}
+	}
+
+	&__diamond--highlights {
+		.coreValue {
+			&__item {
+				position: absolute;
+				bottom: 28px;
+				cursor: auto;
+
+				@include media-breakpoint-up(sm) {
+					bottom: 0;
+				}
+
+				&:hover {
+					.coreValue {
+						&__patten {
+							cursor: auto;
+
+							&::before {
+								background-color: $secondary;
+							}
+
+							&::after {
+								background-color: $deep_red;
+							}
+						}
+
+						&__title, &__content {
+							color: $white;
+						}
+					}
+				}
+			}
+
+			&__title {
+				height: auto;
+				color: $white;
+			}
+
+			&__content {
+				width: 80%;
+				text-transform: unset;
+				cursor: auto;
+			}
+
+			&__patten {
+				&::before {
+					background-color: $secondary;
+				}
+
+				&::after {
+					background-color: $deep_red;
+				}
+			}
+		}
+	}
+}

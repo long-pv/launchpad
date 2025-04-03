@@ -1,0 +1,162 @@
+// block introductionx
+.admissionIntro {
+	&__row {
+		row-gap: 32px;
+		@include media-breakpoint-up(lg) {
+			row-gap: 56px;
+		}
+	}
+
+	// menu title
+	&__title {
+		background-color: $secondary;
+		padding: 12px;
+		border-radius: 4px;
+		position: relative;
+		cursor: pointer;
+
+		@include media-breakpoint-up(lg) {
+			padding: 16px;
+		}
+
+		.secTitle {
+			font-size: 16px;
+			color: #ffffff;
+			margin-bottom: 0px;
+			margin-right: 24px;
+
+			@include media-breakpoint-up(lg) {
+				font-size: 18px;
+			}
+		}
+	}
+
+	// menu list
+	&__list {
+		margin-top: 4px;
+		border-radius: 4px;
+		border: 1px solid $light_gray;
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			right: 15px;
+			left: 15px;
+			background: white;
+			z-index: 99;
+		}
+	}
+
+	&__gutters {
+		row-gap: 16px;
+	}
+
+	// nav menu level 1
+	ul.menu {
+		padding: 0px;
+		margin: 0px;
+
+		li {
+			list-style: none;
+
+			a {
+				color: $body;
+				display: block;
+				padding: 16px;
+				transition: all 0.5s;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: none;
+
+					@include media-breakpoint-up(lg) {
+						transition: all 0.5s;
+						color: $secondary;
+					}
+				}
+			}
+		}
+
+		& > li {
+			&:not(:last-child) {
+				border-bottom: 1px solid $light_gray;
+			}
+			&.menu-item-has-children {
+				position: relative;
+				cursor: pointer;
+
+				// sub arrow
+				& > .sub {
+					&-arrow {
+						width: 53px;
+						height: 53px;
+						right: 0px;
+						top: 0px;
+						transform: rotate(0);
+						transition: transform 0.5s;
+						position: absolute;
+						display: inline-flex;
+
+						@include media-breakpoint-up(lg) {
+							width: 56px;
+							height: 56px;
+						}
+
+						&--active {
+							transform: rotate(180deg);
+							transition: transform 0.5s;
+						}
+
+						&::before {
+							transform: translate(15px, 15px);
+							content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%232E2E2E'/%3E%3C/svg%3E%0A");
+
+							@include media-breakpoint-up(lg) {
+								transform: translate(17px, 17px);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// nav menu level 2
+	ul.sub-menu {
+		padding: 0px;
+		display: none;
+
+		.menu-item {
+			border-top: 1px solid $light_gray;
+			background-color: $bg-light;
+			a {
+				padding-left: 48px;
+			}
+		}
+	}
+
+	// menu arrow
+	.arrow {
+		&::before {
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			right: 12px;
+			top: 50%;
+			transform: translateY(-50%) rotate(0);
+			transition: transform 0.5s;
+			content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+
+			@include media-breakpoint-up(lg) {
+				right: 16px;
+			}
+		}
+
+		&--active {
+			&::before {
+				transform: rotate(180deg) translateY(50%);
+				transition: transform 0.5s;
+			}
+		}
+	}
+}

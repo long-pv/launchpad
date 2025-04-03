@@ -1,0 +1,111 @@
+// Custom editor mixin
+@mixin customCtaEditor {
+	color: white;
+	line-height: 1.2;
+
+	@include media-breakpoint-up(lg) {
+		line-height: unset;
+	}
+}
+
+// Style block CTA
+.cta {
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+
+	@include media-breakpoint-up(lg) {
+		padding-left: 64px;
+		padding-right: 64px;
+		text-align: start;
+	}
+
+	strong {
+		color: currentColor !important;
+	}
+
+	*:not(span) {
+		@include customCtaEditor;
+	}
+
+	.editor {
+		b,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@include customCtaEditor;
+		}
+	}
+
+	&__btnWrap {
+		display: flex;
+		gap: 16px;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include media-breakpoint-up(md) {
+			margin: 0 auto;
+			display: inline-flex;
+		}
+
+		@include media-breakpoint-up(lg) {
+			justify-content: unset;
+		}
+
+		& > .btnCTA {
+			width: 100%;
+			@include media-breakpoint-up(md) {
+				width: unset;
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 32px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__link {
+		background-color: $secondary;
+		font-weight: 700;
+		padding: 12px 16px;
+		height: 48px;
+		display: inline-block;
+		border-radius: 4px;
+		transition: all 0.5s;
+
+		&:hover {
+			text-decoration: none;
+
+			@include media-breakpoint-up(lg) {
+				text-decoration: underline;
+				transition: all 0.5s;
+				background-color: $light_gray;
+
+				.cta__text {
+					transition: all 0.5s;
+					color: $secondary;
+				}
+			}
+		}
+	}
+
+	&__text {
+		transition: all 0.5s;
+		text-transform: uppercase;
+	}
+
+	&__content {
+		margin-bottom: 32px;
+
+		p {
+			line-height: 1.5;
+		}
+	}
+}

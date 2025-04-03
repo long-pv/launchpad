@@ -1,0 +1,23 @@
+.leaderItem {
+    &__title {
+        margin-bottom: 16px;
+        text-transform: unset;
+    }
+
+    &__position {
+        font-weight: 400;
+    }
+
+    &__img {
+        padding-bottom: 85%;
+    }
+}
+
+.councilArticle {
+    .leaderItem {
+        padding: 0px;
+        &__wrap{
+            margin-bottom: 30px;
+        }
+    }
+}
