@@ -16,7 +16,16 @@
 
 // header template
 get_header();
-// flexible content
-get_template_part('template-parts/content-flexible');
+?>
+
+<section class="secSpace">
+    <div class="handbook">
+
+    </div>
+    DDay la du an code chay
+</section>
+
+
+<?php
 // footer template
 get_footer();
