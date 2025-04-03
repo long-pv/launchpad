@@ -29,6 +29,7 @@
 .handbook__link {
 	display: flex;
 	text-decoration: none;
+	justify-content: center;
 }
 
 .handbook__title {
@@ -98,4 +99,112 @@
 
 .button_1__active {
 	background-color: #c83438 !important;
+}
+
+/* Banner */
+.banner {
+	position: relative;
+	width: 100%;
+	min-height: 300px; // Điều chỉnh chiều cao tùy ý
+	background-image: url("../../assets/images/Banner-img.png"); // Đường dẫn ảnh nền
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	.banner__content {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+	}
+
+	.banner__social {
+		display: flex;
+		padding: 5px 10px;
+		border-radius: 20px;
+		gap: 10px;
+		//
+		background: rgba(255, 255, 255, 0.5);
+	}
+
+	.banner__social-icon {
+		display: inline-flex;
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		// transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&--facebook {
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 16.19C22 19.83 19.83 22 16.19 22H15C14.45 22 14 21.55 14 21V15.23C14 14.96 14.22 14.73 14.49 14.73L16.25 14.7C16.39 14.69 16.51 14.59 16.54 14.45L16.89 12.54C16.8968 12.4967 16.8941 12.4525 16.8822 12.4103C16.8702 12.3681 16.8492 12.3291 16.8207 12.2958C16.7922 12.2625 16.7568 12.2358 16.717 12.2176C16.6771 12.1993 16.6338 12.1899 16.59 12.19L14.46 12.22C14.18 12.22 13.96 12 13.95 11.73L13.91 9.28C13.91 9.12 14.04 8.98 14.21 8.98L16.61 8.94C16.78 8.94 16.91 8.81 16.91 8.64L16.87 6.24C16.87 6.07 16.74 5.94 16.57 5.94L13.87 5.98C13.4759 5.98599 13.0868 6.06969 12.725 6.22632C12.3633 6.38295 12.0361 6.60942 11.762 6.89276C11.488 7.1761 11.2725 7.51073 11.128 7.87748C10.9835 8.24422 10.9128 8.63588 10.92 9.03L10.97 11.78C10.98 12.06 10.76 12.28 10.48 12.29L9.28 12.31C9.11 12.31 8.98 12.44 8.98 12.61L9.01 14.51C9.01 14.68 9.14 14.81 9.31 14.81L10.51 14.79C10.79 14.79 11.01 15.01 11.02 15.28L11.11 20.98C11.12 21.54 10.67 22 10.11 22H7.81C4.17 22 2 19.83 2 16.18V7.81C2 4.17 4.17 2 7.81 2H16.19C19.83 2 22 4.17 22 7.81V16.19Z' fill='%232E548A'/%3E%3C/svg%3E%0A"); // Đặt đường dẫn icon Facebook
+		}
+
+		&--youtube {
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 4H7C4 4 2 6 2 9V15C2 18 4 20 7 20H17C20 20 22 18 22 15V9C22 6 20 4 17 4ZM13.89 13.03L11.42 14.51C10.42 15.11 9.6 14.65 9.6 13.48V10.51C9.6 9.34 10.42 8.88 11.42 9.48L13.89 10.96C14.84 11.54 14.84 12.46 13.89 13.03Z' fill='%232E548A'/%3E%3C/svg%3E%0A"); // Đặt đường dẫn icon YouTube
+		}
+
+		&--telegram {
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.14 2.96004L7.11 5.96004C1.03999 7.99004 1.03999 11.3 7.11 13.32L9.79 14.21L10.68 16.89C12.7 22.96 16.02 22.96 18.04 16.89L21.05 7.87004C22.39 3.82004 20.19 1.61004 16.14 2.96004ZM16.46 8.34004L12.66 12.16C12.51 12.31 12.32 12.38 12.13 12.38C11.94 12.38 11.75 12.31 11.6 12.16C11.4605 12.0189 11.3823 11.8285 11.3823 11.63C11.3823 11.4316 11.4605 11.2412 11.6 11.1L15.4 7.28004C15.69 6.99004 16.17 6.99004 16.46 7.28004C16.75 7.57004 16.75 8.05004 16.46 8.34004Z' fill='%232E548A'/%3E%3C/svg%3E%0A"); // Đặt đường dẫn icon Telegram
+		}
+	}
+}
+
+/* Gallery */
+
+/* Table */
+.table_info {
+	width: 100%;
+	table-layout: fixed; /* Cố định bố cục bảng */
+}
+
+.table_info thead {
+	background-color: #f2f6f9;
+	border-bottom: 1px solid rgba(210, 211, 213, 1);
+}
+
+.table_info thead th {
+	padding: 10px 20px;
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 16px;
+	//
+	color: #2e2e2e;
+}
+
+.table_info th:nth-child(1),
+.table_info td:nth-child(1) {
+	width: 50%;
+	text-align: left;
+}
+
+.table_info th:nth-child(2),
+.table_info td:nth-child(2) {
+	width: 30%;
+	text-align: right;
+}
+
+.table_info th:nth-child(3),
+.table_info td:nth-child(3) {
+	width: 20%;
+	text-align: right;
+}
+
+.table_info tbody {
+	border: 1px solid #d2d3d5;
+}
+
+.table_info tbody td {
+	padding: 15px 20px;
+	border-bottom: 1px solid #d2d3d5;
+	//
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 16px;
+	//
+	color: #2e2e2e;
 }
