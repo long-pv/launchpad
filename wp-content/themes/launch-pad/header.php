@@ -52,5 +52,11 @@
 		</header>
 
 		<div class="sidebar_left">
+			<div class="top">
+				<a href="<?php echo home_url(); ?>" class="top_logo">
+					<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_top.svg'; ?>
+					<img src="<?php echo $logo_url; ?>" alt="logo">
+				</a>
+			</div>
 			<?php get_template_part('template-parts/sidebar_menu'); ?>
 		</div>

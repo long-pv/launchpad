@@ -1,0 +1,27 @@
+.sidebar_left {
+    .top {
+        padding: 20px 26px 30px 26px;
+
+        .top_logo {
+            display: inline-flex;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .sidebarMenu {
+        padding: 20px;
+
+        ul {
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
