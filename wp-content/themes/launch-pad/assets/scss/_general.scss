@@ -13,6 +13,13 @@ body {
     }
 }
 
+@include media-breakpoint-up(lg) {
+    .container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
 .mainBodyContent {
     min-height: calc(100vh - 100px);
 }
