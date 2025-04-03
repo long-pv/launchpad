@@ -208,3 +208,46 @@
 	//
 	color: #2e2e2e;
 }
+
+/* Tabs */
+.navItem {
+	background-color: #ecedf1;
+}
+
+.nav {
+	justify-content: end;
+	gap: 30px;
+}
+
+.nav-tabs {
+	// border-bottom: 1px solid #dee2e6;
+	border-bottom: none !important;
+}
+
+.nav-tabs .nav-link {
+	border: none !important;
+	padding: 10px;
+	//
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 16px;
+	//
+	color: #2e548a;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+	color: #c83438;
+}
+
+.nav-tabs .nav-link.active {
+	// color: #495057;
+	background-color: transparent;
+	// border-color: #dee2e6 #dee2e6 #fff;
+	border: none !important;
+	//
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 16px;
+	color: #c83438;
+}
