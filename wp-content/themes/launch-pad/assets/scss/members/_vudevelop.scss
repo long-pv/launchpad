@@ -169,6 +169,11 @@
 
 .table_info thead th {
 	padding: 10px 20px;
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 16px;
+	//
+	color: #2e2e2e;
 }
 
 .table_info th:nth-child(1),
@@ -180,11 +185,26 @@
 .table_info th:nth-child(2),
 .table_info td:nth-child(2) {
 	width: 30%;
-	text-align: left;
+	text-align: right;
 }
 
 .table_info th:nth-child(3),
 .table_info td:nth-child(3) {
 	width: 20%;
-	text-align: left;
+	text-align: right;
+}
+
+.table_info tbody {
+	border: 1px solid #d2d3d5;
+}
+
+.table_info tbody td {
+	padding: 15px 20px;
+	border-bottom: 1px solid #d2d3d5;
+	//
+	font-family: "Montserrat";
+	font-weight: 400;
+	font-size: 16px;
+	//
+	color: #2e2e2e;
 }
