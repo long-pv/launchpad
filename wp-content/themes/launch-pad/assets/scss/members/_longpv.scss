@@ -1,0 +1,22 @@
+.page_inner {
+    padding-left: 340px;
+    padding-top: 80px;
+}
+
+.page-template-default {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar_left {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 340px;
+    height: 100vh;
+    background-color: #fff;
+    padding-right: 30px;
+}

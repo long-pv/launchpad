@@ -15,7 +15,31 @@
 
 // header template
 get_header();
-// flexible content
-get_template_part('template-parts/content-flexible');
+?>
+<div class="container">
+    <div class="page_inner">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cupiditate est soluta non autem sit, corrupti, labore ex ratione explicabo quia, culpa fugit aperiam corporis eius nesciunt consequatur placeat praesentium.
+        <?php
+        get_template_part('template-parts/content-flexible');
+        ?>
+    </div>
+</div>
+
+<?php
 // footer template
 get_footer();
