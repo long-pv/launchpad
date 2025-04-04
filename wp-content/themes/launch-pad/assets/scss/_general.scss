@@ -161,13 +161,13 @@ $secSpaceSP: 32px;
         transition: all 0.3s;
     }
 
-    @include media-breakpoint-up(lg) {
-        &:hover {
-            img {
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-        }
-    }
+    // @include media-breakpoint-up(lg) {
+    //     &:hover {
+    //         img {
+    //             transform: translate(-50%, -50%) scale(1.1);
+    //         }
+    //     }
+    // }
 }
 
 // ---------- line ------------

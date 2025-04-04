@@ -1,6 +1,7 @@
 <?php
 
 /**
+ *  * Template Name: Home
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -20,7 +21,22 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <?php
-            get_template_part('template-parts/content-flexible');
+            $banner = get_field('banner') ?? '';
+            if ($banner['image']):
+            ?>
+                <div class="imgGroup banner">
+                    <img src="<?php echo $banner['image']; ?>" alt="banner">
+
+                    <div class="social_network">
+                        <a href="">
+
+                        </a>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php
+            $title_block = get_field('title_block') ?? '';
             ?>
         </div>
     </div>
