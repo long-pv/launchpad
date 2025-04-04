@@ -1,6 +1,11 @@
 .sidebar_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
     .top {
-        padding: 20px 26px 30px 26px;
+        padding: 20px 26px;
 
         .top_logo {
             display: inline-flex;
@@ -14,6 +19,8 @@
 
     .sidebarMenu {
         padding: 20px;
+        height: 100%;
+        overflow-y: auto;
 
         ul {
             padding: 0px;
@@ -61,6 +68,9 @@
                         left: 0px;
                         top: 0px;
                         display: inline-flex;
+                        width: 24px;
+                        height: 24px;
+                        object-fit: cover;
                     }
                 }
 
@@ -76,6 +86,7 @@
             padding-left: 32px;
             gap: 10px;
             margin-top: 20px;
+            display: none;
 
             &>li {
                 display: block;
@@ -93,6 +104,12 @@
 
                     .icon {
                         display: none;
+                    }
+                }
+
+                &:hover {
+                    &>ul {
+                        display: flex !important;
                     }
                 }
 
@@ -150,6 +167,25 @@
                     }
                 }
             }
+        }
+    }
+
+    .bottom {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            color: #1A4079;
+            font-size: 12px;
+            opacity: 0.5;
+            text-align: center;
         }
     }
 }

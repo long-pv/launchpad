@@ -59,4 +59,15 @@
 				</a>
 			</div>
 			<?php get_template_part('template-parts/sidebar_menu'); ?>
+
+			<div class="bottom">
+				<a href="javascript:void(0);" class="logo">
+					<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_vin.svg'; ?>
+					<img src="<?php echo $logo_url; ?>" alt="logo">
+				</a>
+
+				<div class="copyright">
+					Copyright © 2019 VinUni. All Right Reserved.
+				</div>
+			</div>
 		</div>
