@@ -86,7 +86,7 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 
         // Check has child page
         if (!empty($item['sub_menu'])) {
-            echo '<span class="sidebarMenu__icon"></span>';
+            echo '<span class="sidebarMenu__icon ' . ($current_class ? 'sidebarMenu--open' : '') . '"></span>';
             display_sidebar_menu($item['sub_menu'], $level + 1);
         }
 
