@@ -128,7 +128,7 @@
 							Login
 						</div>
 					</a>
-					<a href="#" class="item">
+					<a href="#" class="item item_menu">
 						<div class="icon">
 							<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M3.5 7.72729H21.5M3.5 12.7273H21.5M3.5 17.7273H21.5" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" />
@@ -156,3 +156,17 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade popup_menu" id="popup_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class=" modal-content">
+				<div class="modal-body">
+					<div class="box_search">
+						<div class="container">
+							Menu sidebar
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

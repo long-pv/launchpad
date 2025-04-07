@@ -49,6 +49,7 @@
     bottom: 0px;
     width: 100%;
     position: fixed;
+    z-index: 9999;
 
     @include media-breakpoint-up(lg) {
         display: none;
@@ -115,6 +116,30 @@
     .modal-content {
         border: none !important;
         border-radius: 0px !important;
+    }
+
+    .modal-body {
+        padding: 0px !important;
+    }
+}
+
+
+.popup_menu {
+    .modal-dialog {
+        margin-bottom: 70px !important;
+        min-height: calc(100% - 100px) !important;
+        height: calc(100% - 100px) !important;
+        max-width: unset !important;
+    }
+
+    .modal-dialog-centered {
+        align-items: flex-end !important;
+    }
+
+    .modal-content {
+        border: none !important;
+        border-radius: 0px !important;
+        background-color: transparent !important;
     }
 
     .modal-body {
