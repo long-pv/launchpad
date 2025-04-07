@@ -1,5 +1,7 @@
 .page_wrap {
-    padding-left: 340px;
+    @include media-breakpoint-up(lg) {
+        padding-left: 340px;
+    }
 }
 
 .page_inner {
@@ -20,12 +22,102 @@
     padding: 0;
 }
 
-.sidebar_left {
-    position: fixed;
+.sec_title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2E548A;
+    padding-left: 40px;
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: 24px;
+
+    &::before {
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3333 17.4866L22.05 14.2033L16.7 8.8533C15.5666 7.73663 13.6333 8.53663 13.6333 10.1366V29.87C13.6333 31.47 15.5666 32.27 16.7 31.1366L25.3333 22.5033C26.7166 21.1366 26.7166 18.87 25.3333 17.4866Z' fill='%23C83438'/%3E%3C/svg%3E%0A");
+        @include bg_cover;
+        position: absolute;
+        left: 0px;
+        top: 8px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.sidebar_bottom {
+    background-color: #fff;
     left: 0px;
-    top: 0px;
-    width: 340px;
-    height: 100vh;
-    background-color: transparent;
-    padding-right: 30px;
+    bottom: 0px;
+    width: 100%;
+    position: fixed;
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    .list {
+        padding: 10px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        text-decoration: none !important;
+
+        .icon {
+            display: inline-flex;
+            width: 24px;
+            height: 24px;
+        }
+
+        .title {
+            color: #2E2E2E;
+            font-size: 14px;
+        }
+
+        &:hover {
+            .title {
+                color: #C83438;
+            }
+
+            .icon {
+                svg {
+                    path {
+                        stroke: #C83438;
+                    }
+                }
+            }
+
+            &.item_logout {
+                .icon {
+                    svg {
+                        path {
+                            stroke: #C83438;
+                            fill: #C83438;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.popup_search {
+    .modal-dialog {
+        margin: 0px !important;
+        margin-top: 48px !important;
+        max-width: unset !important;
+    }
+
+    .modal-content {
+        border: none !important;
+        border-radius: 0px !important;
+    }
+
+    .modal-body {
+        padding: 0px !important;
+    }
 }

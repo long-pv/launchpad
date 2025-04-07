@@ -24,13 +24,19 @@ get_header();
             $banner = get_field('banner') ?? '';
             if ($banner['image']):
             ?>
-                <div class="imgGroup banner">
-                    <img src="<?php echo $banner['image']; ?>" alt="banner">
-
-                    <div class="social_network">
-                        <a href="">
-
-                        </a>
+                <div class="banner" style="background-image: url('<?php echo $banner['image']; ?>');">
+                    <div class="banner__content">
+                        <div class="banner__social">
+                            <?php if ($banner['social_network']['facebook']) : ?>
+                                <a target="_blank" href="<?php echo $banner['social_network']['facebook']; ?>" class="banner__social-icon banner__social-icon--facebook"></a>
+                            <?php endif; ?>
+                            <?php if ($banner['social_network']['youtube']) : ?>
+                                <a target="_blank" href="<?php echo $banner['social_network']['youtube']; ?>" class="banner__social-icon banner__social-icon--youtube"></a>
+                            <?php endif; ?>
+                            <?php if ($banner['social_network']['telegram']) : ?>
+                                <a target="_blank" href="<?php echo $banner['social_network']['telegram']; ?>" class="banner__social-icon banner__social-icon--telegram"></a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php endif; ?>
@@ -38,6 +44,9 @@ get_header();
             <?php
             $title_block = get_field('title_block') ?? '';
             ?>
+            <h2 class="sec_title">
+                <?php echo  $title_block; ?>
+            </h2>
         </div>
     </div>
 </div>

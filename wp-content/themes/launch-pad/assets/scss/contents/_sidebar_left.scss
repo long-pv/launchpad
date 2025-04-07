@@ -1,8 +1,19 @@
 .sidebar_left {
-    display: flex;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 340px;
+    height: 100vh;
+    background-color: transparent;
+    padding-right: 30px;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
 
     .top {
         padding: 20px 26px;
