@@ -317,3 +317,89 @@
 	align-items: center;
 	justify-content: center;
 }
+
+/* ACCORDION COMPONENT */
+.container-accordion {
+	max-width: 800px;
+	margin: auto;
+}
+
+.accordion {
+	.accordion-item {
+		border-radius: 4px;
+		overflow: hidden;
+		border: none;
+		// Khoảng cách giữa các khối
+		margin-bottom: 16px;
+
+		&:last-child {
+			// kKhoảng cách giữa các khối
+			margin-bottom: 0px;
+		}
+
+		.accordion-header {
+			button.accordion-button {
+				padding: 16px;
+				background-color: #eaeaea;
+				border: none !important;
+				border-radius: 0px;
+				//
+				font-family: "Montserrat";
+				font-weight: 700;
+				font-size: 18px;
+				text-transform: uppercase;
+				color: #2e2e2e;
+				//
+				// transition: background-color 0.3s ease;
+
+				&::after {
+					content: "";
+					display: inline-block;
+					width: 24px;
+					height: 24px;
+					//
+					background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5101 15.7002L15.4801 13.7302L18.6901 10.5202C19.3601 9.84018 18.8801 8.68018 17.9201 8.68018H11.6901H6.08007C5.12007 8.68018 4.64007 9.84018 5.32007 10.5202L10.5001 15.7002C11.3201 16.5302 12.6801 16.5302 13.5101 15.7002Z' fill='%232E2E2E'/%3E%3C/svg%3E%0A");
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: center;
+					//
+					margin-left: auto;
+					transition: transform 0.3s ease;
+				}
+
+				&:not(.collapsed)::after {
+					// transform: rotate(-180deg);
+				}
+
+				&:hover {
+					// 	background-color: #e0e0e0;
+				}
+
+				&:focus {
+					border: none;
+					box-shadow: none;
+				}
+				//
+				&:not(.collapsed) {
+					// background-color: #fff;
+					color: #c83438; // tiêu đề màu đỏ khi mở
+					box-shadow: none;
+
+					&::after {
+						transform: rotate(0deg);
+						background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5101 9.29982L15.4801 11.2698L18.6901 14.4798C19.3601 15.1598 18.8801 16.3198 17.9201 16.3198H11.6901H6.08007C5.12007 16.3198 4.64007 15.1598 5.32007 14.4798L10.5001 9.29982C11.3201 8.46982 12.6801 8.46982 13.5101 9.29982Z' fill='%23C83438'/%3E%3C/svg%3E%0A");
+					}
+				}
+			}
+		}
+
+		.accordion-collapse {
+			transition: max-height 0.3s ease;
+		}
+
+		.accordion-body {
+			background-color: #f4f4f4;
+			padding: 16px;
+		}
+	}
+}
