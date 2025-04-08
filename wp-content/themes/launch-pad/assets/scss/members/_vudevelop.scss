@@ -551,4 +551,86 @@
 	}
 }
 
-/*  */
+/* LIST MARK */
+.list_mark {
+	padding: 24px;
+	background-color: #f8f8f8;
+	font-family: sans-serif;
+
+	&__intro {
+		font-size: 16px;
+		margin-bottom: 16px;
+		color: #333;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		//
+		padding: 15px 0px;
+		border-bottom: 1px solid #d2d3d5;
+	}
+
+	&__content {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__index,
+	&__title {
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 16px;
+		color: #2e548a;
+		//
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		gap: 32px;
+	}
+
+	&__action {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 10px;
+		//
+		text-decoration: none;
+		//
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 16px;
+
+		&--visit {
+			color: #2e548a;
+		}
+		&--remove {
+			color: #2e2e2e;
+		}
+
+		&::before {
+			content: "";
+			width: 24px;
+			height: 24px;
+			min-width: 24px;
+			//
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+
+		&--visit::before {
+			background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.6'%3E%3Cpath d='M21.46 17.8405L19.83 18.3905C19.38 18.5405 19.02 18.8905 18.87 19.3505L18.32 20.9805C17.85 22.3905 15.87 22.3605 15.43 20.9505L13.58 15.0005C13.22 13.8205 14.31 12.7205 15.48 13.0905L21.44 14.9405C22.84 15.3805 22.86 17.3705 21.46 17.8405Z' stroke='%232E548A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22.5 12C22.5 6.48 18.02 2 12.5 2C6.98 2 2.5 6.48 2.5 12C2.5 17.52 6.98 22 12.5 22' stroke='%232E548A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E%0A");
+		}
+
+		&--remove::before {
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.6'%3E%3Cpath d='M9.17 14.83L14.83 9.17M14.83 14.83L9.17 9.17M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z' stroke='%232E2E2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E%0A");
+		}
+	}
+}
