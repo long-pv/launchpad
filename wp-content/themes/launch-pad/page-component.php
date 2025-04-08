@@ -281,6 +281,35 @@ get_header();
     </div>
 </section>
 
+<!-- List -->
+<section class="secSpace">
+    <div class="card_club__inner">
+        <div class="list_post">
+            <p class="list_post__title">
+                Search result for <span class="list_post__keyword">Associations</span>
+            </p>
+            <ul class="list_post__list">
+                <li class="list_post__item">
+                    <h3 class="list_post__heading">Clubs & Associations</h3>
+                    <p class="list_post__description">
+                        University clubs are student organizations that promote social interaction, skill development,
+                        and extracurricular activities across various interests. They enhance the campus experience and
+                        foster connections among students.
+                    </p>
+                </li>
+                <li class="list_post__item">
+                    <h3 class="list_post__heading">Clubs & Associations</h3>
+                    <p class="list_post__description">
+                        University clubs are student organizations that promote social interaction, skill development,
+                        and extracurricular activities across various interests. They enhance the campus experience and
+                        foster connections among students.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 <?php
 // footer template
 get_footer();

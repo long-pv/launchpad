@@ -495,3 +495,60 @@
 		}
 	}
 }
+
+/* LIST POST */
+.list_post {
+	padding: 24px;
+
+	&__title {
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 18px;
+		color: #2e2e2e;
+		//
+		margin-bottom: 30px;
+	}
+
+	&__keyword {
+		font-weight: 700;
+		color: #c83438;
+	}
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__heading {
+		font-family: "Montserrat";
+		font-weight: 700;
+		font-size: 16px;
+		color: #2e548a;
+		//
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	&__description {
+		font-family: "Montserrat";
+		font-weight: 400;
+		font-size: 16px;
+		color: #2e2e2e;
+		//
+		margin-bottom: 0px;
+	}
+}
+
+/*  */
