@@ -152,7 +152,23 @@ get_header();
     </div>
 </section>
 
-<!--  -->
+<!-- Form Search -->
+<section class="secSpace">
+    <div class="container">
+        <div class="inner_form">
+            <div class="text-center m-4" style="font-weight: 700;">
+                FORM SEARCH
+            </div>
+
+            <form action="#" class="form_search">
+                <input type="text" name="s" id="search__input" placeholder="Enter the keywords">
+                <button class="styled-link" type="submit"></button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
 
 
 <?php
