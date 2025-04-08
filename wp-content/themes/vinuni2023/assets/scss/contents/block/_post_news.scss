@@ -1,0 +1,92 @@
+.postNews {
+    .imgGroup {
+        padding-bottom: 62.5%;
+        margin-bottom: 16px;
+
+        &:hover {
+            cursor: pointer !important;
+        }
+    }
+
+    &__title {
+        margin: 0px;
+
+        a {
+            text-decoration: none;
+            color: $body;
+
+            @include media-breakpoint-up(lg) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__link {
+        font-weight: 500;
+        color: $body;
+        font-size: 14px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+
+            &:hover {
+                // color: $secondary;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__desc {
+        margin-bottom: 0px;
+        padding-top: 8px;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 12px;
+        row-gap: 4px;
+        margin: 8px 0px;
+    }
+
+    &__tagsItem {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.16602 6.5332C7.35268 6.96654 8.64602 6.96654 9.83268 6.5332' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M11.2129 1.8335H4.78622C3.36622 1.8335 2.21289 2.9935 2.21289 4.40683V13.8002C2.21289 15.0002 3.07289 15.5068 4.12622 14.9268L7.37956 13.1202C7.72622 12.9268 8.28622 12.9268 8.62622 13.1202L11.8796 14.9268C12.9329 15.5135 13.7929 15.0068 13.7929 13.8002V4.40683C13.7862 2.9935 12.6329 1.8335 11.2129 1.8335Z' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3Cpath d='M11.2129 1.8335H4.78622C3.36622 1.8335 2.21289 2.9935 2.21289 4.40683V13.8002C2.21289 15.0002 3.07289 15.5068 4.12622 14.9268L7.37956 13.1202C7.72622 12.9268 8.28622 12.9268 8.62622 13.1202L11.8796 14.9268C12.9329 15.5135 13.7929 15.0068 13.7929 13.8002V4.40683C13.7862 2.9935 12.6329 1.8335 11.2129 1.8335Z' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' /%3E%3C/svg%3E");
+            width: 16px;
+            height: 16px;
+            margin-top: -2px;
+        }
+
+        span {
+            margin-left: 2px;
+        }
+    }
+}
+
+.relatedPostsList {
+    margin: 0px -15px;
+
+    &__item {
+        padding: 0px 15px;
+    }
+
+    .slick-track {
+        margin-left: unset;
+    }
+
+    .slick-arrow {
+        @include media-breakpoint-up(lg) {
+            top: 20px !important;
+        }
+    }
+}
+
+.relatedPosts__bg {
+    background-color: $bg-light;
+}

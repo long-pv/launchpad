@@ -1,0 +1,68 @@
+<?php
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package clvinuni
+ */
+get_header();
+?>
+
+<div class="leaderDetail">
+    <div class="container">
+        <div class="breadcrumbsBlock">
+            <?php wp_breadcrumbs(); ?>
+        </div>
+    </div>
+    <div class="leaderDetail__bg space">
+        <div class="container">
+            <div class="row leaderDetail__gutters">
+                <?php if (get_the_post_thumbnail_url()): ?>
+                    <div class="col-lg-4">
+                        <div class="imgGroup imgGroup--noEffect leaderDetail__img">
+                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <div class="<?php echo get_the_post_thumbnail_url() ? 'col-lg-8' : 'col-12'; ?>">
+                    <h1 class="h2 leaderDetail__title">
+                        <?php echo custom_text_people(get_the_title()); ?>
+                    </h1>
+
+                    <?php
+                    $position = get_field('position') ?? null;
+
+                    if ($position):
+                        ?>
+                        <h3 class="h6 leaderDetail__position">
+                            <?php echo custom_text_people($position); ?>
+                        </h3>
+                        <?php
+                    endif;
+                    ?>
+
+                    <?php
+                    $academic_name = get_academic_people(get_the_ID());
+
+                    if ($academic_name):
+                        ?>
+                        <div class="h6 leaderDetail__position">
+                            <?php echo $academic_name; ?>
+                        </div>
+                        <?php
+                    endif;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="editor space">
+            <?php the_content(); ?>
+        </div>
+    </div>
+</div>
+
+<?php
+get_footer();

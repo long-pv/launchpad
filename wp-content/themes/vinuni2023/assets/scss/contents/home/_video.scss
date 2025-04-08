@@ -1,0 +1,109 @@
+.home-video {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: 12px;
+    padding-bottom: 100%;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 8px;
+        padding-bottom: 75%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 50%;
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        transition: none;
+    }
+
+    .overlay {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 8%;
+            background: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+                from(transparent),
+            );
+            background: linear-gradient(
+                0deg,
+                transparent,
+            );
+            cursor: url(../images/home/play-button.png), auto;
+        }
+
+        &.play {
+            opacity: 1;
+        }
+
+        &.pause {
+            opacity: 0;
+
+            @include media-breakpoint-up(lg) {
+                cursor: url(../images/home/pause.png), auto;
+            }
+        }
+    }
+
+    .video-action {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include media-breakpoint-up(lg) {
+            background: -webkit-gradient(
+                linear,
+                left bottom,
+                left top,
+            );
+            background: linear-gradient(
+                0deg,
+                transparent,
+            );
+            cursor: url(../images/home/play-button.png), auto;
+        }
+
+        img {
+            height: 96px;
+            width: 96px;
+            align-items: center;
+            margin-bottom: 24px;
+
+            @include media-breakpoint-up(lg) {
+                height: 120px;
+                width: 120px;
+            }
+        }
+
+        h2 {
+            width: 250px;
+            font-weight: 700;
+            color: $white;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}

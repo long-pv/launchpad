@@ -1,0 +1,110 @@
+.leaderDetail {
+    // &__bg {
+        // background: $bg-light;
+    // }
+
+    // &__gutters {
+    //     row-gap: 24px;
+    // }
+
+    &__img {
+        padding-bottom: 100%;
+
+        @include media-breakpoint-up(lg) {
+            &:hover {
+                img {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+    }
+
+    &__title,
+    &__position {
+        font-weight: 700;
+
+        a {
+            color: $primary;
+        }
+    }
+
+    &__title {
+        color: $primary;
+        margin-bottom: 16px;
+    }
+
+    .secHeading__title {
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+        }
+    }
+
+    &__biography {
+        padding: 0px 12px;
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0px 16px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__posList {
+        margin-bottom: 16px;
+    }
+
+    &__posItem {
+        margin-bottom: 16px;
+    }
+
+    &__posParent {
+        font-size: 16px;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 8px;
+    }
+
+    &__posChild {
+        font-size: 16px;
+        font-weight: 500;
+        color: $primary;
+        padding-left: 16px;
+        margin-bottom: 4px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__email {
+        font-size: 18px;
+        font-weight: 400;
+        color: $primary !important;
+    }
+
+    &__imgWrap {
+        @include media-breakpoint-up(lg) {
+            padding: 48px 0px;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        background-color: $bg-light;
+        padding: 24px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 64px 0px;
+            margin-left: -140px;
+            padding-left: calc(140px + 64px);
+            background-image: url('../images/people_single_bg.png');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+}

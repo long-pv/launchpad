@@ -1,0 +1,92 @@
+.pageResearchPeople {
+
+
+    &__peopleInner {
+        margin-top: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 32px;
+        }
+
+        .pagination {
+            margin-top: 24px;
+        }
+    }
+
+    &__peopleGutter {
+        row-gap: 16px;
+
+        @include media-breakpoint-up(lg) {
+            row-gap: 32px;
+        }
+
+        .testimonialItem {
+            padding: 0px;
+        }
+    }
+
+    &__group {
+        height: 100%;
+
+        input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            padding: 16px;
+            border: 1px solid $light_gray;
+            border-radius: 0px !important;
+
+            &::placeholder {
+                color: $silver;
+            }
+        }
+    }
+
+    &__search {
+        &:hover {
+            background: $secondary;
+
+            @include media-breakpoint-up(lg) {
+                background: $white;
+            }
+
+            span {
+                color: $white;
+
+                @include media-breakpoint-up(lg) {
+                    color: $secondary;
+                }
+            }
+        }
+
+        span {
+            color: $white;
+        }
+    }
+
+    &__viewAll {
+        background: $primary;
+        border: 1px solid $primary;
+
+        &:hover {
+            background: $white;
+
+            @include media-breakpoint-up(lg) {
+                background: $white;
+                border: 1px solid $secondary;
+            }
+
+            span {
+                color: $white;
+
+                @include media-breakpoint-up(lg) {
+                    color: $secondary;
+                }
+            }
+        }
+
+        span {
+            color: $white;
+        }
+    }
+}

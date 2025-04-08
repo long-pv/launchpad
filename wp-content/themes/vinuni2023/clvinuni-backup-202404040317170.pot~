@@ -1,0 +1,367 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vinuni 2023\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-14 07:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.6; wp-6.3.2\n"
+"X-Domain: clvinuni"
+
+#: inc/cpt-custom-role.php:6 inc/cpt-custom-role.php:167
+msgid "Academic"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:8
+msgid "academic"
+msgstr ""
+
+#: inc/breadcrumbs.php:86 inc/cpt-custom-role.php:96
+msgid "AID"
+msgstr ""
+
+#: search.php:76
+msgid "All"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:9
+msgid "All Academic"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:19
+msgid "All Location"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:14
+msgid "All Non Academic"
+msgstr ""
+
+#: inc/cpt-custom-role.php:66
+msgid "Career services"
+msgstr ""
+
+#: inc/cpt-custom-role.php:200
+msgid "Career services category"
+msgstr ""
+
+#: inc/cpt-custom-role.php:177
+msgid "Club categories"
+msgstr ""
+
+#: inc/cpt-custom-role.php:129
+msgid "Clubs"
+msgstr ""
+
+#. Author of the theme
+msgid "codLUCK"
+msgstr ""
+
+#: inc/cpt-custom-role.php:182
+msgid "Colleges People"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: single-job.php:52
+msgid "Date posted"
+msgstr ""
+
+#: page-jobs.php:84 single-job.php:56
+msgid "Deadline"
+msgstr ""
+
+#: single-job.php:74
+msgid "Division"
+msgstr ""
+
+#: single-job.php:66 inc/cpt-custom-role.php:162
+msgid "Employment type"
+msgstr ""
+
+#: inc/cpt-custom-role.php:104
+msgid "Event"
+msgstr ""
+
+#: archive-event.php:20 page-news-event.php:111 search.php:84
+msgid "Events"
+msgstr ""
+
+#: inc/cpt-custom-role.php:142
+msgid "Faculty stories category"
+msgstr ""
+
+#: archive-faqs.php:18 taxonomy-faqs_category.php:16
+#: inc/cpt-custom-role.php:109 inc/custom-post-types-taxonomies.php:147
+#: inc/custom-post-types-taxonomies.php:148
+#: inc/custom-post-types-taxonomies.php:152
+msgid "FAQs"
+msgstr ""
+
+#: inc/custom-post-types-taxonomies.php:191
+#: inc/custom-post-types-taxonomies.php:192
+#: inc/custom-post-types-taxonomies.php:197
+msgid "FAQs Category"
+msgstr ""
+
+#: inc/cpt-custom-role.php:152
+msgid "FAQs category"
+msgstr ""
+
+#: functions.php:32
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:33
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:34
+msgid "Footer 3"
+msgstr ""
+
+#: template-parts/block/news_and_events.php:166
+msgid "For media"
+msgstr ""
+
+#: inc/cpt-custom-role.php:16
+msgid "Global Exchange"
+msgstr ""
+
+#: inc/breadcrumbs.php:81
+msgid "Global exchange"
+msgstr ""
+
+#: inc/breadcrumbs.php:13
+msgid "Home"
+msgstr ""
+
+#. URI of the theme
+msgid "http://underscores.me/"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://codluck.com"
+msgstr ""
+
+#: inc/cpt-custom-role.php:205
+msgid "Industrial insight category"
+msgstr ""
+
+#: inc/cpt-custom-role.php:157
+msgid "Job Location"
+msgstr ""
+
+#: inc/cpt-custom-role.php:124
+msgid "Jobs"
+msgstr ""
+
+#: inc/cpt-custom-role.php:86
+msgid "Jobs & Internship Opportunity"
+msgstr ""
+
+#: page-jobs.php:71
+msgid "Jobs matched with your search: "
+msgstr ""
+
+#: template-parts/block/latest_news.php:30
+msgid "Latest news"
+msgstr ""
+
+#: inc/cpt-custom-role.php:114
+msgid "Leader"
+msgstr ""
+
+#: page-jobs.php:68
+msgid "List <span>Jobs</span>"
+msgstr ""
+
+#: single-job.php:70
+msgid "Location"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:18
+msgid "location"
+msgstr ""
+
+#: inc/cpt-custom-role.php:91
+msgid "Mentorship Program"
+msgstr ""
+
+#: functions.php:35
+msgid "Menu top"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"My WordPress theme is a sophisticated combination of comfort and beauty, "
+"aimed at creating a great online experience for customers. The website "
+"interface is built with simplicity and ease of use in mind, creating a "
+"friendly and convenient feeling for users. Soft colors and harmonious "
+"decoration create an interesting and sophisticated space. The theme supports "
+"flexible customization, helping administrators easily adjust content as "
+"desired. At the same time, integrate social widgets and multilingual support "
+"to optimize interaction and sharing across different platforms. In short, "
+"this theme is not just a website, but also an exquisite online space where "
+"customers can experience comfort and beauty from their first visit."
+msgstr ""
+
+#: search.php:80
+msgid "News"
+msgstr ""
+
+#: page-jobs.php:100
+msgid "No jobs found"
+msgstr ""
+
+#: inc/template-functions.php:219
+msgid "No results found"
+msgstr ""
+
+#: inc/cpt-custom-role.php:172
+msgid "Non Academic"
+msgstr ""
+
+#: template-parts/block/finding_your_jobs.php:13
+msgid "non academic"
+msgstr ""
+
+#: search.php:147
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/cpt-custom-role.php:21
+msgid "On Media"
+msgstr ""
+
+#. 1: title.
+#: comments.php:35
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: search.php:88 inc/cpt-custom-role.php:134
+msgid "People"
+msgstr ""
+
+#: inc/custom-post-types-taxonomies.php:17
+#: inc/custom-post-types-taxonomies.php:18
+#: inc/custom-post-types-taxonomies.php:22
+msgid "Portfolio"
+msgstr ""
+
+#: inc/custom-post-types-taxonomies.php:61
+#: inc/custom-post-types-taxonomies.php:62
+#: inc/custom-post-types-taxonomies.php:67
+#: inc/custom-post-types-taxonomies.php:98
+#: inc/custom-post-types-taxonomies.php:99
+#: inc/custom-post-types-taxonomies.php:104
+msgid "Portfolio category"
+msgstr ""
+
+#: page-jobs.php:79
+msgid "Position"
+msgstr ""
+
+#: functions.php:31
+msgid "Primary"
+msgstr ""
+
+#: template-parts/block/news_and_events.php:154
+msgid "Read More"
+msgstr ""
+
+#: single.php:77
+msgid "Related Posts"
+msgstr ""
+
+#: inc/cpt-custom-role.php:26
+msgid "Research"
+msgstr ""
+
+#: inc/cpt-custom-role.php:195
+msgid "Research Areas"
+msgstr ""
+
+#: inc/cpt-custom-role.php:36
+msgid "Research News"
+msgstr ""
+
+#: inc/cpt-custom-role.php:190
+msgid "Research Types"
+msgstr ""
+
+#: search.php:42 template-parts/block/search_club.php:31
+msgid "Reset"
+msgstr ""
+
+#: single-job.php:60
+msgid "Salary"
+msgstr ""
+
+#: search.php:34 template-parts/block/finding_your_jobs.php:34
+#: template-parts/block/search_club.php:27
+msgid "Search"
+msgstr ""
+
+#: template-parts/block/search_club.php:24
+msgid "Search by keyword"
+msgstr ""
+
+#: search.php:54
+msgid "Search result for"
+msgstr ""
+
+#: page-news-event.php:77 page-news-event.php:120
+#: inc/template-functions.php:105 inc/template-functions.php:128
+#: template-parts/block/featured.php:42
+msgid "See more"
+msgstr ""
+
+#: search.php:150
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/breadcrumbs.php:76 inc/cpt-custom-role.php:11
+msgid "Student Life"
+msgstr ""
+
+#: search.php:92
+msgid "Testimonial"
+msgstr ""
+
+#: inc/cpt-custom-role.php:119
+msgid "Testimonials"
+msgstr ""
+
+#: inc/cpt-custom-role.php:147
+msgid "Testimonials category"
+msgstr ""
+
+#: template-parts/single/jobs_item.php:22
+msgid "View detail"
+msgstr ""
+
+#. Name of the theme
+msgid "Vinuni 2023"
+msgstr ""

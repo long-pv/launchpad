@@ -1,0 +1,166 @@
+.sectionSectionMap {
+    margin-top: 0px;
+}
+
+.sectionMap {
+    .secHeading {
+        margin-top: 40px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 80px;
+        }
+    }
+
+    &__mapWrap {
+        position: relative;
+        padding-bottom: 100%;
+        margin-bottom: 16px;
+        cursor: pointer;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 70%;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0px;
+            padding-bottom: 30%;
+        }
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        transition: none;
+        cursor: pointer;
+    }
+
+    &__info {
+        border: 1px solid $success;
+        border-top: 4px solid $secondary;
+        padding: 24px;
+        z-index: 999;
+        position: relative;
+        background: $white;
+
+        @include media-breakpoint-up(lg) {
+            padding: 32px;
+        }
+    }
+
+    &__list {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $primary;
+        margin-bottom: 0px;
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            top: 22%;
+            left: 22%;
+            transform: translateY(-22% -22%);
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__infoDetail {
+        margin-left: 16px;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 700;
+        color: $primary;
+        margin-bottom: 0px;
+    }
+
+    &__content {
+        color: $body;
+
+        a {
+            color: $body !important;
+            transition: all 0.5s;
+
+            &:hover {
+                cursor: pointer !important;
+                color: $body !important;
+
+                @include media-breakpoint-up(lg) {
+                    color: $secondary !important;
+                    transition: all 0.5s;
+                }
+            }
+        }
+
+        p {
+            margin-bottom: 0px !important;
+        }
+    }
+
+    &__editor {
+        margin-top: 16px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__img {
+        margin-top: 16px;
+        width: 100%;
+        height: auto;
+
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+        }
+    }
+
+    &__imgInner {
+        position: relative;
+    }
+
+    &--top {
+        .sectionMap {
+            &__info {
+                @include media-breakpoint-up(lg) {
+                    margin-top: -200px;
+                }
+            }
+
+            &__editor {
+                margin-top: 32px;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 56px;
+                }
+            }
+        }
+    }
+}

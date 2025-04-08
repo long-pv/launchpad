@@ -1,0 +1,111 @@
+.sectionGovernanceLeader,
+.sectionGovernanceLeaderNew {
+    margin: 0px;
+    padding: 40px 0px;
+    background: $bg_colla;
+
+    @include media-breakpoint-up(lg) {
+        padding: 80px 0px;
+    }
+}
+
+.governanceLeader {
+    &__subTitle {
+        font-size: 16px;
+        font-weight: 700;
+        color: $secondary;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 20px;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            height: 1px;
+            width: 100%;
+            background: $body;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__item {
+        padding: 24px 0px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            padding: 32px 0px;
+        }
+
+        &::after {
+            content: '';
+            height: 1px;
+            width: 100%;
+            background: $silver;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:first-child {
+            padding-top: 0px;
+        }
+
+        &:last-child {
+            padding-bottom: 0px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        height: 100%;
+        padding: 16px 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0px 0px 24px 0px;
+        }
+    }
+
+    &__position {
+        font-weight: 700;
+        margin-bottom: 16px;
+        font-size: 18px;
+        // text-transform: capitalize;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        text-transform: capitalize;
+    }
+
+    &__link {
+        font-weight: 700;
+        display: block;
+
+        // &:hover {
+        //     text-decoration: none;
+        //     color: $primary;
+
+        //     @include media-breakpoint-up(lg) {
+        //         color: $secondary;
+        //     }
+        // }
+    }
+
+    &__quote {
+        margin-bottom: 0px;
+    }
+
+    &__img {
+        padding-bottom: 85%;
+        z-index: 1;
+    }
+}

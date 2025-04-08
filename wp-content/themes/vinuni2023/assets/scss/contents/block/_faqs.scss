@@ -1,0 +1,119 @@
+// Block FAQs
+.faqs {
+	&__header {
+		background-color: $light_gray;
+		margin-top: 16px;
+		border-radius: 4px;
+
+		&:has(button[aria-expanded="true"]) {
+			border-radius: 4px 4px 0px 0px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0px;
+	}
+
+	&__btn {
+		position: relative;
+		color: $body;
+		font-size: 16px;
+		font-weight: 700;
+		padding: 12px 44px 12px 12px;
+		border: none;
+		transition: all 0.5s;
+		text-decoration: none;
+
+		// Close item accordion
+		&::after {
+			position: absolute;
+			width: 24px;
+			height: 24px;
+			right: 12px;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all 0.5s;
+			content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%232E2E2E'/%3E%3C/svg%3E%0A");
+
+			@include media-breakpoint-up(lg) {
+				right: 16px;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding: 16px 48px 16px 16px;
+			font-size: 18px;
+
+			&:hover {
+				color: $secondary !important;
+				transition: all 0.5s;
+
+				&::after {
+					content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%23C72127'/%3E%3C/svg%3E%0A") !important;
+					transition: all 0.5s;
+				}
+			}
+		}
+
+		// Open item accordion
+		&[aria-expanded="true"] {
+			text-decoration: none;
+			color: $primary-color;
+			transition: all 0.5s;
+
+			&::after {
+				content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 9.19484L15.4781 11.1648L18.6881 14.3748C19.3581 15.0548 18.8781 16.2148 17.9181 16.2148H11.6881H6.07812C5.11812 16.2148 4.63812 15.0548 5.31812 14.3748L10.4981 9.19484C11.3181 8.36484 12.6781 8.36484 13.5081 9.19484Z' fill='%23134D8B'/%3E%3C/svg%3E%0A");
+				transition: all 0.5s;
+			}
+
+			@include media-breakpoint-up(lg) {
+				&:hover {
+					&::after {
+						content: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 9.19484L15.4781 11.1648L18.6881 14.3748C19.3581 15.0548 18.8781 16.2148 17.9181 16.2148H11.6881H6.07812C5.11812 16.2148 4.63812 15.0548 5.31812 14.3748L10.4981 9.19484C11.3181 8.36484 12.6781 8.36484 13.5081 9.19484Z' fill='%23C72127'/%3E%3C/svg%3E%0A") !important;
+						transition: all 0.5s;
+					}
+				}
+			}
+		}
+	}
+
+	&__body {
+		padding: 12px;
+		background-color: $bg-light;
+		border-radius: 0px 0px 4px 4px;
+
+		@include media-breakpoint-up(lg) {
+			padding: 16px;
+		}
+	}
+
+	&--people {
+		.faqs {
+			&__btn {
+				text-transform: uppercase;
+				@include media-breakpoint-up(lg) {
+					font-size: 24px;
+				}
+			}
+
+			&__header {
+				background-color: $bg-light;
+			}
+		}
+	}
+}
+
+.faqsItem {
+	.faqs__item {
+		&:first-child {
+			.faqs__header {
+				margin-top: 0;
+			}
+		}
+	}
+}

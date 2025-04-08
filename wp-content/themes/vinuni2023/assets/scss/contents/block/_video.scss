@@ -1,0 +1,97 @@
+.videoBlock {
+    &__videoWrap {
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        cursor: auto;
+        padding: 72px 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 96px 0px;
+        }
+    }
+
+    &__overlay {
+        cursor: auto;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    &__videoAction {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 100;
+        text-align: center;
+        align-items: center;
+        min-height: 280px;
+
+        @include media-breakpoint-up(lg) {
+            min-height: 360px;
+        }
+    }
+
+    &__playAction {
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+        margin-bottom: 24px;
+        background: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__playButton {
+        height: 96px;
+        width: 96px;
+        align-items: center;
+
+        @include media-breakpoint-up(lg) {
+            height: 120px;
+            width: 120px;
+        }
+    }
+
+    &__title {
+        width: 250px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0;
+        cursor: auto;
+    }
+
+    &__btnClose {
+        display: block;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        z-index: 999;
+        border-radius: 50%;
+        width: 40px;
+        background: $white !important;
+        height: 40px;
+        opacity: 1;
+        outline: none !important;
+
+        &:not(:disabled):not(.disabled) {
+            &:hover, &:focus {
+                opacity: 1;
+
+                @include media-breakpoint-up(lg) {
+                    opacity: 0.75;
+                }
+            }
+        }
+    }
+}

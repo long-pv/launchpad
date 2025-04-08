@@ -1,0 +1,14 @@
+.relatedPosts {
+    &__title {
+        font-weight: 700;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__gutters {
+        row-gap: 24px;
+    }
+}

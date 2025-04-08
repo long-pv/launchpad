@@ -1,0 +1,157 @@
+// Style Sidebar Menu
+.sidebarMenu {
+	position: relative;
+	border-radius: 4px;
+	overflow: hidden;
+	margin-bottom: 16px;
+
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 0px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		background-color: $bg-light;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		height: 2px;
+	}
+
+	ul {
+		padding: 0px;
+		margin-bottom: 0px;
+
+		li {
+			list-style: none;
+			position: relative;
+		}
+	}
+
+	a,
+	&__tab {
+		color: $body;
+		display: block;
+		padding: 16px 48px 15px 16px;
+		background-color: $bg-light;
+		border-bottom: 1px solid $silver;
+		position: relative;
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: none;
+			@include media-breakpoint-up(lg) {
+				color: $secondary !important;
+			}
+		}
+	}
+
+	&__tab {
+		font-weight: 700;
+		color: $primary;
+		display: block;
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+
+		.sidebarMenu__icon {
+			z-index: unset;
+		}
+	}
+
+	&__content {
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			display: block;
+		}
+	}
+
+	// Icon
+	&__icon {
+		width: 53px;
+		height: 53px;
+		transition: all 0.5s;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		background-position: center center;
+		z-index: 1;
+		transform: rotate(0deg);
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%232E2E2E'/%3E%3C/svg%3E%0A");
+
+		@include media-breakpoint-up(lg) {
+			width: 56px;
+			height: 56px;
+		}
+	}
+
+	&--active {
+		& > a {
+			color: $primary !important;
+			font-weight: 700;
+		}
+	}
+
+	&--open {
+		transform: rotate(180deg);
+	}
+
+	// Sidebar level 1
+	&__level1 {
+		& > .sidebarMenu--active > a {
+			padding-left: 32px !important;
+
+			&::before {
+				width: 9px;
+				height: 16px;
+				position: absolute;
+				left: 16px;
+				top: 50%;
+				transform: translateY(-50%);
+				content: url("data:image/svg+xml,%3Csvg width='9' height='16' viewBox='0 0 9 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.83195 7.29289L1.70711 1.16804C1.07714 0.53808 0 0.984246 0 1.87515V14.1248C0 15.0158 1.07714 15.4619 1.70711 14.832L7.83196 8.70711C8.22248 8.31658 8.22248 7.68342 7.83195 7.29289Z' fill='%23C72127'/%3E%3C/svg%3E%0A");
+
+				@include media-breakpoint-up(lg) {
+					top: 48%;
+				}
+			}
+		}
+	}
+
+	// Sidebar level 2
+	&__level2 {
+		a {
+			padding-left: 40px !important;
+		}
+	}
+
+	// Sidebar level 3
+	&__level3 {
+		a {
+			padding-left: 64px !important;
+		}
+	}
+}
+
+.sidebarWrapper {
+	height: 100%;
+	position: relative;
+	.sidebarGroup {
+		@include media-breakpoint-up(lg){
+			position: sticky;
+			top: 155px;
+			transition: all 0.5s;
+		}
+	}
+	&.sidebar_scrollUp{
+		.sidebarGroup {
+			@include media-breakpoint-up(lg){
+				top: 15px;
+			}
+		}
+	}
+}

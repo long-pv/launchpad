@@ -1,0 +1,48 @@
+.contactItem {
+    background: $primary;
+    color: $white;
+    padding: 24px 16px;
+    text-align: center;
+    height: 100%;
+
+    @include media-breakpoint-up(lg) {
+        padding: 40px 16px 64px;
+    }
+
+    &__title,
+    &__img {
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__img {
+        width: 100px;
+        object-fit: cover;
+        aspect-ratio: 1;
+        @include media-breakpoint-up(lg){
+            width: 160px;
+        }
+    }
+
+    &__title,
+    &__link {
+        font-weight: 700;
+    }
+
+    &__link {
+        color: $white;
+
+        &:hover {
+            // text-decoration: none;
+            text-decoration: underline;
+            color: $white;
+        }
+    }
+
+    &__secondary {
+        background: $secondary;
+    }
+}

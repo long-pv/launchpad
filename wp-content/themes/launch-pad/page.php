@@ -15,7 +15,17 @@
 
 // header template
 get_header();
-// flexible content
-get_template_part('template-parts/content-flexible');
+?>
+<div class="container">
+    <div class="page_wrap">
+        <div class="page_inner">
+            <?php
+            get_template_part('template-parts/content-flexible');
+            ?>
+        </div>
+    </div>
+</div>
+
+<?php
 // footer template
 get_footer();

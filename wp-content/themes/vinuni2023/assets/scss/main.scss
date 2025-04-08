@@ -1,0 +1,103 @@
+/**
+ * Global reset
+ */
+@import 'fonts';
+@import 'mixins';
+@import 'variables';
+@import 'bootstrap/bootstrap';
+//animated
+@import 'animate';
+
+// slick
+@import 'slick/slick';
+@import 'contents/slick';
+
+//template css
+@import 'general';
+@import 'contents/header';
+@import 'contents/footer';
+@import 'contents/breadcrumbs';
+@import 'contents/select2';
+@import 'contents/pagination';
+
+// page home
+@import 'contents/home/banner';
+@import 'contents/home/leaders';
+@import 'contents/home/collaborators';
+@import 'contents/home/video';
+@import 'contents/home/core_value';
+
+// block styles
+@import 'contents/block/block-template';
+@import 'contents/block/banner';
+
+
+// ------------------ Longpv ----------------------//
+@import 'contents/block/milestones';
+@import 'contents/block/faculty_stories';
+@import 'contents/page_article';
+@import 'contents/page_search';
+@import 'contents/block/page_research_people';
+
+// ------------------ Huongnt ---------------------//
+@import "contents/editor";
+@import 'contents/block/about';
+@import 'contents/block/quick-link';
+@import "contents/block/introduction";
+@import "contents/block/highlights";
+@import "contents/block/faqs";
+@import "contents/block/template";
+@import "contents/block/cta";
+@import "contents/block/programs";
+@import "contents/block/testimonials";
+@import "contents/block/research";
+@import "contents/block/why-working";
+@import "contents/block/sidebar-menu";
+
+// ------------------ Ankt ------------------------//
+@import 'contents/block/post_news';
+@import 'contents/block/card';
+@import 'contents/block/stats';
+@import 'contents/block/key_dates';
+@import 'contents/block/core_values';
+@import 'contents/block/news_and_events';
+@import 'contents/block/button_cta';
+@import 'contents/block/slider';
+@import 'contents/block/video';
+@import 'contents/block/leaders';
+@import 'contents/block/collaborators';
+@import 'contents/news_and_event';
+@import 'contents/block/latest_news';
+@import 'contents/archive';
+@import 'contents/block/section_map';
+@import 'contents/block/section_form';
+@import 'contents/block/featured';
+@import 'contents/block/governance_officers';
+@import 'contents/block/governance_leader';
+@import 'contents/block/governance_advisory';
+@import 'contents/block/student_activities';
+@import 'contents/block/residential_life';
+@import 'contents/block/student_support';
+@import 'contents/leader_detail';
+@import 'contents/single_detail';
+@import 'contents/block/breadcrumbs';
+@import 'contents/page_research_people';
+@import 'contents/block/strategic_collaborators';
+@import 'contents/block/countdown';
+
+// ------------------ LongBN ------------------------//
+@import 'contents/block/find_jobs';
+@import 'contents/block/jobs';
+@import 'contents/block/single_job';
+@import 'contents/block/contact_us';
+@import 'contents/block/why_vinuni';
+@import 'contents/block/council';
+@import 'contents/block/blockTabs';
+@import 'contents/block/search_club';
+@import 'contents/block/service';
+@import 'contents/block/more_resources';
+@import 'contents/block/accreditation';
+@import 'contents/block/fact_figure';
+@import 'contents/block/download';
+@import 'contents/block/gallery';
+@import 'contents/block/gallery_detail';

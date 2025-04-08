@@ -1,0 +1,39 @@
+.buttonCta {
+	&__gutters {
+		row-gap: 16px;
+	}
+}
+
+.btnCTA {
+	display: flex;
+	height: 100%;
+	border-radius: 4px;
+	padding: 15px;
+	font-size: 14px;
+	color: $white;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s;
+	background: $secondary;
+	border: 1px solid $secondary;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 16px;
+	}
+
+	&::before,
+	&::after {
+		display: none;
+	}
+
+	&:hover {
+		color: $white;
+
+		@include media-breakpoint-up(lg) {
+			background: $white;
+			color: $secondary;
+			transition: all 0.5s;
+		}
+	}
+}

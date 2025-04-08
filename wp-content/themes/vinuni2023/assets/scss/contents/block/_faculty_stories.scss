@@ -1,0 +1,238 @@
+.stories {
+    &__tabSlider {
+        border: none !important;
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            margin: 0px -15px;
+        }
+
+        .nav-link {
+            padding: 12px 0px;
+            font-size: 16px;
+            border: none !important;
+            border-radius: 0px !important;
+
+            @include media-breakpoint-up(md) {
+                color: $white !important;
+                background: none !important;
+                padding: 0px 0px 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding: 0px 0px 24px;
+            }
+
+            &.active {
+                position: relative;
+
+                @include media-breakpoint-up(md) {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 1px;
+                        left: 0px;
+                        width: 140px;
+                        height: 3px;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+
+        .slick-track {
+			margin-left: unset;
+		}
+    }
+
+    &__tabContent {
+        border-top: 1px solid $white;
+        @include media-breakpoint-down(sm){
+            border-top: none;
+        }
+    }
+
+    &__tabItem {
+        padding: 0px;
+
+        @include media-breakpoint-up(md) {
+            padding: 0px 15px;
+        }
+    }
+
+    &__iframe {
+        color: $white;
+    }
+
+    &__slider {
+        .storiesItem {
+            margin-bottom: 15px;
+            padding-top: 0px;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.storiesItem {
+    padding-top: 24px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 48px;
+    }
+
+    &__content {
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 16px;
+        }
+
+        * {
+            color: $white;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        margin-bottom: 8px;
+        font-size: 18px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+        }
+    }
+
+    &__position {
+        font-weight: 700;
+        margin-bottom: 32px;
+    }
+
+    &__img {
+        padding-bottom: 65%;
+    }
+
+    &__quote {
+        padding-left: 32px;
+        padding-top: 16px;
+        margin: 0px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='17' viewBox='0 0 22 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.352 8.016C8.152 8.368 8.776 8.896 9.224 9.6C9.672 10.304 9.896 11.136 9.896 12.096C9.896 13.472 9.464 14.592 8.6 15.456C7.736 16.288 6.632 16.704 5.288 16.704C3.944 16.704 2.824 16.272 1.928 15.408C1.064 14.544 0.632 13.44 0.632 12.096C0.632 11.456 0.712 10.816 0.872 10.176C1.032 9.536 1.384 8.576 1.928 7.296L4.712 0.383998H9.464L7.352 8.016ZM18.68 8.016C19.48 8.368 20.104 8.896 20.552 9.6C21 10.304 21.224 11.136 21.224 12.096C21.224 13.472 20.792 14.592 19.928 15.456C19.064 16.288 17.96 16.704 16.616 16.704C15.272 16.704 14.152 16.272 13.256 15.408C12.392 14.544 11.96 13.44 11.96 12.096C11.96 11.456 12.04 10.816 12.2 10.176C12.36 9.536 12.712 8.576 13.256 7.296L16.04 0.383998H20.792L18.68 8.016Z' fill='%23F2F2F2'/%3E%3C/svg%3E%0A");
+            width: 24px;
+            height: 24px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 11px;
+            left: 0px;
+        }
+    }
+
+    &__video {
+        position: relative;
+        width: 100%;
+        height: 0px;
+        padding-bottom: 56.25%;
+
+        iframe,
+        video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    }
+
+    &__link {
+        margin-top: 24px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 32px;
+        }
+
+        &:hover {
+            color: $white;
+            text-decoration: underline;
+        }
+    }
+}
+
+.selecDropdown {
+    @include media-breakpoint-down(sm) {
+        position: relative;
+
+        li {
+            z-index: 2;
+            cursor: pointer;
+            margin: 0px !important;
+            background: $bg-light;
+            font-weight: 700;
+
+            &.init {
+                a {
+                    background: $bg-light !important;
+                    color: $primary-color !important;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding-right: 32px;
+                    padding-left: 12px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%) rotate(0);
+                        right: 5px;
+                        height: 24px;
+                        width: 24px;
+                        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.5081 15.5942L15.4781 13.6242L18.6881 10.4142C19.3581 9.73422 18.8781 8.57422 17.9181 8.57422H11.6881H6.07812C5.11812 8.57422 4.63812 9.73422 5.31812 10.4142L10.4981 15.5942C11.3181 16.4242 12.6781 16.4242 13.5081 15.5942Z' fill='%232E2E2E'/%3e%3c/svg%3e");
+                        background-position: center center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+
+                &.active {
+                    a {
+                        &::after {
+                            transform: translateY(-50%) rotate(-180deg);
+                        }
+                    }
+                }
+            }
+
+            &:not(.init) {
+                display: none;
+                padding: 0 10px;
+                
+                &:last-child {
+                    a {
+                        border-bottom: 0 !important;
+                    }
+                }
+                
+                a {
+                    background: $bg-light;
+                    color: $body;
+                    padding: 12px;
+                    border-bottom: 1px solid $silver !important;
+                }
+            }
+
+            &:not(.init):hover,
+            &.selected:not(.init) {
+                a {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}

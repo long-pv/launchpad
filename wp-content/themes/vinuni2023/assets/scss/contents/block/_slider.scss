@@ -1,0 +1,51 @@
+.sliders {
+    &__list {
+        margin: 0px -15px;
+
+        .slick-track {
+            margin-left: unset;
+        }
+    }
+
+    &__item {
+        padding: 16px;
+        width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            padding: 32px 24px;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &__itemInner {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0px 15px;
+        }
+    }
+
+    .secHeading__desc {
+        a {
+            &:hover {
+                text-decoration: none;
+
+                @include media-breakpoint-up(lg) {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

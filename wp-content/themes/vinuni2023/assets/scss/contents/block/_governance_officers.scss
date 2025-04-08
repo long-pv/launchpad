@@ -1,0 +1,105 @@
+.sectionGovernanceOfficers {
+	margin: 0px;
+}
+
+.governanceOfficers {
+	padding: 40px 0px;
+
+	@include media-breakpoint-up(lg) {
+		padding: 80px 0px;
+	}
+
+	&__subTitle {
+		font-size: 16px;
+		font-weight: 700;
+		color: $secondary;
+		text-transform: uppercase;
+		position: relative;
+		padding-bottom: 16px;
+		margin-bottom: 24px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			height: 1px;
+			width: 100%;
+			background: $body;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&__gutters {
+		row-gap: 24px;
+
+		@include media-breakpoint-up(lg) {
+			row-gap: 32px;
+		}
+	}
+
+	&__image {
+		padding-bottom: 85%;
+
+        img {
+            transform: translate(-50%, -50%) scale(1);
+        }
+	}
+
+	&__img, &__content {
+		height: 100%;
+		background: $white;
+		background: $white;
+	}
+
+	&__content {
+		padding: 8px;
+	}
+
+	&__title,
+	&__position {
+		font-size: 12px;
+	}
+
+	&__title {
+		font-weight: 700;
+		margin-bottom: 4px;
+	}
+
+	&__link {
+		color: $body;
+		display: block;
+
+		// &:hover {
+		// 	text-decoration: none;
+		// 	color: $body;
+
+		// 	@include media-breakpoint-up(lg) {
+		// 		color: $secondary;
+		// 	}
+		// }
+	}
+
+	&__position {
+		margin-bottom: 0px;
+	}
+
+	&--bgGray {
+		background: $bg_colla;
+	}
+
+	&.section__bgImg {
+		.governanceOfficers {
+			&__subTitle {
+				color: $white;
+
+				&::after {
+					background: $white;
+				}
+			}
+		}
+	}
+}

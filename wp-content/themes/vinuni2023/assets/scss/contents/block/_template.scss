@@ -1,0 +1,10 @@
+.template {
+	&--bg {
+		background: $primary-color;
+		color: white !important;
+
+		* {
+			color: white !important;
+		}
+	}
+}

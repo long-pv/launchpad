@@ -1,0 +1,42 @@
+.studentSupport {
+    &__inner {
+        background: $bg-light;
+        padding: 24px;
+    }
+
+    &__item {
+        display: flex;
+        margin-bottom: 12px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .editor {
+        p {
+            margin-bottom: 4px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
+        a {
+            color: $body;
+
+            @include media-breakpoint-up(lg) {
+                &:hover {
+                    // color: $secondary;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

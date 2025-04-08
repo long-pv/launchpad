@@ -1,0 +1,42 @@
+.residentialLife {
+    &__gutters {
+        row-gap: 15px;
+
+        @include media-breakpoint-up(lg) {
+            row-gap: 30px;
+        }
+    }
+
+    &__bg {
+        display: grid;
+        gap: 15px;
+
+        @include media-breakpoint-up(lg) {
+            gap: 30px;
+        }
+
+        &--left {
+            grid-template-columns: repeat(2, 1fr);
+
+            .residentialLife__item:nth-child(3) {
+                grid-column: span 2;
+            }
+        }
+
+        &--right {
+            grid-template-columns: repeat(2, 1fr);
+
+            .residentialLife__item:nth-child(1) {
+                grid-column: span 2;
+            }
+        }
+    }
+
+    &__imgGroup {
+        padding-bottom: 84.6% ;
+
+        img {
+            width: 100%;
+        }
+    }
+}

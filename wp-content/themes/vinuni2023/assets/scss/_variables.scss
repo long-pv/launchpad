@@ -1,0 +1,62 @@
+// Bootstrap overrides
+
+//grid breakpoints
+$grid-breakpoints    : (
+  xs                 : 0,
+  sm                 : 576px,
+  md                 : 768px,
+  lg                 : 992px,
+  xl                 : 1200px,
+  xxl                : 1700px
+);
+//to get value using map-get($grid-breakpoints, "lg")
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm                 : 540px,
+  md                 : 720px,
+  lg                 : 960px,
+  xl                 : 1140px,
+  xxl                : 1320px
+);
+
+// Base color
+$body                : #2E2E2E;
+$primary             : #134D8B;
+$primary-color       : var(--primary);
+$secondary           : #C72127;
+$success             : #818181;
+$info                : #F2F6F9;
+$silver              : #C0C0C0;
+$dark_gray           : #333333;
+$dark_blue           : #1A4079;
+$deep_red            : #A41218;
+$taupe_gray          : #857D7D;
+
+$bg-light            : #F4F4F4;
+$light_gray          : #EAEAEA;
+$btn                 : #0076C0;
+$btn_hover           : #0562AC;
+$deep_blue           : #0D3B77;
+
+$btn_border          : #C6C6C6;
+$btn_prev            : #5A5A5A;
+
+$bg_colla            : #EEEFEF;
+$list_style          : #AAAAAA;
+
+$yellow-color        : #FFA200;
+$red-color           : #D50030;
+$light_blue-color    : #75A7DC;
+$light_green-color   : #018369;
+
+// $primary:       $blue !default;
+// $secondary:     $gray-600 !default;
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+// $light:         $gray-100 !default;
+// $dark:          $gray-800 !default;

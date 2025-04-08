@@ -1,0 +1,114 @@
+.countdown {
+    &__blockInfo {
+        .secHeading {
+            margin-bottom: 32px;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 40px;
+            }
+
+            &__link {
+                margin-top: 0px;
+
+                @include media-breakpoint-up(md) {
+                    text-align: center;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    display: inline-flex;
+                }
+
+                .btnCTA {
+                    margin-bottom: 32px;
+
+                    @include media-breakpoint-up(md) {
+                        display: inline-flex;
+                        min-width: 386px;
+                    }
+
+                    @include media-breakpoint-up(lg) {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__time {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include media-breakpoint-up(md) {
+            flex-wrap: unset;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 40px;
+            justify-content: flex-end;
+            gap: 40px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            margin-right: 28px;
+        }
+
+        .col-sm-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+
+            @include media-breakpoint-up(md) {
+                flex: 0 0 104px;
+                max-width: 104px;
+            }
+        }
+
+        #days, #hours, #minutes, #seconds {
+            @include media-breakpoint-up(lg) {
+                padding: 0px;
+            }
+        }
+
+        .wrapper {
+            text-align: center;
+            min-width: 87px;
+            margin-bottom: 16px;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0px;
+            }
+
+            .time {
+                font-family: 'Mulish', sans-serif;
+                font-size: 40px;
+                font-weight: 400;
+                display: block;
+                line-height: 1;
+                white-space: nowrap;
+                background: $primary;
+                color: $white;
+                padding: 28px 8px;
+                min-width: 87px;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 48px;
+                }
+            }
+
+            span {
+                display: block;
+
+                &:last-child {
+                    font-size: 16px;
+                    display: block;
+                    margin-top: 8px;
+                    text-transform: uppercase;
+                    font-family: 'Mulish', sans-serif;
+                    color: $primary;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

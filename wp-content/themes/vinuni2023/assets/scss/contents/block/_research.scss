@@ -1,0 +1,118 @@
+// Block research
+.research {
+	&General {
+		&__img {
+			padding-bottom: 62.5%;
+
+			@media screen and (min-width: 992px) and (max-width: 1440px) {
+				height: 100% !important;
+			}
+		}
+
+		&__content {
+			position: relative;
+			height: 100%;
+			padding: 16px 15px;
+			box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+
+			&::before {
+				content: "";
+				position: absolute;
+				border-style: solid;
+				top: -16px;
+				left: 0px;
+				border-width: 16px 0 16px 16px;
+				border-color: transparent transparent transparent $secondary;
+
+				@include media-breakpoint-up(lg) {
+					top: 24px;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
+				padding: 24px 32px;
+			}
+		}
+
+		&__title {
+			font-weight: 700;
+			margin-bottom: 32px;
+
+			.character {
+				color: $secondary;
+			}
+		}
+	}
+
+	&__slider {
+		margin: 32px -15px 0px -15px;
+	}
+
+	&__item {
+		padding: 0px 15px;
+
+		@include media-breakpoint-up(lg) {
+			&:hover {
+				.imgGroup {
+					opacity: 0.95;
+
+					&--noEffect {
+						opacity: 1 !important;
+					}
+
+					img {
+						transform: translate(-50%, -50%) scale(1);
+						transition: all 1s;
+					}
+
+					&::before {
+						transition: all 0.8s;
+						transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 300%, 0);
+					}
+
+					&::after {
+						opacity: 0.2;
+						transition: all 1s;
+					}
+				}
+			}
+		}
+	}
+
+	&__itemInner {
+		position: relative;
+	}
+
+	&__itemTitle {
+		text-transform: uppercase;
+		font-weight: 700;
+		position: absolute;
+		left: 0px;
+		bottom: 0px;
+		z-index: 100;
+		margin: 8px 24px;
+		padding: 0px;
+		color: $white;
+
+		a {
+			color: $white;
+			transition: all 0.5s;
+			width: 100%;
+			display: block;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__itemImg {
+		background-repeat: no-repeat !important;
+		background-size: cover !important;
+		background-position: center center !important;
+	}
+
+	&__generalLink {
+		margin-top: 24px;
+	}
+}

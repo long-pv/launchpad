@@ -1,0 +1,170 @@
+.campusGallery {
+    &__input {
+        width: 100%;
+        outline: none;
+        padding: 16px;
+        border: 1px solid $light_gray;
+        border-radius: 0px !important;
+
+        &::placeholder {
+            color: $silver;
+        }
+
+        @include media-breakpoint-up(md) {
+            border-width: 1px 0px 1px 1px;
+        }
+    }
+
+    &__filterBtn {
+        display: inline-block;
+        padding: 12px 16px;
+        border: 1px solid $primary;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        transition: all 0.5s;
+        text-decoration: none;
+        color: $primary !important;
+        cursor: pointer;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 8px;
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            @include media-breakpoint-up(lg) {
+                background: $primary;
+                color: #ffffff !important;
+            }
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__filterCatWrap {
+        margin-top: -12px;
+        padding: 24px;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+        background: #ffffff;
+
+        @include media-breakpoint-up(lg) {
+            padding: 24px 65px;
+        }
+
+        .customSelect2 {
+            .select2 {
+                .select2-selection {
+                    &__rendered {
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    &__filterCat {
+        padding: 20px 0 0 24px;
+        position: absolute;
+        display: none;
+        top: 58px;
+        left: -24px;
+        width: calc(100% + 24px);
+        height: calc(100% + 20px);
+        transform: translateY(-8px);
+        z-index: 7;
+    }
+
+    &__label {
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    &__filterList {
+        margin-bottom: 8px;
+    }
+
+    &__filterItem {
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__btnReset {
+        margin-top: 16px;
+        display: inline-block;
+        color: $body;
+    }
+
+    &__filterWrap {
+        margin-bottom: 32px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 56px;
+        }
+    }
+
+    &__listRow {
+        row-gap: 8px;
+
+        @include media-breakpoint-up(lg) {
+            row-gap: 48px;
+        }
+    }
+
+}
+
+.galleryItem {
+
+    &__img {
+        padding-bottom: 63%;
+    }
+
+    &__cat {
+        display: flex;
+        flex-wrap: nowrap;
+        color: $primary;
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M9.25 9.05078C11.03 9.70078 12.97 9.70078 14.75 9.05078' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.8203 2H7.18031C5.05031 2 3.32031 3.74 3.32031 5.86V19.95C3.32031 21.75 4.61031 22.51 6.19031 21.64L11.0703 18.93C11.5903 18.64 12.4303 18.64 12.9403 18.93L17.8203 21.64C19.4003 22.52 20.6903 21.76 20.6903 19.95V5.86C20.6803 3.74 18.9503 2 16.8203 2Z' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.8203 2H7.18031C5.05031 2 3.32031 3.74 3.32031 5.86V19.95C3.32031 21.75 4.61031 22.51 6.19031 21.64L11.0703 18.93C11.5903 18.64 12.4303 18.64 12.9403 18.93L17.8203 21.64C19.4003 22.52 20.6903 21.76 20.6903 19.95V5.86C20.6803 3.74 18.9503 2 16.8203 2Z' stroke='%23134D8B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-right: 4px;
+    }
+
+    &__content {
+        padding: 16px 0;
+    }
+
+    &__link {
+        font-weight: 700;
+        font-size: 18px;
+
+        &:hover {
+            color: $body;
+        }
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__date {
+        font-size: 16px;
+    }
+}

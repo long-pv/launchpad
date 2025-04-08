@@ -1,0 +1,51 @@
+.cards {
+    &__gutters {
+        row-gap: 16px;
+
+        @include media-breakpoint-up(lg) {
+            row-gap: 32px;
+        }
+    }
+}
+
+.cardBlock {
+    border-radius: 0px;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
+    height: 100%;
+
+    &__content {
+        position: relative;
+        padding: 16px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 32px 24px;
+        }
+
+        &::before {
+            content: '';
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+            background: $secondary;
+            position: absolute;
+            width: 22px;
+            height: 44px;
+            left: 0;
+            top: -22px;
+            z-index: 10;
+        }
+    }
+
+    &__img {
+        padding-bottom: 62.38%;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 700;
+        color: $secondary;
+        text-transform: uppercase;
+    }
+
+    &__desc {
+        margin-bottom: 24px;
+    }
+}

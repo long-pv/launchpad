@@ -1,0 +1,18 @@
+.pageResearchPeople {
+
+    @include media-breakpoint-up(lg) {
+        &__row {
+            margin-left: -8px;
+            margin-right: -8px;
+
+            &>div {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+        }
+
+        &__btn{
+            min-height: 62px;
+        }
+    }
+}

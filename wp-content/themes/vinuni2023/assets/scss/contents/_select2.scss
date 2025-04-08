@@ -1,0 +1,103 @@
+.customSelect2 {
+    span{
+        outline: none;
+    }
+    .select2 {
+        &-container {
+            width: 100% !important;
+        }
+        .select2 {
+            &-selection {
+                padding: 16px;
+                height: auto;
+                border-radius: 0;
+                border: 1px solid $light_gray;
+
+                &__rendered {
+                    padding-left: 0;
+                    font-weight: 700;
+                    color: $body;
+                }
+
+                &__placeholder {
+                    color: $silver;
+                    text-transform: uppercase;
+                }
+
+                &__arrow {
+                    top: 50%;
+                    right: 16px;
+                    transform: translateY(-50%);
+                    height: 24px;
+                    width: 24px;
+
+                    b {
+                        position: relative;
+                        border: none;
+                        width: 24px;
+                        height: 100%;
+                        display: inline-block;
+                        margin: 0;
+                        top: unset;
+                        left: unset;
+
+                        &::after {
+                            content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M13.5081 15.1997L15.4781 13.2297L18.6881 10.0197C19.3581 9.33969 18.8781 8.17969 17.9181 8.17969H11.6881H6.07812C5.11812 8.17969 4.63812 9.33969 5.31812 10.0197L10.4981 15.1997C11.3181 16.0297 12.6781 16.0297 13.5081 15.1997Z' fill='%232E2E2E'/%3e%3c/svg%3e");
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%) rotate(0);
+                            right: 0;
+                            transition: transform 0.5s;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-container--open {
+            .select2-selection__arrow {
+                b {
+                    &::after {
+                        transform: translateY(-50%) rotate(180deg);
+                        transition: transform 0.5s;
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.select2-dropdown {
+    border: 1px solid $light_gray;
+    border-radius: 0px 0px 4px 4px;
+
+    .select2-results {
+        ul {
+            border-radius: 0 0 4px 4px;
+
+            li {
+                padding: 16px;
+                border-bottom: 1px solid $light_gray;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &.select2-results__option--highlighted {
+                    background-color: $primary;
+                }
+
+                .jobType__child {
+                    margin-left: 16px;
+                }
+            }
+        }
+    }
+}
+
+.select2-search__field {
+    outline: none;
+}

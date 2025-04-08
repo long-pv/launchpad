@@ -1,0 +1,43 @@
+.recruitment{
+    background: $bg-light;
+    &__content{
+        .col-xs-12{
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+    &__heading{
+        border-top: 1px solid $silver;
+        border-bottom: 1px solid $silver;
+    }
+    &__title{
+        margin-bottom: 0;
+        padding: 8px 0;
+        font-weight: 700;
+        @include media-breakpoint-up(xl){
+            padding-right: 16px;
+        }
+    }
+    &__subTitle{
+        color: $secondary;
+        font-weight: 700;
+        font-size: 20px;
+        @include media-breakpoint-up(xl){
+            font-size: 24px;
+        }
+    }
+    &__text{
+        margin: 0;
+        font-size: 20px;
+        padding: 8px 0;
+        min-height: 48px;
+        border-top: 1px solid $silver;
+        border-bottom: 1px solid $silver;
+        @include media-breakpoint-up(xl){
+            padding: 10px 0;
+            font-size: 24px;
+        }
+    }
+}
