@@ -281,7 +281,7 @@ get_header();
     </div>
 </section>
 
-<!-- List -->
+<!-- List Post -->
 <section class="secSpace">
     <div class="card_club__inner">
         <div class="list_post">
@@ -310,6 +310,38 @@ get_header();
     </div>
 </section>
 
+<!-- List Mark -->
+<section class="secSpace">
+    <div class="card_club__inner">
+        <div class="list_mark">
+            <p class="list_mark__intro">All your bookmarks are listed here:</p>
+
+            <div class="list_mark__item">
+                <div class="list_mark__content">
+                    <span class="list_mark__index">1.</span>
+                    <span class="list_mark__title">Clubs & Associations</span>
+                </div>
+                <div class="list_mark__actions">
+                    <a href="#" class="list_mark__action list_mark__action--visit">Visit</a>
+                    <a href="#" class="list_mark__action list_mark__action--remove">Remove</a>
+                </div>
+            </div>
+
+            <div class="list_mark__item">
+                <div class="list_mark__content">
+                    <span class="list_mark__index">2</span>
+                    <span class="list_mark__title">OASIS Program</span>
+                </div>
+                <div class="list_mark__actions">
+                    <a href="#" class="list_mark__action list_mark__action--visit">Visit</a>
+                    <a href="#" class="list_mark__action list_mark__action--remove">Remove</a>
+                </div>
+            </div>
+
+            <!-- Add more list_mark__item here -->
+        </div>
+    </div>
+</section>
 <?php
 // footer template
 get_footer();
