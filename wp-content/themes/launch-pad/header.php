@@ -33,7 +33,10 @@
 		<div class="header_pc" id="header">
 			<div class="header_inner">
 				<div class="header_form">
-					xxx
+					<form action="<?php echo home_url(); ?>" class="form_search">
+						<input type="text" name="s" id="search__input" placeholder="Enter the keywords">
+						<button class="styled-link" type="submit"></button>
+					</form>
 				</div>
 				<div class="header_nav">
 					<div class="menu">
@@ -160,13 +163,13 @@
 		<div class="modal fade popup_menu" id="popup_menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 				<div class=" modal-content">
-				<div class="modal-body">
-					<div class="box_search">
-						<div class="container">
-							Menu sidebar
+					<div class="modal-body">
+						<div class="box_search">
+							<div class="container">
+								Menu sidebar
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>

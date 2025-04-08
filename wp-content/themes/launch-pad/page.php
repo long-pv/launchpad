@@ -19,9 +19,11 @@ get_header();
 <div class="container">
     <div class="page_wrap">
         <div class="page_inner">
-            <?php
-            get_template_part('template-parts/content-flexible');
-            ?>
+            <div class="page_body">
+                <?php
+                get_template_part('template-parts/content-flexible');
+                ?>
+            </div>
         </div>
     </div>
 </div>
