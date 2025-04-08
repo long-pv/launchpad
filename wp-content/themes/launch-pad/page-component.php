@@ -240,8 +240,43 @@ get_header();
 <!-- Card Club -->
 <section class="secSpace">
     <div class="container">
-        <div class="card_club">
-                
+        <div class="card_club__inner">
+            <div class="card_club">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card_club__image-wrapper">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/club-img.png'; ?>"
+                                alt="Vinista Club Logo" class="card_club__image" />
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="card_club__content">
+                            <p class="card_club__description">
+                                Vinista is a fashion club that is eager to create an environment that encourages
+                                students to
+                                express and implement their creative ideas freely. At Vinista, we cultivate a strong
+                                sense
+                                of an
+                                inclusive community that appreciates the diversity of styles, cultures, and perspectives
+                                within
+                                the realm of fashion.
+                            </p>
+                            <div class="card_club__contact">
+                                <h3 class="card_club__contact_title">Contact information</h3>
+                                <ul class="card_club__contact_list">
+                                    <li><span class="card_club__contact_list--desc">Phone:</span> <span
+                                            class="card_club__contact_list--phone">+84919.009.589</span></li>
+                                    <li><span class="card_club__contact_list--desc">Email:</span> <span
+                                            class="card_club__contact_list--mail">vinista@vinuni.edu.vn</span></li>
+                                    <li><span class="card_club__contact_list--desc">Facebook:</span> <a
+                                            href="https://facebook.com"
+                                            class="card_club__contact_list--facebook">https://facebook.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
