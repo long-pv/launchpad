@@ -526,20 +526,25 @@
 	}
 
 	&__list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
 	}
 
 	&__item {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		margin-bottom: 30px;
+		// margin-bottom: 30px;
 
-		&:last-child {
-			margin-bottom: 0px;
-		}
+		// &:last-child {
+		// 	margin-bottom: 0px;
+		// }
+	}
+
+	&__link {
+		display: flex;
+		text-decoration: none;
 	}
 
 	&__heading {
