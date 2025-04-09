@@ -70,19 +70,15 @@
 
 		<div class="header_mb">
 			<div class="container">
-				<div class="row">
-					<div class="col-6">
-						<a href="<?php echo home_url(); ?>" class="logo">
-							<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_top.svg'; ?>
-							<img src="<?php echo $logo_url; ?>" alt="logo">
-						</a>
-					</div>
-					<div class="col-6">
-						<div class="content_right">
-							<div class="bookmark_icon">
-							</div>
-							<div class="search_icon">
-							</div>
+				<div class="header_mb_inner">
+					<a href="<?php echo home_url(); ?>" class="logo">
+						<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_top.svg'; ?>
+						<img src="<?php echo $logo_url; ?>" alt="logo">
+					</a>
+					<div class="content_right">
+						<div class="bookmark_icon">
+						</div>
+						<div class="search_icon">
 						</div>
 					</div>
 				</div>
@@ -182,7 +178,10 @@
 					<div class="modal-body">
 						<div class="box_search">
 							<div class="container">
-								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, tenetur iste quia quas beatae eius vitae quod incidunt sit. Ab sapiente accusantium placeat vitae, voluptatem dolorum distinctio tempora error voluptates?
+								<form action="<?php echo home_url(); ?>" class="form_search">
+									<input type="text" name="s" id="search__input" value="<?php echo get_search_query(); ?>" placeholder="Enter the keywords" required>
+									<button class="styled-link" type="submit"></button>
+								</form>
 							</div>
 						</div>
 					</div>
