@@ -5,6 +5,11 @@
 	});
 	$(".item_menu").on("click", function () {
 		$("#popup_menu").modal("toggle");
+		$(this).addClass("active");
+	});
+
+	$("#popup_menu").on("hidden.bs.modal", function (e) {
+		$(".item_menu").removeClass("active");
 	});
 
 	$('select[name="tabs_title"]').on("change", function () {

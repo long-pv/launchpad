@@ -4,12 +4,12 @@
     "fields": [
         {
             "key": "field_67ecd599419c5",
-            "label": "Title",
-            "name": "title",
+            "label": "Copyright",
+            "name": "copyright",
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -41,5 +41,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743574477
+    "modified": 1744212267
 }

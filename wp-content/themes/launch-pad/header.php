@@ -34,19 +34,33 @@
 			<div class="header_inner">
 				<div class="header_form">
 					<form action="<?php echo home_url(); ?>" class="form_search">
-						<input type="text" name="s" id="search__input" value="<?php echo get_search_query(); ?>" placeholder="Enter the keywords">
+						<input type="text" name="s" id="search__input" value="<?php echo get_search_query(); ?>" placeholder="Enter the keywords" required>
 						<button class="styled-link" type="submit"></button>
 					</form>
 				</div>
 				<div class="header_nav">
 					<div class="menu">
-						<a class="menu_item menu_item_home" href="#">
-							Home
-						</a>
-						<a class="menu_item menu_item_res" href="#">
-							Resources
-						</a>
-						<a class="menu_item menu_item_login" href="#">
+						<?php
+						$page_id = get_the_ID();
+
+						$header_home = get_field('header_home', 'option') ?? '';
+						if ($header_home) {
+						?>
+							<a class="menu_item menu_item_home <?php echo $header_home == $page_id ? 'active' : ""; ?>" href="<?php echo get_permalink($header_home); ?>">
+								<?php echo get_the_title($header_home); ?>
+							</a>
+						<?php } ?>
+
+						<?php
+						$header_resources = get_field('header_resources', 'option') ?? '';
+						if ($header_resources) {
+						?>
+							<a class="menu_item menu_item_res <?php echo $header_resources == $page_id ? 'active' : ""; ?>" href="<?php echo get_permalink($header_resources); ?>">
+								<?php echo get_the_title($header_resources); ?>
+							</a>
+						<?php } ?>
+
+						<a class=" menu_item menu_item_login" href="javascript:void(0);">
 							Login
 						</a>
 					</div>
@@ -90,37 +104,52 @@
 					<img src="<?php echo $logo_url; ?>" alt="logo">
 				</a>
 
-				<div class="copyright">
-					Copyright © 2019 VinUni. All Right Reserved.
-				</div>
+				<?php
+				$copyright = get_field('copyright', 'option') ?? '';
+				if ($copyright) {
+				?>
+					<div class="copyright">
+						<?php echo $copyright; ?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 
 		<div class="sidebar_bottom">
 			<div class="container">
 				<div class="list">
-					<a href="#" class="item">
-						<div class="icon">
-							<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M11.9998 18.7274V15.7274M10.0698 3.54739L3.13978 9.09739C2.35978 9.71739 1.85978 11.0274 2.02978 12.0074L3.35978 19.9674C3.59978 21.3874 4.95978 22.5374 6.39978 22.5374H17.5998C19.0298 22.5374 20.3998 21.3774 20.6398 19.9674L21.9698 12.0074C22.1298 11.0274 21.6298 9.71739 20.8598 9.09739L13.9298 3.55739C12.8598 2.69739 11.1298 2.69739 10.0698 3.54739Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</div>
-						<div class="title">
-							Home
-						</div>
-					</a>
-					<a href="#" class="item">
-						<div class="icon">
-							<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M13.5 12.7273C13.5 15.9073 10.93 18.4773 7.75 18.4773C4.57 18.4773 2 15.9073 2 12.7273C2 9.54729 4.57 6.97729 7.75 6.97729" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M10 12.7273C10 9.41729 12.69 6.72729 16 6.72729C19.31 6.72729 22 9.41729 22 12.7273C22 16.0373 19.31 18.7273 16 18.7273" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-							</svg>
-						</div>
-						<div class="title">
-							Resources
-						</div>
-					</a>
-					<a href="#" class="item item_logout">
+					<?php
+					if ($header_home) {
+					?>
+						<a href="<?php echo get_permalink($header_home); ?>" class="item <?php echo $header_home == $page_id ? 'active' : ""; ?>">
+							<div class="icon">
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.9998 18.7274V15.7274M10.0698 3.54739L3.13978 9.09739C2.35978 9.71739 1.85978 11.0274 2.02978 12.0074L3.35978 19.9674C3.59978 21.3874 4.95978 22.5374 6.39978 22.5374H17.5998C19.0298 22.5374 20.3998 21.3774 20.6398 19.9674L21.9698 12.0074C22.1298 11.0274 21.6298 9.71739 20.8598 9.09739L13.9298 3.55739C12.8598 2.69739 11.1298 2.69739 10.0698 3.54739Z" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+							<div class="title">
+								<?php echo get_the_title($header_home); ?>
+							</div>
+						</a>
+					<?php } ?>
+
+					<?php
+					if ($header_resources) {
+					?>
+						<a href="<?php echo get_permalink($header_resources); ?>" class="item <?php echo $header_resources == $page_id ? 'active' : ""; ?>">
+							<div class="icon">
+								<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M13.5 12.7273C13.5 15.9073 10.93 18.4773 7.75 18.4773C4.57 18.4773 2 15.9073 2 12.7273C2 9.54729 4.57 6.97729 7.75 6.97729" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+									<path d="M10 12.7273C10 9.41729 12.69 6.72729 16 6.72729C19.31 6.72729 22 9.41729 22 12.7273C22 16.0373 19.31 18.7273 16 18.7273" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</div>
+							<div class="title">
+								<?php echo get_the_title($header_resources); ?>
+							</div>
+						</a>
+					<?php } ?>
+
+					<a href="javascript:void(0);" class="item item_logout">
 						<div class="icon">
 							<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path opacity="0.4" d="M11.2599 2.72729C10.7799 2.72729 10.3999 3.10729 10.3999 3.58729V21.8773C10.3999 22.3473 10.7799 22.7373 11.2599 22.7373C17.1499 22.7373 21.2599 18.6273 21.2599 12.7373C21.2599 6.84729 17.1399 2.72729 11.2599 2.72729Z" fill="#2E2E2E" />
@@ -131,7 +160,8 @@
 							Login
 						</div>
 					</a>
-					<a href="#" class="item item_menu">
+
+					<a href="javascript:void(0);" class="item item_menu">
 						<div class="icon">
 							<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M3.5 7.72729H21.5M3.5 12.7273H21.5M3.5 17.7273H21.5" stroke="#2E2E2E" stroke-width="2" stroke-linecap="round" />
