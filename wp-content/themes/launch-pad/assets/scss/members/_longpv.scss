@@ -149,9 +149,12 @@
 
 .popup_menu {
     .modal-dialog {
-        margin-bottom: 70px !important;
-        min-height: calc(100% - 100px) !important;
-        height: calc(100% - 100px) !important;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        margin-top: 60px;
+        margin-bottom: 90px;
+        min-height: calc(100% - 60px - 90px) !important;
+        height: calc(100% - 60px - 90px) !important;
         max-width: unset !important;
     }
 
@@ -167,6 +170,16 @@
 
     .modal-body {
         padding: 0px !important;
+    }
+
+    .box_menu {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 32px 20px;
+
+        .sidebarMenu {
+            padding: 0px;
+        }
     }
 }
 

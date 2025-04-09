@@ -28,163 +28,6 @@
         }
     }
 
-    .sidebarMenu {
-        padding: 20px;
-        height: 100%;
-        overflow-y: auto;
-
-        ul {
-            padding: 0px;
-            margin: 0px;
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sidebarMenu__level1 {
-            gap: 20px;
-
-            &>li {
-                display: block;
-                position: relative;
-
-                &>.sidebarMenu__icon {
-                    position: absolute;
-                    right: 0px;
-                    top: 4px;
-                    width: 16px;
-                    height: 16px;
-                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12L10 8L6 4' stroke='%231A4079' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-                    background-position: center center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    z-index: 20;
-
-                    &.sidebarMenu--open {
-                        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%231A4079' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-                    }
-                }
-
-                &>a {
-                    color: #1A4079;
-                    font-size: 16px;
-                    padding-left: 32px;
-                    text-decoration: none !important;
-                    display: flex;
-                    position: relative;
-                    z-index: 10;
-
-                    &:hover {
-                        color: #C83438;
-                    }
-
-                    .icon {
-                        position: absolute;
-                        left: 0px;
-                        top: 0px;
-                        display: inline-flex;
-                        width: 24px;
-                        height: 24px;
-                        object-fit: cover;
-                    }
-                }
-
-                &.sidebarMenu--active {
-                    &>a {
-                        color: #C83438 !important;
-                    }
-                }
-            }
-        }
-
-        .sidebarMenu__level2 {
-            padding-left: 32px;
-            gap: 10px;
-            margin-top: 20px;
-            display: none;
-
-            &>li {
-                display: block;
-                position: relative;
-
-                &>a {
-                    color: #2E548A;
-                    font-size: 16px;
-                    text-decoration: none !important;
-                    display: flex;
-
-                    &:hover {
-                        color: #C83438;
-                    }
-
-                    .icon {
-                        display: none;
-                    }
-                }
-
-                &:hover {
-                    &>ul {
-                        display: flex !important;
-                    }
-                }
-
-                &.sidebarMenu--active {
-                    &>a {
-                        background-color: #C83438;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        color: #fff !important;
-                    }
-                }
-            }
-        }
-
-        .sidebarMenu__level3 {
-            padding-left: 20px;
-            gap: 10px;
-            margin-top: 10px;
-
-            &>li {
-                display: block;
-                position: relative;
-
-                &>a {
-                    color: #2E548A;
-                    font-size: 16px;
-                    text-decoration: none !important;
-                    display: flex;
-                    padding-left: 18px;
-                    position: relative;
-
-                    &:hover {
-                        color: #C83438;
-                    }
-
-                    .icon {
-                        display: none;
-                    }
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        height: 8px;
-                        width: 8px;
-                        border-radius: 50%;
-                        background-color: #5897DE;
-                        left: 0px;
-                        top: 8px;
-                    }
-                }
-
-                &.sidebarMenu--active {
-                    &>a {
-                        color: #C83438 !important;
-                    }
-                }
-            }
-        }
-    }
-
     .bottom {
         padding-left: 20px;
         padding-right: 20px;
@@ -201,6 +44,163 @@
             font-size: 12px;
             opacity: 0.5;
             text-align: center;
+        }
+    }
+}
+
+.sidebarMenu {
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+
+    ul {
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebarMenu__level1 {
+        gap: 20px;
+
+        &>li {
+            display: block;
+            position: relative;
+
+            &>.sidebarMenu__icon {
+                position: absolute;
+                right: 0px;
+                top: 4px;
+                width: 16px;
+                height: 16px;
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12L10 8L6 4' stroke='%231A4079' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                z-index: 20;
+
+                &.sidebarMenu--open {
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%231A4079' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                }
+            }
+
+            &>a {
+                color: #1A4079;
+                font-size: 16px;
+                padding-left: 32px;
+                text-decoration: none !important;
+                display: flex;
+                position: relative;
+                z-index: 10;
+
+                &:hover {
+                    color: #C83438;
+                }
+
+                .icon {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    display: inline-flex;
+                    width: 24px;
+                    height: 24px;
+                    object-fit: cover;
+                }
+            }
+
+            &.sidebarMenu--active {
+                &>a {
+                    color: #C83438 !important;
+                }
+            }
+        }
+    }
+
+    .sidebarMenu__level2 {
+        padding-left: 32px;
+        gap: 10px;
+        margin-top: 20px;
+        display: none;
+
+        &>li {
+            display: block;
+            position: relative;
+
+            &>a {
+                color: #2E548A;
+                font-size: 16px;
+                text-decoration: none !important;
+                display: flex;
+
+                &:hover {
+                    color: #C83438;
+                }
+
+                .icon {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                &>ul {
+                    display: flex !important;
+                }
+            }
+
+            &.sidebarMenu--active {
+                &>a {
+                    background-color: #C83438;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+
+    .sidebarMenu__level3 {
+        padding-left: 20px;
+        gap: 10px;
+        margin-top: 10px;
+
+        &>li {
+            display: block;
+            position: relative;
+
+            &>a {
+                color: #2E548A;
+                font-size: 16px;
+                text-decoration: none !important;
+                display: flex;
+                padding-left: 18px;
+                position: relative;
+
+                &:hover {
+                    color: #C83438;
+                }
+
+                .icon {
+                    display: none;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 8px;
+                    width: 8px;
+                    border-radius: 50%;
+                    background-color: #5897DE;
+                    left: 0px;
+                    top: 8px;
+                }
+            }
+
+            &.sidebarMenu--active {
+                &>a {
+                    color: #C83438 !important;
+                }
+            }
         }
     }
 }

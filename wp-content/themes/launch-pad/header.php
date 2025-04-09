@@ -164,9 +164,9 @@
 			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 				<div class=" modal-content">
 					<div class="modal-body">
-						<div class="box_search">
-							<div class="container">
-								Menu sidebar
+						<div class="container">
+							<div class="box_menu">
+								<?php get_template_part('template-parts/sidebar_menu'); ?>
 							</div>
 						</div>
 					</div>
