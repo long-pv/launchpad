@@ -2,22 +2,22 @@
 function register_cpt_post_types()
 {
     $cpt_list = [
-        // 'event' => [
-        //     'labels' => __('Event', 'basetheme'),
-        //     'slug' => 'su_kien',
-        //     'cap' => false,
-        //     'hierarchical' => false,
-        //     'position' => false
-        // ],
+        'clubs' => [
+            'labels' => __('Clubs', 'basetheme'),
+            'slug' => 'clubs',
+            'cap' => false,
+            'hierarchical' => false,
+            'position' => false
+        ],
     ];
 
     $cpt_tax = [
-        // 'event_category' => [
-        //     'labels' => __('Event category', 'basetheme'),
-        //     'slug' => 'danh-muc-su-kien',
-        //     'cap' => false,
-        //     'post_type' => ['event']
-        // ],
+        'clubs_category' => [
+            'labels' => __('Clubs category', 'basetheme'),
+            'slug' => 'clubs-category',
+            'cap' => false,
+            'post_type' => ['clubs']
+        ],
     ];
 
     foreach ($cpt_list as $post_type => $data) {
