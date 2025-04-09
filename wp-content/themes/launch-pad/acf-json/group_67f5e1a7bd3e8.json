@@ -5,7 +5,7 @@
         {
             "key": "field_67f5e1a8eb9e3",
             "label": "Page main",
-            "name": "page_main",
+            "name": "flexible_content",
             "aria-label": "",
             "type": "flexible_content",
             "instructions": "",
@@ -57,70 +57,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "layout_67f639c31977f": {
-                    "key": "layout_67f639c31977f",
-                    "name": "card_club",
-                    "label": "Card Club",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67f639e619782",
-                            "label": "Card Club Block",
-                            "name": "card_club_block",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_67f63a9aab9ae"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_67f641f3a590f": {
-                    "key": "layout_67f641f3a590f",
-                    "name": "gallery",
-                    "label": "Gallery",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67f641fba5912",
-                            "label": "Gallery Block",
-                            "name": "gallery_block",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_67f641c8d6509"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "min": "",
@@ -148,5 +84,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744198071
+    "modified": 1744199549
 }

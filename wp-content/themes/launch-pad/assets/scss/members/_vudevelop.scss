@@ -104,11 +104,15 @@
 .banner {
 	position: relative;
 	width: 100%;
-	min-height: 300px; // Điều chỉnh chiều cao tùy ý
+	min-height: 200px; // Điều chỉnh chiều cao tùy ý
 	background-image: url("../../assets/images/Banner-img.png"); // Đường dẫn ảnh nền
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+
+	@include media-breakpoint-up(lg) {
+		min-height: 300px;
+	}
 
 	.banner__content {
 		position: absolute;

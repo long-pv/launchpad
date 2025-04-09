@@ -34,7 +34,7 @@
 			<div class="header_inner">
 				<div class="header_form">
 					<form action="<?php echo home_url(); ?>" class="form_search">
-						<input type="text" name="s" id="search__input" placeholder="Enter the keywords">
+						<input type="text" name="s" id="search__input" value="<?php echo get_search_query(); ?>" placeholder="Enter the keywords">
 						<button class="styled-link" type="submit"></button>
 					</form>
 				</div>

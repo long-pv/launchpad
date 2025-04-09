@@ -17,7 +17,7 @@
 // header template
 get_header();
 ?>
-<div class="container">
+<div class="container_xx">
     <div class="page_wrap">
         <div class="page_inner">
             <?php
@@ -41,88 +41,90 @@ get_header();
                 </div>
             <?php endif; ?>
 
-            <?php
-            $title_block = get_field('title_block') ?? '';
-            ?>
-            <h2 class="sec_title">
-                <?php echo  $title_block; ?>
-            </h2>
+            <div class="container">
+                <?php
+                $title_block = get_field('title_block') ?? '';
+                ?>
+                <h2 class="sec_title">
+                    <?php echo  $title_block; ?>
+                </h2>
 
-            <?php
-            $quick_links = get_field('quick_links') ?? [];
-            if ($quick_links) :
+                <?php
+                $quick_links = get_field('quick_links') ?? [];
+                if ($quick_links) :
 
-            ?>
-                <div class="tabs_home">
-                    <div class="nav row" id="nav-tab" role="tablist">
-                        <?php
-                        foreach ($quick_links as $key => $item):
-                        ?>
-                            <button class="col-lg-4 nav-link <?php echo $key == 0 ? 'active' : ''; ?>" id="nav-<?php echo $key; ?>-tab" data-bs-toggle="tab" data-bs-target="#nav-<?php echo $key; ?>"
-                                type="button" role="tab" aria-controls="nav-<?php echo $key; ?>" aria-selected="<?php echo $key == 0 ? 'true' : 'false'; ?>">
-                                <?php
-                                if ($item['display_type'] == '2') {
-                                ?>
-                                    <a target="_blank" href="<?php echo $item['external_link'] ?? '#'; ?>">
-                                        <?php echo $item['title']; ?>
-                                    </a>
-                                <?php
-                                } else {
-                                    echo $item['title'];
-                                }
-                                ?>
-                            </button>
-                        <?php
-                        endforeach;
-                        ?>
-                    </div>
-                    <div class="tab-content" id="nav-tabContent">
-                        <?php
-                        foreach ($quick_links as $key => $item):
-                        ?>
-                            <div class="tab-pane fade <?php echo $key == 0 ? 'active show' : ''; ?>" id="nav-<?php echo $key; ?>" role="tabpanel" aria-labelledby="nav-<?php echo $key; ?>-tab">
-                                <?php
-                                if ($item['display_type'] == '1') {
-                                ?>
-                                    <div class="tab_body editor">
-                                        <?php echo $item['static_content']; ?>
-                                    </div>
-                                <?php
-                                } else {
-                                ?>
-                                    <div class="tab_body">
-                                        <div class="row">
-                                            <?php
-                                            foreach ($item['list_handbook'] as $key => $item_2) {
-                                            ?>
-                                                <div class="col-lg-3">
-                                                    <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>" class="handbook">
-                                                        <div class="handbook__image">
-                                                            <img src="<?php echo $item_2['image'] ?? '' ?>"
-                                                                alt="International Student Handbook">
-                                                        </div>
-                                                        <h3 class="handbook__title">
-                                                            <?php echo $item_2['title'] ?? '' ?>
-                                                        </h3>
-                                                    </a>
-                                                </div>
-                                            <?php
-                                            }
-                                            ?>
+                ?>
+                    <div class="tabs_home">
+                        <div class="nav row" id="nav-tab" role="tablist">
+                            <?php
+                            foreach ($quick_links as $key => $item):
+                            ?>
+                                <button class="col-lg-4 nav-link <?php echo $key == 0 ? 'active' : ''; ?>" id="nav-<?php echo $key; ?>-tab" data-bs-toggle="tab" data-bs-target="#nav-<?php echo $key; ?>"
+                                    type="button" role="tab" aria-controls="nav-<?php echo $key; ?>" aria-selected="<?php echo $key == 0 ? 'true' : 'false'; ?>">
+                                    <?php
+                                    if ($item['display_type'] == '2') {
+                                    ?>
+                                        <a target="_blank" href="<?php echo $item['external_link'] ?? '#'; ?>">
+                                            <?php echo $item['title']; ?>
+                                        </a>
+                                    <?php
+                                    } else {
+                                        echo $item['title'];
+                                    }
+                                    ?>
+                                </button>
+                            <?php
+                            endforeach;
+                            ?>
+                        </div>
+                        <div class="tab-content" id="nav-tabContent">
+                            <?php
+                            foreach ($quick_links as $key => $item):
+                            ?>
+                                <div class="tab-pane fade <?php echo $key == 0 ? 'active show' : ''; ?>" id="nav-<?php echo $key; ?>" role="tabpanel" aria-labelledby="nav-<?php echo $key; ?>-tab">
+                                    <?php
+                                    if ($item['display_type'] == '1') {
+                                    ?>
+                                        <div class="tab_body editor">
+                                            <?php echo $item['static_content']; ?>
                                         </div>
-                                    </div>
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        <?php
-                        endforeach;
-                        ?>
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <div class="tab_body">
+                                            <div class="row">
+                                                <?php
+                                                foreach ($item['list_handbook'] as $key => $item_2) {
+                                                ?>
+                                                    <div class="col-lg-3">
+                                                        <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>" class="handbook">
+                                                            <div class="handbook__image">
+                                                                <img src="<?php echo $item_2['image'] ?? '' ?>"
+                                                                    alt="International Student Handbook">
+                                                            </div>
+                                                            <h3 class="handbook__title">
+                                                                <?php echo $item_2['title'] ?? '' ?>
+                                                            </h3>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            <?php
+                            endforeach;
+                            ?>
+                        </div>
                     </div>
-                </div>
-            <?php
-            endif;
-            ?>
+                <?php
+                endif;
+                ?>
+            </div>
         </div>
     </div>
 </div>
