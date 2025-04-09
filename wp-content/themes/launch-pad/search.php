@@ -14,17 +14,19 @@ get_header();
 <div class="container_xx">
 	<div class="page_wrap">
 		<div class="page_inner">
-			<?php
-			if (have_posts()) :
-				while (have_posts()) :
-					the_post();
-			?>
-					xxxx
-			<?php
+			<div class="page_body">
+				<?php
+				if (have_posts()) :
+					while (have_posts()) :
+						the_post();
+				?>
+						xxxx
+				<?php
 
-				endwhile;
-			endif;
-			?>
+					endwhile;
+				endif;
+				?>
+			</div>
 		</div>
 	</div>
 </div>

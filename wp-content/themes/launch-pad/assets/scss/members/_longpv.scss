@@ -13,6 +13,7 @@
         padding: 20px;
         padding-top: 80px;
         overflow-y: auto;
+        height: 100vh;
     }
 }
 
@@ -20,6 +21,7 @@
     background-color: #fff;
     border-radius: 8px;
     padding: 40px 20px;
+    min-height: 100%;
 }
 
 .page-template-default {
