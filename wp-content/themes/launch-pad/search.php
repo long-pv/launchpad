@@ -17,7 +17,7 @@ get_header();
 			<div class="page_body">
 				<?php if (get_search_query()): ?>
 					<p class="list_post__title">
-						<?php _e("Search result for"); ?> <span
+						<?php _e("Search result for", "launch-pad"); ?> <span
 							class="list_post__keyword"><?php echo esc_html(get_search_query()); ?></span>
 					</p>
 				<?php endif; ?>
