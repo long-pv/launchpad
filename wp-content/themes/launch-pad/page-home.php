@@ -55,6 +55,20 @@ get_header();
 
                 ?>
                     <div class="tabs_home">
+                        <div class="tabs_home_mb">
+                            <select name="tabs_title">
+                                <?php
+                                foreach ($quick_links as $key => $item):
+                                ?>
+                                    <option value="nav-<?php echo $key; ?>-tab" data-url="<?php echo ($item['display_type'] == '2' && $item['external_link']) ? $item['external_link'] : ''; ?>">
+                                        <?php echo $item['title']; ?>
+                                    </option>
+                                <?php
+                                endforeach;
+                                ?>
+                            </select>
+                        </div>
+
                         <div class="nav row tabs_home_pc" id="nav-tab" role="tablist">
                             <?php
                             foreach ($quick_links as $key => $item):
@@ -89,7 +103,7 @@ get_header();
                                             <?php echo $item['static_content']; ?>
                                         </div>
                                     <?php
-                                    } else {
+                                    } elseif ($item['display_type'] == '0') {
                                     ?>
                                         <div class="tab_body">
                                             <div class="row">
