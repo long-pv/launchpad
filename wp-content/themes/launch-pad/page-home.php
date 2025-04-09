@@ -55,7 +55,7 @@ get_header();
 
                 ?>
                     <div class="tabs_home">
-                        <div class="nav row" id="nav-tab" role="tablist">
+                        <div class="nav row tabs_home_pc" id="nav-tab" role="tablist">
                             <?php
                             foreach ($quick_links as $key => $item):
                             ?>
@@ -96,7 +96,7 @@ get_header();
                                                 <?php
                                                 foreach ($item['list_handbook'] as $key => $item_2) {
                                                 ?>
-                                                    <div class="col-lg-3">
+                                                    <div class="col-6 col-lg-3">
                                                         <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>" class="handbook">
                                                             <div class="handbook__image">
                                                                 <img src="<?php echo $item_2['image'] ?? '' ?>"

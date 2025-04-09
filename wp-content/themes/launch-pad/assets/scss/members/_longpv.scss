@@ -5,8 +5,9 @@
 }
 
 .page_inner {
+    background-color: #ECEDF1;
+
     @include media-breakpoint-up(lg) {
-        background-color: #ECEDF1;
         border-radius: 20px 0px 0px 20px;
         overflow: hidden;
         box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.15);
@@ -214,11 +215,28 @@
     .tab_body {
         background-color: #fff;
         border-radius: 8px;
-        padding: 24px;
+        padding: 16px;
+
+        @include media-breakpoint-up(lg) {
+            padding: 24px;
+        }
 
         .row {
+            --bs-gutter-x: 26px;
             row-gap: 24px;
-            justify-content: center;
+
+            @include media-breakpoint-up(lg) {
+                --bs-gutter-x: 80px;
+                justify-content: center;
+            }
+        }
+    }
+
+    .tabs_home_pc {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
         }
     }
 }
