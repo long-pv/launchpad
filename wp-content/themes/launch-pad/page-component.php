@@ -342,6 +342,13 @@ get_header();
         </div>
     </div>
 </section>
+
+<!-- ACF  -->
+<?php
+$page_main = get_field('page_main') ?? '';
+var_dump($page_main);
+?>
+
 <?php
 // footer template
 get_footer();
