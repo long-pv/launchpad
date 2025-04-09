@@ -46,8 +46,9 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 		}
 
 		$icon_sidebar = get_template_directory_uri() . '/assets/images/icon_sidebar.png';
+		$icon_img = get_field('icon_menu', $item['id']) ?: $icon_sidebar;
 
-		$icon = '<img class="icon" src="' . $icon_sidebar . '" >';
+		$icon = '<img class="icon" src="' . $icon_img . '" >';
 
 		echo '<li class="' . esc_attr($current_class) . '">';
 		echo '<a href="' . esc_url($item['link']) . '" ' . $target . ' >' . $icon . esc_html($item['title']) . '</a>';
