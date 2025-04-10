@@ -107,14 +107,14 @@
 .banner {
 	position: relative;
 	width: 100%;
-	min-height: 200px; // Điều chỉnh chiều cao tùy ý
-	background-image: url("../../assets/images/Banner-img.png"); // Đường dẫn ảnh nền
-	background-size: cover;
-	background-position: center;
+	padding-bottom: 40%; // Tỉ lệ ảnh, có thể điều chỉnh theo nhu cầu (ví dụ: 40% tương đương 2.5:1)
+	background-image: url("../../assets/images/Banner-img.png");
+	background-position: center center;
 	background-repeat: no-repeat;
+	background-size: cover;
 
 	@include media-breakpoint-up(lg) {
-		min-height: 300px;
+		padding-bottom: 26.5%; // Giảm chiều cao banner trên màn lớn nếu muốn
 	}
 
 	.banner__content {
@@ -128,7 +128,6 @@
 		padding: 5px 10px;
 		border-radius: 20px;
 		gap: 10px;
-		//
 		background: rgba(255, 255, 255, 0.5);
 	}
 
@@ -140,7 +139,6 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		// transition: opacity 0.3s ease;
 
 		&:hover {
 			opacity: 0.8;
