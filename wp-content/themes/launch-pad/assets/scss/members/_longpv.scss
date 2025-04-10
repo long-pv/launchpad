@@ -361,3 +361,33 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.block_heading {
+    &>.row {
+        --bs-gutter-x: 10px;
+        row-gap: 10px;
+        align-items: center;
+    }
+
+    .block_heading_img {
+        max-width: 200px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title {
+        color: #000000;
+        font-family: 16px;
+        font-weight: 700;
+    }
+
+    .desc {
+        color: #2E548A;
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
