@@ -65,36 +65,6 @@ get_header(); ?>
 
 <!-- Gallery -->
 
-<!-- Table -->
-<section class="secSpace">
-    <div class="container">
-        <div class="text-center m-4" style="font-weight: 700;">
-            TABLE
-        </div>
-
-        <table class="table_info">
-            <thead>
-                <th>Program</th>
-                <th>Per Semester</th>
-                <th>Per Year</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-</section>
-
 <!-- Tabs -->
 <section class="secSpace navItem">
     <div class="container">
@@ -102,9 +72,8 @@ get_header(); ?>
             <h2 class="text-center p-3">Card with Tabs</h2>
             <nav>
                 <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                        data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                        aria-selected="true">Home</button>
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                         type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
@@ -138,6 +107,36 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Table -->
+<section class="secSpace">
+    <div class="container">
+        <div class="text-center m-4" style="font-weight: 700;">
+            TABLE
+        </div>
+
+        <table>
+            <thead>
+                <th>Program</th>
+                <th>Per Semester</th>
+                <th>Per Year</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 </section>
 
@@ -284,8 +283,7 @@ get_header(); ?>
         <div class="list_post">
             <?php if (get_search_query()): ?>
                 <p class="list_post__title">
-                    Search result for <span
-                        class="list_post__keyword"><?php echo esc_html(get_search_query()); ?></span>
+                    Search result for <span class="list_post__keyword"><?php echo esc_html(get_search_query()); ?></span>
                 </p>
             <?php endif; ?>
 
@@ -333,12 +331,6 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
-<!-- ACF  -->
-<?php
-$page_main = get_field('page_main') ?? '';
-var_dump($page_main);
-?>
 
 <?php
 // footer template
