@@ -43,7 +43,7 @@ get_header();
 
             <div class="container">
                 <?php
-                $title_block = get_field('title_block') ?? '';
+               $title_block = get_field('title_block') ?: get_the_title();
                 ?>
                 <h2 class="sec_title">
                     <?php echo  $title_block; ?>

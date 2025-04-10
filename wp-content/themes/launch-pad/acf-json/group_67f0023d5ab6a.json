@@ -3,6 +3,26 @@
     "title": "Banner",
     "fields": [
         {
+            "key": "field_67f7f3965df60",
+            "label": "Title block",
+            "name": "title_block",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_67f0023dce8a9",
             "label": "Banner",
             "name": "banner",
@@ -140,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744286871
+    "modified": 1744303019
 }

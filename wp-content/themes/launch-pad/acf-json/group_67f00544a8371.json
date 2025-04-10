@@ -3,26 +3,6 @@
     "title": "Home",
     "fields": [
         {
-            "key": "field_67f008b9e9bcb",
-            "label": "Title block",
-            "name": "title_block",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_67f00544b03ff",
             "label": "Quick links",
             "name": "quick_links",
@@ -267,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744286871
+    "modified": 1744303045
 }

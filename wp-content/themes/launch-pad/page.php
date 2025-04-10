@@ -20,9 +20,13 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <div class="container">
+               <?php
+                $title_block = get_field('title_block') ?: get_the_title();
+                ?>
                 <h2 class="sec_title">
-                    Quick links
+                    <?php echo  $title_block; ?>
                 </h2>
+
                 <div class="page_body">
                     <div class="page_scroll">
                         <?php
