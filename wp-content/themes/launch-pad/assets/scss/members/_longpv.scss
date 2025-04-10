@@ -49,15 +49,22 @@
     font-size: 24px;
     font-weight: 700;
     color: #2E548A;
-    padding-left: 40px;
+    padding-left: 32px;
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
 
     @include media-breakpoint-up(lg) {
-        font-size: 36px;
+        font-size: 28px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        padding-left: 40px;
+    }
+
+    @include media-breakpoint-up(xxl) {
         margin-top: 24px;
         margin-bottom: 24px;
+        font-size: 36px;
     }
 
     &::before {
@@ -66,14 +73,14 @@
         @include bg_cover;
         position: absolute;
         left: 0px;
-        top: 2px;
+        top: 50%;
+        transform: translateY(-50%);
         width: 30px;
         height: 30px;
 
         @include media-breakpoint-up(lg) {
             width: 40px;
             height: 40px;
-            top: 8px;
         }
     }
 }

@@ -23,9 +23,9 @@
 
     a {
         text-decoration: none;
-        transition: all 0.5s;
+        transition: all 0.3s;
         white-space: inherit;
-        color: $primary !important;
+        color: $secondary !important;
 
         &:hover {
             text-decoration: underline;
