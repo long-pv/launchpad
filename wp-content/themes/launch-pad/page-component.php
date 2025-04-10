@@ -77,36 +77,6 @@ get_header();
 
 <!-- Gallery -->
 
-<!-- Table -->
-<section class="secSpace">
-    <div class="container">
-        <div class="text-center m-4" style="font-weight: 700;">
-            TABLE
-        </div>
-
-        <table class="table_info">
-            <thead>
-                <th>Program</th>
-                <th>Per Semester</th>
-                <th>Per Year</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>2</td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-</section>
-
 <!-- Tabs -->
 <section class="secSpace navItem">
     <div class="container">
@@ -149,6 +119,36 @@ get_header();
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Table -->
+<section class="secSpace">
+    <div class="container">
+        <div class="text-center m-4" style="font-weight: 700;">
+            TABLE
+        </div>
+
+        <table>
+            <thead>
+                <th>Program</th>
+                <th>Per Semester</th>
+                <th>Per Year</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+
+        </table>
     </div>
 </section>
 
@@ -343,12 +343,6 @@ get_header();
         </div>
     </div>
 </section>
-
-<!-- ACF  -->
-<?php
-$page_main = get_field('page_main') ?? '';
-var_dump($page_main);
-?>
 
 <?php
 // footer template
