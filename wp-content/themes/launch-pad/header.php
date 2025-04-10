@@ -61,7 +61,7 @@
 						<?php } ?>
 
 						<a class=" menu_item menu_item_login" href="javascript:void(0);">
-							Login
+							<?php _e('Login', 'launch-pad'); ?>
 						</a>
 					</div>
 				</div>
@@ -153,7 +153,7 @@
 							</svg>
 						</div>
 						<div class="title">
-							Login
+							<?php _e('Login', 'launch-pad'); ?>
 						</div>
 					</a>
 
@@ -164,7 +164,7 @@
 							</svg>
 						</div>
 						<div class="title">
-							Menu
+							<?php _e('Menu', 'launch-pad'); ?>
 						</div>
 					</a>
 				</div>

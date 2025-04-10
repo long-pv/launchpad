@@ -16,7 +16,7 @@ get_header();
 		<div class="page_inner">
 			<div class="container">
 				<h2 class="sec_title">
-					Quick links
+					<?php _e('Search results', 'launch-pad'); ?>
 				</h2>
 				<div class="page_body">
 					<div class="page_scroll d-block">

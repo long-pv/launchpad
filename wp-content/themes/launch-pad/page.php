@@ -20,11 +20,35 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <div class="container">
-               <?php
+                <?php
+                $banner = get_field('banner') ?? '';
+                if ($banner['image']):
+                    ?>
+                    <div class="banner" style="background-image: url('<?php echo $banner['image']; ?>');">
+                        <div class="banner__content">
+                            <div class="banner__social">
+                                <?php if ($banner['social_network']['facebook']): ?>
+                                    <a target="_blank" href="<?php echo $banner['social_network']['facebook']; ?>"
+                                        class="banner__social-icon banner__social-icon--facebook"></a>
+                                <?php endif; ?>
+                                <?php if ($banner['social_network']['youtube']): ?>
+                                    <a target="_blank" href="<?php echo $banner['social_network']['youtube']; ?>"
+                                        class="banner__social-icon banner__social-icon--youtube"></a>
+                                <?php endif; ?>
+                                <?php if ($banner['social_network']['telegram']): ?>
+                                    <a target="_blank" href="<?php echo $banner['social_network']['telegram']; ?>"
+                                        class="banner__social-icon banner__social-icon--telegram"></a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
+                <?php
                 $title_block = get_field('title_block') ?: get_the_title();
                 ?>
                 <h2 class="sec_title">
-                    <?php echo  $title_block; ?>
+                    <?php echo $title_block; ?>
                 </h2>
 
                 <div class="page_body">
@@ -47,7 +71,7 @@ get_header();
                         <?php
                         $copyright = get_field('copyright', 'option') ?? '';
                         if ($copyright) {
-                        ?>
+                            ?>
                             <div class="copyright">
                                 <?php echo $copyright; ?>
                             </div>
@@ -60,10 +84,10 @@ get_header();
 </div>
 
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         adjustTabBodyHeight();
 
-        $(window).on('resize', function() {
+        $(window).on('resize', function () {
             adjustTabBodyHeight();
         });
 
