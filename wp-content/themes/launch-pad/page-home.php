@@ -100,30 +100,34 @@ get_header();
                                     if ($item['display_type'] == '1') {
                                     ?>
                                         <div class="tab_body editor">
-                                            <?php echo $item['static_content']; ?>
+                                            <div class="tab_scroll">
+                                                <?php echo $item['static_content']; ?>
+                                            </div>
                                         </div>
                                     <?php
                                     } elseif ($item['display_type'] == '0') {
                                     ?>
                                         <div class="tab_body">
-                                            <div class="row">
-                                                <?php
-                                                foreach ($item['list_handbook'] as $key => $item_2) {
-                                                ?>
-                                                    <div class="col-6 col-lg-3">
-                                                        <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>" class="handbook">
-                                                            <div class="handbook__image">
-                                                                <img src="<?php echo $item_2['image'] ?? '' ?>"
-                                                                    alt="International Student Handbook">
-                                                            </div>
-                                                            <h3 class="handbook__title">
-                                                                <?php echo $item_2['title'] ?? '' ?>
-                                                            </h3>
-                                                        </a>
-                                                    </div>
-                                                <?php
-                                                }
-                                                ?>
+                                            <div class="tab_scroll">
+                                                <div class="row">
+                                                    <?php
+                                                    foreach ($item['list_handbook'] as $key => $item_2) {
+                                                    ?>
+                                                        <div class="col-6 col-lg-3">
+                                                            <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>" class="handbook">
+                                                                <div class="handbook__image">
+                                                                    <img src="<?php echo $item_2['image'] ?? '' ?>"
+                                                                        alt="International Student Handbook">
+                                                                </div>
+                                                                <h3 class="handbook__title">
+                                                                    <?php echo $item_2['title'] ?? '' ?>
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    <?php
+                                                    }
+                                                    ?>
+                                                </div>
                                             </div>
                                         </div>
                                     <?php
@@ -162,6 +166,45 @@ get_header();
         </div>
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+        adjustTabBodyHeight();
+
+        $(window).on('resize', function() {
+            adjustTabBodyHeight();
+        });
+
+        function adjustTabBodyHeight() {
+            var windowWidth = $(window).width();
+
+            if (windowWidth >= 1200) {
+                var windowHeight = $(window).height();
+                var headerHeight = $('.banner').outerHeight(true);
+                var titleHeight = $('.sec_title').outerHeight(true);
+                var navTabHeight = $('.tabs_home_pc').outerHeight(true) || 0;
+                var otherPadding = 150; // tuỳ chỉnh theo giao diện
+                var usedHeight = headerHeight + titleHeight + navTabHeight + otherPadding;
+                var availableHeight = windowHeight - usedHeight;
+
+                $('.tab_scroll').css({
+                    'max-height': availableHeight + 'px',
+                    'min-height': availableHeight + 'px',
+                    'overflow-y': 'auto',
+                    'overflow-x': 'hidden',
+                });
+            } else {
+                // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+                $('.tab_scroll').css({
+                    'max-height': 'none',
+                    'min-height': 'none',
+                    'overflow-y': 'visible',
+                    'overflow-x': 'visible',
+                });
+            }
+        }
+    });
+</script>
 
 <?php
 // footer template
