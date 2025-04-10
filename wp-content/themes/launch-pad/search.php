@@ -14,34 +14,104 @@ get_header();
 <div class="container_xx">
 	<div class="page_wrap">
 		<div class="page_inner">
-			<div class="page_body">
-				<?php if (get_search_query()): ?>
-					<p class="list_post__title">
-						<?php _e("Search result for", "launch-pad"); ?> <span
-							class="list_post__keyword"><?php echo esc_html(get_search_query()); ?></span>
-					</p>
-				<?php endif; ?>
-
-				<div class="list_post__list">
-					<?php
-					if (have_posts()):
-						while (have_posts()):
-							the_post();
-							?>
-							<div class="list_post__item">
-								<a href="<?php the_permalink(); ?>" class="list_post__link">
-									<h3 class=" list_post__heading"><?php the_title(); ?></h3>
-								</a>
-								<p class="list_post__description"><?php echo get_the_excerpt(); ?></p>
+			<div class="container">
+				<h2 class="sec_title">
+					Quick links
+				</h2>
+				<div class="page_body">
+					<div class="page_scroll d-block">
+						<?php if (get_search_query()): ?>
+							<div class="list_post__title">
+								<?php _e("Search result for", "launch-pad"); ?>
+								<span class="list_post__keyword">
+									<?php echo esc_html(get_search_query()); ?>
+								</span>
 							</div>
+						<?php endif; ?>
+
+						<div class="list_post__list">
 							<?php
-						endwhile;
-					endif;
-					?>
+							if (have_posts()):
+								while (have_posts()):
+									the_post();
+							?>
+									<div class="list_post__item">
+										<a href="<?php the_permalink(); ?>" class="list_post__link">
+											<h3 class=" list_post__heading"><?php the_title(); ?></h3>
+										</a>
+										<div class="list_post__description">
+											<?php echo preg_replace('/<a\b[^>]*>(.*?)<\/a>/is', '$1', get_the_excerpt()); ?>
+										</div>
+									</div>
+							<?php
+								endwhile;
+							endif;
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="page_bottom">
+				<div class="container">
+					<div class="inner">
+						<a href="javascript:void(0);" class="logo">
+							<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_vin.svg'; ?>
+							<img src="<?php echo $logo_url; ?>" alt="logo">
+						</a>
+
+						<?php
+						$copyright = get_field('copyright', 'option') ?? '';
+						if ($copyright) {
+						?>
+							<div class="copyright">
+								<?php echo $copyright; ?>
+							</div>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	jQuery(document).ready(function($) {
+		adjustTabBodyHeight();
+
+		$(window).on('resize', function() {
+			adjustTabBodyHeight();
+		});
+
+		function adjustTabBodyHeight() {
+			var windowWidth = $(window).width();
+
+			if (windowWidth >= 1200) {
+				var windowHeight = $(window).height();
+				var headerHeight = $('.banner').outerHeight(true) || 0;
+				var titleHeight = $('.sec_title').outerHeight(true) || 0;
+				var otherPadding = 180; // tuỳ chỉnh theo giao diện
+				var usedHeight = headerHeight + titleHeight + otherPadding;
+				var availableHeight = windowHeight - usedHeight;
+
+				$('.page_scroll').css({
+					'max-height': availableHeight + 'px',
+					'min-height': availableHeight + 'px',
+					'overflow-y': 'auto',
+					'overflow-x': 'hidden',
+				});
+			} else {
+				// Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+				$('.page_scroll').css({
+					'max-height': 'none',
+					'min-height': 'none',
+					'overflow-y': 'visible',
+					'overflow-x': 'visible',
+				});
+			}
+		}
+	});
+</script>
+
 <?php
 get_footer();

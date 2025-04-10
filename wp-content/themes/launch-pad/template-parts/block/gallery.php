@@ -1,6 +1,6 @@
 <?php
 $data = $args['flexible'];
-$gallery = $data['gallery'];
+$gallery = $data['gallery'] ?? [];
 ?>
 
 <?php

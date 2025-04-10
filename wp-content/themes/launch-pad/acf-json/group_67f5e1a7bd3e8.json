@@ -17,12 +17,35 @@
                 "id": ""
             },
             "layouts": {
-                "layout_67f5e1c1b5eac": {
-                    "key": "layout_67f5e1c1b5eac",
-                    "name": "",
-                    "label": "",
+                "layout_67f79c0cf58ac": {
+                    "key": "layout_67f79c0cf58ac",
+                    "name": "heading",
+                    "label": "Heading",
                     "display": "block",
-                    "sub_fields": [],
+                    "sub_fields": [
+                        {
+                            "key": "field_67f79c14f58af",
+                            "label": "Heading Block",
+                            "name": "heading_block",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67f79bbb15c6a"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 },
@@ -48,38 +71,6 @@
                             },
                             "clone": [
                                 "group_67f5d22769408"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_67f639c31977f": {
-                    "key": "layout_67f639c31977f",
-                    "name": "card_club",
-                    "label": "Card Club",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67f639e619782",
-                            "label": "Card Club Block",
-                            "name": "card_club_block",
-                            "aria-label": "",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_67f63a9aab9ae"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -154,16 +145,16 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_67f79c0cf58ac": {
-                    "key": "layout_67f79c0cf58ac",
-                    "name": "heading",
-                    "label": "Heading",
+                "layout_67f7ee5b30ca9": {
+                    "key": "layout_67f7ee5b30ca9",
+                    "name": "button",
+                    "label": "Button",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_67f79c14f58af",
-                            "label": "Heading Block",
-                            "name": "heading_block",
+                            "key": "field_67f7ee6130cac",
+                            "label": "Block",
+                            "name": "block",
                             "aria-label": "",
                             "type": "clone",
                             "instructions": "",
@@ -175,7 +166,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_67f79bbb15c6a"
+                                "group_67f7eeae4a9cc"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -212,5 +203,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744286871
+    "modified": 1744302077
 }

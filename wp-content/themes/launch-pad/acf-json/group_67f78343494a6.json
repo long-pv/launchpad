@@ -25,27 +25,6 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_67f78344a06bf",
-                    "label": "Tab Link",
-                    "name": "tab_link",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_67f7854ddf723"
-                },
-                {
                     "key": "field_67f7929ba8fdd",
                     "label": "Tab Title",
                     "name": "tab_title",
@@ -108,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744286871
+    "modified": 1744300632
 }
