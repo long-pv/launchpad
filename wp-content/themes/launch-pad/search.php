@@ -34,7 +34,7 @@ get_header();
 							if (have_posts()):
 								while (have_posts()):
 									the_post();
-							?>
+									?>
 									<div class="list_post__item">
 										<a href="<?php the_permalink(); ?>" class="list_post__link">
 											<h3 class=" list_post__heading"><?php the_title(); ?></h3>
@@ -43,7 +43,7 @@ get_header();
 											<?php echo preg_replace('/<a\b[^>]*>(.*?)<\/a>/is', '$1', get_the_excerpt()); ?>
 										</div>
 									</div>
-							<?php
+									<?php
 								endwhile;
 							endif;
 							?>
@@ -63,7 +63,7 @@ get_header();
 						<?php
 						$copyright = get_field('copyright', 'option') ?? '';
 						if ($copyright) {
-						?>
+							?>
 							<div class="copyright">
 								<?php echo $copyright; ?>
 							</div>
@@ -76,10 +76,10 @@ get_header();
 </div>
 
 <script>
-	jQuery(document).ready(function($) {
+	jQuery(document).ready(function ($) {
 		adjustTabBodyHeight();
 
-		$(window).on('resize', function() {
+		$(window).on('resize', function () {
 			adjustTabBodyHeight();
 		});
 

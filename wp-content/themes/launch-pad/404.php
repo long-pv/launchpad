@@ -10,51 +10,84 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div class="container_xx">
+	<div class="page_wrap">
+		<div class="page_inner">
+			<div class="container pt-4 pt-lg-0">
+				<div class="page_body">
+					<div class="page_scroll d-block">
+						<div class="py-5">
+							<h2 style="text-align:center;font-weight:bold;color:#C72127;font-size:80px;line-height:1;">
+								<?php _e('404', 'launch-pad'); ?>
+							</h2>
+							<p style="text-align:center;">
+								<?php _e('Page not found', 'launch-pad'); ?>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'launch-pad' ); ?></h1>
-			</header><!-- .page-header -->
+			<div class="page_bottom">
+				<div class="container">
+					<div class="inner">
+						<a href="javascript:void(0);" class="logo">
+							<?php $logo_url = get_template_directory_uri() . '/assets/images/logo_vin.svg'; ?>
+							<img src="<?php echo $logo_url; ?>" alt="logo">
+						</a>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'launch-pad' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'launch-pad' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
+						<?php
+						$copyright = get_field('copyright', 'option') ?? '';
+						if ($copyright) {
 							?>
-						</ul>
-					</div><!-- .widget -->
+							<div class="copyright">
+								<?php echo $copyright; ?>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-					<?php
-					/* translators: %1$s: smiley */
-					$launch_pad_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'launch-pad' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$launch_pad_archive_content" );
+<script>
+	jQuery(document).ready(function ($) {
+		adjustTabBodyHeight();
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+		$(window).on('resize', function () {
+			adjustTabBodyHeight();
+		});
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+		function adjustTabBodyHeight() {
+			var windowWidth = $(window).width();
 
-	</main><!-- #main -->
+			if (windowWidth >= 1200) {
+				var windowHeight = $(window).height();
+				var headerHeight = $('.banner').outerHeight(true) || 0;
+				var titleHeight = $('.sec_title').outerHeight(true) || 0;
+				var otherPadding = 180; // tuỳ chỉnh theo giao diện
+				var usedHeight = headerHeight + titleHeight + otherPadding;
+				var availableHeight = windowHeight - usedHeight;
+
+				$('.page_scroll').css({
+					'max-height': availableHeight + 'px',
+					'min-height': availableHeight + 'px',
+					'overflow-y': 'auto',
+					'overflow-x': 'hidden',
+				});
+			} else {
+				// Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+				$('.page_scroll').css({
+					'max-height': 'none',
+					'min-height': 'none',
+					'overflow-y': 'visible',
+					'overflow-x': 'visible',
+				});
+			}
+		}
+	});
+</script>
 
 <?php
 get_footer();
