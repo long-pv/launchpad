@@ -180,8 +180,8 @@ get_header();
 
             if (windowWidth >= 1200) {
                 var windowHeight = $(window).height();
-                var headerHeight = $('.banner').outerHeight(true);
-                var titleHeight = $('.sec_title').outerHeight(true);
+                var headerHeight = $('.banner').outerHeight(true) || 0;
+                var titleHeight = $('.sec_title').outerHeight(true) || 0;
                 var navTabHeight = $('.tabs_home_pc').outerHeight(true) || 0;
                 var otherPadding = 150; // tuỳ chỉnh theo giao diện
                 var usedHeight = headerHeight + titleHeight + navTabHeight + otherPadding;

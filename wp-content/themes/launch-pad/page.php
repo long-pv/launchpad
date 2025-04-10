@@ -102,14 +102,59 @@ endif;
 <div class="container_xxx">
     <div class="page_wrap">
         <div class="page_inner">
-            <div class="page_body">
-                <?php
-                get_template_part('template-parts/content-flexible');
-                ?>
+            <div class="container">
+                <h2 class="sec_title">
+                    Quick links
+                </h2>
+                <div class="page_body">
+                    <div class="page_scroll">
+                        <?php
+                        get_template_part('template-parts/content-flexible');
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+        adjustTabBodyHeight();
+
+        $(window).on('resize', function() {
+            adjustTabBodyHeight();
+        });
+
+        function adjustTabBodyHeight() {
+            var windowWidth = $(window).width();
+
+            if (windowWidth >= 1200) {
+                var windowHeight = $(window).height();
+                var headerHeight = $('.banner').outerHeight(true) || 0;
+                var titleHeight = $('.sec_title').outerHeight(true) || 0;
+                var otherPadding = 180; // tuỳ chỉnh theo giao diện
+                var usedHeight = headerHeight + titleHeight + otherPadding;
+                var availableHeight = windowHeight - usedHeight;
+
+                $('.page_scroll').css({
+                    'max-height': availableHeight + 'px',
+                    'min-height': availableHeight + 'px',
+                    'overflow-y': 'auto',
+                    'overflow-x': 'hidden',
+                });
+            } else {
+                // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+                $('.page_scroll').css({
+                    'max-height': 'none',
+                    'min-height': 'none',
+                    'overflow-y': 'visible',
+                    'overflow-x': 'visible',
+                });
+            }
+        }
+    });
+</script>
 
 <?php
 // footer template
