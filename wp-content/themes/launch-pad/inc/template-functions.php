@@ -71,15 +71,21 @@ function get_data_sidebar($parent_id = 0, $level = 1, $max_level = 3)
 	$data_result = [];
 
 	$args = array(
-		'post_type' => ['page'],
-		'post_parent' => $parent_id,
-		// 'meta_query' => array(
-		//     array(
-		//         'key' => 'sidebar_menu',
-		//         'value' => 'yes',
-		//     ),
-		// ),
+		'post_type'      => ['page'],
+		'post_parent'    => $parent_id,
 		'posts_per_page' => -1,
+		'meta_query'     => array(
+			'relation' => 'OR',
+			array(
+				'key'     => 'hidden_on_sidebar',
+				'compare' => 'NOT EXISTS',
+			),
+			array(
+				'key'     => 'hidden_on_sidebar',
+				'value'   => '1',
+				'compare' => '!=',
+			),
+		),
 	);
 
 	$sidebar_query = new WP_Query($args);
@@ -97,7 +103,7 @@ function get_data_sidebar($parent_id = 0, $level = 1, $max_level = 3)
 
 			$redirection = get_field('redirection') ?? null;
 			if ($redirection) {
-				$data_item['link'] = $redirection;
+				$data_item['link'] = get_permalink($redirection);
 			}
 
 			// Check for child pages recursively

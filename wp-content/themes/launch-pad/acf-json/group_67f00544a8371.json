@@ -129,6 +129,7 @@
                     "collapsed": "field_67f00544eef03",
                     "button_label": "Add Row",
                     "rows_per_page": 20,
+                    "parent_repeater": "field_67f00544b03ff",
                     "sub_fields": [
                         {
                             "key": "field_67f00544eef03",
@@ -195,8 +196,7 @@
                             "placeholder": "",
                             "parent_repeater": "field_67f00544dd0a7"
                         }
-                    ],
-                    "parent_repeater": "field_67f00544b03ff"
+                    ]
                 },
                 {
                     "key": "field_67f00544e0a63",

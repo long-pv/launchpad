@@ -219,7 +219,7 @@
     .nav {
         column-gap: 0px;
         justify-content: flex-start;
-        row-gap: 24px;
+        row-gap: 20px;
         --bs-gutter-x: 30px;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -265,6 +265,7 @@
 
         @include media-breakpoint-up(lg) {
             padding: 24px;
+            padding-right: 0px;
         }
 
         .row {
@@ -275,6 +276,12 @@
                 --bs-gutter-x: 80px;
                 justify-content: center;
             }
+        }
+    }
+
+    .tab_scroll {
+        @include media-breakpoint-up(lg) {
+            padding-right: 24px;
         }
     }
 
