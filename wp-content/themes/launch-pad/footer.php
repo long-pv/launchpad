@@ -15,11 +15,11 @@
 <?php wp_footer(); ?>
 
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         // Add active class to all parent anchors
         var sidebarMenu_active = $(".sidebarMenu--active");
         if (sidebarMenu_active.length > 0) {
-            sidebarMenu_active.each(function() {
+            sidebarMenu_active.each(function () {
                 var parentAnchors = $(this).parents("ul");
 
                 // Close all other ul elements
@@ -36,7 +36,7 @@
         }
 
         // Click show/hide sub sidebar
-        $(".sidebarMenu__icon").on("click", function() {
+        $(".sidebarMenu__icon").on("click", function () {
             let sidebar = $(this).siblings("ul");
             sidebar.slideToggle("swing");
             // sidebar.find("ul").slideUp("swing");
@@ -53,7 +53,7 @@
         });
 
         // Click tab to show/hide sidebar with SP
-        $(".sidebarMenu__tab").on("click", function() {
+        $(".sidebarMenu__tab").on("click", function () {
             $(".sidebarMenu__content").slideToggle(1000);
 
             // Open/close icon
@@ -63,6 +63,89 @@
         });
     });
 </script>
+
+<?php
+if (is_page_template('page-home.php')) {
+    ?>
+    <script>
+        jQuery(document).ready(function ($) {
+            adjustTabBodyHeight();
+
+            $(window).on('resize', function () {
+                adjustTabBodyHeight();
+            });
+
+            function adjustTabBodyHeight() {
+                var windowWidth = $(window).width();
+
+                if (windowWidth >= 1200) {
+                    var windowHeight = $(window).height();
+                    var headerHeight = $('.banner').outerHeight(true) || 0;
+                    var titleHeight = $('.sec_title').outerHeight(true) || 0;
+                    var navTabHeight = $('.tabs_home_pc').outerHeight(true) || 0;
+                    var otherPadding = 150; // tuỳ chỉnh theo giao diện
+                    var usedHeight = headerHeight + titleHeight + navTabHeight + otherPadding;
+                    var availableHeight = windowHeight - usedHeight;
+
+                    $('.tab_scroll').css({
+                        'max-height': availableHeight + 'px',
+                        'min-height': availableHeight + 'px',
+                        'overflow-y': 'auto',
+                        'overflow-x': 'hidden',
+                    });
+                } else {
+                    // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+                    $('.tab_scroll').css({
+                        'max-height': 'none',
+                        'min-height': 'none',
+                        'overflow-y': 'visible',
+                        'overflow-x': 'visible',
+                    });
+                }
+            }
+        });
+    </script>
+    <?php
+} else {
+    ?>
+    <script>
+        jQuery(document).ready(function ($) {
+            adjustTabBodyHeight();
+
+            $(window).on('resize', function () {
+                adjustTabBodyHeight();
+            });
+
+            function adjustTabBodyHeight() {
+                var windowWidth = $(window).width();
+
+                if (windowWidth >= 1200) {
+                    var windowHeight = $(window).height();
+                    var headerHeight = $('.banner').outerHeight(true) || 0;
+                    var titleHeight = $('.sec_title').outerHeight(true) || 0;
+                    var otherPadding = 180; // tuỳ chỉnh theo giao diện
+                    var usedHeight = headerHeight + titleHeight + otherPadding;
+                    var availableHeight = windowHeight - usedHeight;
+
+                    $('.page_scroll').css({
+                        'max-height': availableHeight + 'px',
+                        'min-height': availableHeight + 'px',
+                        'overflow-y': 'auto',
+                        'overflow-x': 'hidden',
+                    });
+                } else {
+                    // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
+                    $('.page_scroll').css({
+                        'max-height': 'none',
+                        'min-height': 'none',
+                        'overflow-y': 'visible',
+                        'overflow-x': 'visible',
+                    });
+                }
+            }
+        });
+    </script>
+<?php } ?>
 
 </body>
 

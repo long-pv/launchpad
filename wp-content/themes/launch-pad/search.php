@@ -75,43 +75,5 @@ get_header();
 	</div>
 </div>
 
-<script>
-	jQuery(document).ready(function ($) {
-		adjustTabBodyHeight();
-
-		$(window).on('resize', function () {
-			adjustTabBodyHeight();
-		});
-
-		function adjustTabBodyHeight() {
-			var windowWidth = $(window).width();
-
-			if (windowWidth >= 1200) {
-				var windowHeight = $(window).height();
-				var headerHeight = $('.banner').outerHeight(true) || 0;
-				var titleHeight = $('.sec_title').outerHeight(true) || 0;
-				var otherPadding = 180; // tuỳ chỉnh theo giao diện
-				var usedHeight = headerHeight + titleHeight + otherPadding;
-				var availableHeight = windowHeight - usedHeight;
-
-				$('.page_scroll').css({
-					'max-height': availableHeight + 'px',
-					'min-height': availableHeight + 'px',
-					'overflow-y': 'auto',
-					'overflow-x': 'hidden',
-				});
-			} else {
-				// Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
-				$('.page_scroll').css({
-					'max-height': 'none',
-					'min-height': 'none',
-					'overflow-y': 'visible',
-					'overflow-x': 'visible',
-				});
-			}
-		}
-	});
-</script>
-
 <?php
 get_footer();
