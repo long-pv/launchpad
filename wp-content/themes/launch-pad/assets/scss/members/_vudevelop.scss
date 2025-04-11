@@ -151,18 +151,18 @@
 /* Gallery */
 
 /* Table */
-.table {
+table {
 	width: 100%;
 	table-layout: fixed;
 	/* Cố định bố cục bảng */
 }
 
-.table thead {
+table thead {
 	background-color: #f2f6f9;
 	border-bottom: 1px solid rgba(210, 211, 213, 1);
 }
 
-.table thead th {
+table thead th {
 	padding: 10px 20px;
 	font-family: "Montserrat";
 	font-weight: 700;
@@ -171,29 +171,29 @@
 	color: #2e2e2e;
 }
 
-.table th:nth-child(1),
-.table td:nth-child(1) {
+table th:nth-child(1),
+table td:nth-child(1) {
 	width: 50%;
 	text-align: left;
 }
 
-.table th:nth-child(2),
-.table td:nth-child(2) {
+table th:nth-child(2),
+table td:nth-child(2) {
 	width: 30%;
 	text-align: right;
 }
 
-.table th:nth-child(3),
-.table td:nth-child(3) {
+table th:nth-child(3),
+table td:nth-child(3) {
 	width: 20%;
 	text-align: right;
 }
 
-.table tbody {
+table tbody {
 	border: 1px solid #d2d3d5;
 }
 
-.table tbody td {
+table tbody td {
 	padding: 15px 20px;
 	border-bottom: 1px solid #d2d3d5;
 	//
@@ -471,71 +471,22 @@
 		object-fit: cover;
 	}
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-
-	&__description {
+	&--desc {
 		font-family: "Montserrat";
 		font-weight: 400;
 		font-size: 16px;
 		color: #2e2e2e;
-		//
-		margin-bottom: 0px;
 	}
 
-	&__contact_title {
+	a {
 		font-family: "Montserrat";
-		font-weight: 700;
-		font-size: 18px;
-		color: #2e548a;
-		//
-		margin-top: 0px;
-		margin-bottom: 10px;
-	}
+		font-weight: 400;
+		font-size: 16px;
+		color: #c83438 !important;
+		text-decoration: none;
 
-	&__contact_list {
-		list-style: disc;
-		padding-left: 20px;
-		font-size: 15px;
-		//
-		margin-bottom: 0px;
-
-		li {
-			margin-bottom: 6px;
-
-			&:last-child {
-				margin-bottom: 0px;
-			}
-		}
-
-		&--desc {
-			font-family: "Montserrat";
-			font-weight: 400;
-			font-size: 16px;
-			color: #2e2e2e;
-		}
-
-		&--phone,
-		&--mail {
-			font-family: "Montserrat";
-			font-weight: 700;
-			font-size: 16px;
-			color: #2e2e2e;
-		}
-
-		&--facebook {
-			font-family: "Montserrat";
-			font-weight: 400;
-			font-size: 16px;
-			color: #c83438 !important;
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
