@@ -71,18 +71,18 @@ function get_data_sidebar($parent_id = 0, $level = 1, $max_level = 3)
 	$data_result = [];
 
 	$args = array(
-		'post_type'      => ['page'],
-		'post_parent'    => $parent_id,
+		'post_type' => ['page'],
+		'post_parent' => $parent_id,
 		'posts_per_page' => -1,
-		'meta_query'     => array(
+		'meta_query' => array(
 			'relation' => 'OR',
 			array(
-				'key'     => 'hidden_on_sidebar',
+				'key' => 'hidden_on_sidebar',
 				'compare' => 'NOT EXISTS',
 			),
 			array(
-				'key'     => 'hidden_on_sidebar',
-				'value'   => '1',
+				'key' => 'hidden_on_sidebar',
+				'value' => '1',
 				'compare' => '!=',
 			),
 		),
@@ -118,4 +118,31 @@ function get_data_sidebar($parent_id = 0, $level = 1, $max_level = 3)
 
 	wp_reset_postdata();
 	return $data_result;
+}
+
+add_action('wp_ajax_nopriv_toggle_cookie_bookmark', 'handle_cookie_bookmark');
+add_action('wp_ajax_toggle_cookie_bookmark', 'handle_cookie_bookmark');
+
+function handle_cookie_bookmark()
+{
+	$post_id = intval($_POST['post_id']);
+	$cookie_name = 'bookmarked_pages';
+	$cookie_duration = time() + 30 * DAY_IN_SECONDS;
+
+	$current = isset($_COOKIE[$cookie_name]) ? json_decode(stripslashes($_COOKIE[$cookie_name]), true) : [];
+
+	if (!is_array($current)) {
+		$current = [];
+	}
+
+	if (in_array($post_id, $current)) {
+		$current = array_diff($current, [$post_id]);
+		setcookie($cookie_name, json_encode(array_values($current)), $cookie_duration, "/");
+		wp_send_json_success(['status' => 'removed']);
+	} else {
+		$current[] = $post_id;
+		$current = array_unique($current);
+		setcookie($cookie_name, json_encode(array_values($current)), $cookie_duration, "/");
+		wp_send_json_success(['status' => 'added']);
+	}
 }

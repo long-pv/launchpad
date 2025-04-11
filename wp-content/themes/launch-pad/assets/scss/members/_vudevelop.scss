@@ -602,10 +602,6 @@
 
 /* LIST MARK */
 .list_mark {
-	padding: 24px;
-	background-color: #f8f8f8;
-	font-family: sans-serif;
-
 	&__intro {
 		font-size: 16px;
 		margin-bottom: 16px;
@@ -616,9 +612,15 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		//
 		padding: 15px 0px;
 		border-bottom: 1px solid #d2d3d5;
+		gap: 8px;
+
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
 	}
 
 	&__content {

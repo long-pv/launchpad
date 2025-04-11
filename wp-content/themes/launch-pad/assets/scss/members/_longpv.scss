@@ -31,6 +31,10 @@
     -moz-box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.16);
     padding-right: 0px;
     padding: 40px 20px;
+
+    @include media-breakpoint-up(lg) {
+        padding-right: 0px !important;
+    }
 }
 
 .page_scroll {
@@ -389,5 +393,27 @@
         color: #2E548A;
         font-size: 16px;
         font-weight: 700;
+    }
+}
+
+.page_mark {
+    @include bg_cover;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.4' d='M21.5867 2.6665H10.4267C5.55999 2.6665 2.66666 5.55984 2.66666 10.4132V21.5732C2.66666 26.4265 5.55999 29.3198 10.4133 29.3198H21.5733C26.4267 29.3198 29.32 26.4265 29.32 21.5732V10.4132C29.3333 5.55984 26.44 2.6665 21.5867 2.6665Z' fill='%23A8C4D2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.6667 2.6665V16.5598C21.6667 17.4132 21.4133 18.0532 20.9733 18.3065C20.52 18.5732 19.8 18.4398 19 17.9598L17.24 16.9065C16.56 16.4932 15.44 16.4932 14.76 16.9065L13 17.9598C12.2 18.4398 11.48 18.5598 11.0267 18.3065C10.5867 18.0532 10.3333 17.4132 10.3333 16.5598V2.6665H21.6667Z' fill='%23A8C4D2'/%3E%3C/svg%3E%0A");
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: none;
+
+    &.active {
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.4' d='M21.5866 2.6665H10.4266C5.55996 2.6665 2.66663 5.55984 2.66663 10.4132V21.5732C2.66663 26.4265 5.55996 29.3198 10.4133 29.3198H21.5733C26.4266 29.3198 29.32 26.4265 29.32 21.5732V10.4132C29.3333 5.55984 26.44 2.6665 21.5866 2.6665Z' fill='%23D2AE6D'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.6667 2.6665V16.5598C21.6667 17.4132 21.4134 18.0532 20.9734 18.3065C20.52 18.5732 19.8 18.4398 19 17.9598L17.24 16.9065C16.56 16.4932 15.44 16.4932 14.76 16.9065L13 17.9598C12.2 18.4398 11.48 18.5598 11.0267 18.3065C10.5867 18.0532 10.3334 17.4132 10.3334 16.5598V2.6665H21.6667Z' fill='%23D2AE6D'/%3E%3C/svg%3E%0A");
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: block;
     }
 }
