@@ -1,19 +1,7 @@
 <?php
-/**
- * Template Name: Component
- * Description: The template for displaying all pages by default.
- *
- * This is the default page template in the theme.
- * Other 'pages' on your WordPress site may use a different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package launch-pad
- */
-
-// Load the header template.
-get_header();
-?>
-
+/* Template Name: Component */
+// header template
+get_header(); ?>
 
 <!-- Hand Book -->
 <section class="secSpace">
