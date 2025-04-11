@@ -21,11 +21,8 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <div class="container">
-                <?php
-                $title_block = get_field('title_block') ?: get_the_title();
-                ?>
-                <h2 class="sec_title">
-                    <?php echo $title_block; ?>
+                <h2 class="sec_title sec_title_mark">
+                    <?php _e('Bookmark management', 'launch-pad'); ?>
                 </h2>
 
                 <div class="page_body">
