@@ -14,6 +14,16 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <div class="container">
+                <?php
+                $title_block = get_field('title_block') ?: get_the_title();
+                ?>
+                <h2 class="sec_title">
+                    <?php echo $title_block; ?>
+                
+                    <?php $class_page_mark = (isset($_COOKIE['bookmarked_pages']) && in_array(get_the_ID(), json_decode(stripslashes($_COOKIE['bookmarked_pages']), true) ?? [])) ? 'active' : ''; ?>
+                    <div class="page_mark <?php echo $class_page_mark; ?>" data-id="<?php echo get_the_ID(); ?>"></div>
+                </h2>
+
                 <div class="page_body">
                     <div class="page_scroll d-block">
                         <div class="list_post__list">
@@ -62,13 +72,13 @@ get_header();
                                                         aria-labelledby="heading-<?php echo esc_attr($term->term_id); ?>"
                                                         data-bs-parent="#clubsAccordion">
                                                         <div class="accordion-body">
-                                                            <div class="row gallery">
+                                                            <div class="row club_row">
                                                                 <?php if ($clubs->have_posts()): ?>
                                                                     <?php while ($clubs->have_posts()):
                                                                         $clubs->the_post(); ?>
                                                                         <?php $image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
 
-                                                                        <div class="col-6 col-lg-3">
+                                                                        <div class="col-12 col-md-4 col-lg-3">
                                                                             <a href="<?php echo get_permalink(); ?>" class="handbook">
                                                                                 <div class="handbook__image">
                                                                                     <img src="<?php echo $image_url; ?>" alt="<?php the_title(); ?>">

@@ -428,3 +428,13 @@
         }
     }
 }
+
+.club_row {
+    --bs-gutter-x: 20px;
+    row-gap: 20px;
+
+    @include media-breakpoint-up(lg) {
+        --bs-gutter-x: 40px;
+        row-gap: 40px;
+    }
+}

@@ -28,51 +28,56 @@ get_header();
                 <div class="page_body">
                     <div class="page_scroll d-block">
                         <?php
-                        if (!isset($_COOKIE['bookmarked_pages'])) {
-                            return '<p>Chưa có trang nào được đánh dấu.</p>';
-                        }
+                        if (!empty($_COOKIE['bookmarked_pages'])) {
+                            $ids = json_decode(stripslashes($_COOKIE['bookmarked_pages']), true);
 
-                        $ids = json_decode(stripslashes($_COOKIE['bookmarked_pages']), true);
-                        if (!is_array($ids) || empty($ids)) {
-                            return '<p>Chưa có trang nào được đánh dấu.</p>';
-                        }
+                            $query = new WP_Query([
+                                'post_type' => 'page',
+                                'post__in' => $ids,
+                                'orderby' => 'post__in'
+                            ]);
 
-                        $query = new WP_Query([
-                            'post_type' => 'page',
-                            'post__in' => $ids,
-                            'orderby' => 'post__in'
-                        ]);
+                            if ($query->have_posts()) {
+                                ?>
+                                <div class="list_mark">
+                                    <div class="list_mark__intro">
+                                        <?php _e('All your bookmarks are listed here:', 'launch-pad'); ?>
+                                    </div>
 
-                        if (!$query->have_posts()) {
-                            return '<p>Không tìm thấy trang đã lưu.</p>';
+                                    <?php
+                                    $index = 1;
+                                    while ($query->have_posts()):
+                                        $query->the_post();
+                                        $post_id = get_the_ID();
+                                        $post_title = get_the_title();
+                                        $permalink = get_permalink($post_id);
+                                        ?>
+                                        <div class="list_mark__item" data-id="<?php echo $post_id; ?>">
+                                            <div class="list_mark__content">
+                                                <span class="list_mark__index"><?php echo $index++; ?>.</span>
+                                                <span class="list_mark__title"><?php echo esc_html($post_title); ?></span>
+                                            </div>
+                                            <div class="list_mark__actions">
+                                                <a href="<?php echo esc_url($permalink); ?>"
+                                                    class="list_mark__action list_mark__action--visit" target="_blank">
+                                                    <?php _e('Visit', 'launch-pad'); ?>
+                                                </a>
+                                                <a href="#" class="list_mark__action list_mark__action--remove remove-bookmark"
+                                                    data-id="<?php echo $post_id; ?>">
+                                                    <?php _e('Remove', 'launch-pad'); ?>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    <?php endwhile; ?>
+                                </div>
+                                <?php
+                            } else {
+                                echo '<div>No pages have been bookmarked yet.</div>';
+                            }
+                        } else {
+                            echo '<div>No pages have been bookmarked yet.</div>';
                         }
                         ?>
-
-                        <div class="list_mark">
-                            <div class="list_mark__intro">All your bookmarks are listed here:</div>
-
-                            <?php
-                            $index = 1;
-                            while ($query->have_posts()):
-                                $query->the_post();
-                                $post_id = get_the_ID();
-                                $post_title = get_the_title();
-                                $permalink = get_permalink($post_id);
-                                ?>
-                                <div class="list_mark__item" data-id="<?php echo $post_id; ?>">
-                                    <div class="list_mark__content">
-                                        <span class="list_mark__index"><?php echo $index++; ?>.</span>
-                                        <span class="list_mark__title"><?php echo esc_html($post_title); ?></span>
-                                    </div>
-                                    <div class="list_mark__actions">
-                                        <a href="<?php echo esc_url($permalink); ?>"
-                                            class="list_mark__action list_mark__action--visit" target="_blank">Visit</a>
-                                        <a href="#" class="list_mark__action list_mark__action--remove remove-bookmark"
-                                            data-id="<?php echo $post_id; ?>">Remove</a>
-                                    </div>
-                                </div>
-                            <?php endwhile; ?>
-                        </div>
 
                         <?php
                         wp_reset_postdata();
