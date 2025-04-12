@@ -32,7 +32,7 @@ get_header();
                             $ids = json_decode(stripslashes($_COOKIE['bookmarked_pages']), true);
 
                             $query = new WP_Query([
-                                'post_type' => 'page',
+                                'post_type' => ['page', 'clubs'],
                                 'post__in' => $ids,
                                 'orderby' => 'post__in'
                             ]);
