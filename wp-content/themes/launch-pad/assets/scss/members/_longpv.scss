@@ -442,3 +442,8 @@
 .block_heading_page_clubs {
     margin-bottom: 20px;
 }
+
+.card_club_row {
+    --bs-gutter-x: 20px;
+    row-gap: 20px;
+}

@@ -28,15 +28,15 @@ get_header();
                 <div class="page_body">
                     <div class="page_scroll d-block">
                         <div class="card_club">
-                            <div class="row">
-                                <div class="col-4">
+                            <div class="row card_club_row">
+                                <div class="col-lg-4">
                                     <div class="card_club__image-wrapper">
                                         <?php $thumbnail_url = get_the_post_thumbnail_url(get_the_ID()); ?>
                                         <img src="<?php echo esc_url($thumbnail_url); ?>"
                                             alt="<?php the_title_attribute(); ?>" class="card_club__image" />
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-lg-8">
                                     <div class="card_club__content">
                                         <?php the_content(); ?>
                                     </div>
