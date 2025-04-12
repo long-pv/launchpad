@@ -45,6 +45,13 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 			$target = 'target="_blank"';
 		}
 
+		if (get_post_type(get_the_ID()) == 'clubs') {
+			$page_all_clubs = get_field('page_all_clubs', 'option') ?? '';
+			if ($page_all_clubs && $page_all_clubs == $item['id']) {
+				$current_class = ' sidebarMenu--active';
+			}
+		}
+
 		$icon_sidebar = get_template_directory_uri() . '/assets/images/icon_sidebar.png';
 		$icon_img = get_field('icon_menu', $item['id']) ?: $icon_sidebar;
 
