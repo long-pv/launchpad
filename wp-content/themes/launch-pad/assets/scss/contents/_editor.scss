@@ -76,12 +76,22 @@
 
     th,
     td {
-        border: 1px solid #c0c0c0;
+        border: 1px solid #d2d3d5;
         vertical-align: top;
     }
 
     table td {
         padding: 8px;
+    }
+
+    table th {
+        font-weight: 700;
+        padding: 8px;
+    }
+
+    table thead {
+        background-color: #f2f6f9;
+        border-bottom: 1px solid rgba(210, 211, 213, 1);
     }
 
     table {
