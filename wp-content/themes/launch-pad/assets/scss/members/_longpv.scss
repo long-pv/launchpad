@@ -40,11 +40,10 @@
 .page_scroll {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
+    row-gap: 24px;
 
     @include media-breakpoint-up(lg) {
         padding-right: 20px;
-        row-gap: 40px;
     }
 }
 
