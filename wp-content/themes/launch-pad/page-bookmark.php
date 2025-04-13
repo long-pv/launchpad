@@ -21,9 +21,9 @@ get_header();
     <div class="page_wrap">
         <div class="page_inner">
             <div class="container">
-                <h2 class="sec_title sec_title_mark">
+                <h1 class="sec_title sec_title_mark">
                     <?php _e('Bookmark management', 'launch-pad'); ?>
-                </h2>
+                </h1>
 
                 <div class="page_body">
                     <div class="page_scroll d-block">

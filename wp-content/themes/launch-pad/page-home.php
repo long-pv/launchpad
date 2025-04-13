@@ -48,9 +48,9 @@ get_header();
                 <?php
                 $title_block = get_field('title_block') ?: get_the_title();
                 ?>
-                <h2 class="sec_title">
+                <h1 class="sec_title">
                     <?php echo $title_block; ?>
-                </h2>
+                </h1>
 
                 <?php
                 $quick_links = get_field('quick_links') ?? [];

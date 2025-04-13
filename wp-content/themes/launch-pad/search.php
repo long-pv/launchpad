@@ -15,9 +15,9 @@ get_header();
 	<div class="page_wrap">
 		<div class="page_inner">
 			<div class="container">
-				<h2 class="sec_title">
+				<h1 class="sec_title">
 					<?php _e('Search results', 'launch-pad'); ?>
-				</h2>
+				</h1>
 				<div class="page_body">
 					<div class="page_scroll d-block">
 						<?php if (get_search_query()): ?>
