@@ -36,8 +36,18 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 	echo '<ul class="sidebarMenu__level' . esc_attr($level) . '">';
 
 	foreach ($data_sidebar as $item) {
-		$current_class = (is_page($item['id']) || is_single($item['id'])) ? ' sidebarMenu--active' : '';
+		$current_class = '';
+		$submenu_class = '';
+		$icon_class = '';
 		$open_new_tab = get_field('open_new_tab', $item['id']);
+
+		if (is_page($item['id']) || is_single($item['id'])) {
+			$current_class .= ' sidebarMenu--active';
+		} else {
+			if (!empty($item['sub_menu'])) {
+				$submenu_class .= ' sidebarMenu--subMenu';
+			}
+		}
 
 		// open new tab function
 		$target = '';
@@ -48,7 +58,7 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 		if (get_post_type(get_the_ID()) == 'clubs') {
 			$page_all_clubs = get_field('page_all_clubs', 'option') ?? '';
 			if ($page_all_clubs && $page_all_clubs == $item['id']) {
-				$current_class = ' sidebarMenu--active';
+				$current_class .= ' sidebarMenu--active';
 			}
 		}
 
@@ -57,12 +67,15 @@ function display_sidebar_menu($data_sidebar, $level = 1)
 
 		$icon = '<img class="icon" src="' . $icon_img . '" >';
 
-		echo '<li class="' . esc_attr($current_class) . '">';
+		echo '<li class="' . $current_class . $submenu_class . '">';
 		echo '<a href="' . esc_url($item['link']) . '" ' . $target . ' >' . $icon . esc_html($item['title']) . '</a>';
 
 		// Check has child page
 		if (!empty($item['sub_menu'])) {
-			echo '<span class="sidebarMenu__icon ' . ($current_class ? 'sidebarMenu--open' : '') . '"></span>';
+			if ($current_class) {
+				$icon_class .= ' sidebarMenu--open';
+			}
+			echo '<span class="sidebarMenu__icon ' . $icon_class . '"></span>';
 			display_sidebar_menu($item['sub_menu'], $level + 1);
 		}
 

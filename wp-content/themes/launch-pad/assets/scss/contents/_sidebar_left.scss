@@ -149,12 +149,18 @@
                 }
             }
 
-            &.sidebarMenu--active {
+            &.sidebarMenu--active:not(.sidebarMenu--subMenu) {
                 &>a {
                     background-color: #C83438;
                     padding: 5px 10px;
                     border-radius: 5px;
                     color: #fff !important;
+                }
+            }
+
+            &.sidebarMenu--active.sidebarMenu--subMenu {
+                &>a {
+                    color: #C83438 !important;
                 }
             }
         }
@@ -199,7 +205,14 @@
 
             &.sidebarMenu--active {
                 &>a {
-                    color: #C83438 !important;
+                    background-color: #C83438;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: #fff !important;
+
+                    &::before {
+                        display: none;
+                    }
                 }
             }
         }
