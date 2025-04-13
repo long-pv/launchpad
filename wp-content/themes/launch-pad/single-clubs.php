@@ -26,7 +26,7 @@ get_header();
                     <div class="page_mark <?php echo $class_page_mark; ?>" data-id="<?php echo get_the_ID(); ?>"></div>
                 </h1>
                 <div class="page_body">
-                    <div class="page_scroll d-block">
+                    <div class="page_scroll page_scroll_club_single d-block">
                         <div class="card_club">
                             <div class="row card_club_row">
                                 <div class="col-lg-4">
@@ -37,7 +37,7 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="col-lg-8">
-                                    <div class="card_club__content">
+                                    <div class="editor">
                                         <?php the_content(); ?>
                                     </div>
                                 </div>

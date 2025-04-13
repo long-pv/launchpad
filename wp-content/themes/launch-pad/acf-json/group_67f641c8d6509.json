@@ -3,6 +3,26 @@
     "title": "Gallery",
     "fields": [
         {
+            "key": "field_67fb9ec59acf8",
+            "label": "Description",
+            "name": "description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_67f641c918540",
             "label": "Gallery",
             "name": "gallery",
@@ -49,5 +69,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744286871
+    "modified": 1744543449
 }

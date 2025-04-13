@@ -619,20 +619,19 @@
 		}
 	}
 
+	&__index,
+	&__title {
+		font-weight: 400;
+		font-size: 16px;
+		color: #2e548a;
+	}
+
 	&__content {
 		display: flex;
 		justify-content: start;
 		align-items: center;
 		gap: 16px;
-	}
-
-	&__index,
-	&__title {
-		font-family: "Montserrat";
-		font-weight: 400;
-		font-size: 16px;
-		color: #2e548a;
-		//
+		text-decoration: none !important;
 	}
 
 	&__actions {

@@ -119,7 +119,7 @@ if (is_page_template('page-home.php')) {
                         'min-height': availableHeight + 'px',
                         'overflow-y': 'auto',
                         'overflow-x': 'hidden',
-                    });
+                    }).filter('.page_scroll_club_single').css('min-height', 'unset');
                 } else {
                     // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
                     $('.page_scroll').css({

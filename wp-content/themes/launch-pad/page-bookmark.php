@@ -54,16 +54,17 @@ get_header();
                                             $permalink = get_permalink($post_id);
                                             ?>
                                             <div class="list_mark__item" data-id="<?php echo $post_id; ?>">
-                                                <div class="list_mark__content">
+                                                <a target="_blank" href="<?php echo esc_url($permalink); ?>" class="list_mark__content">
                                                     <span class="list_mark__index"><?php echo $index++; ?>.</span>
                                                     <span class="list_mark__title"><?php echo esc_html($post_title); ?></span>
-                                                </div>
+                                                </a>
                                                 <div class="list_mark__actions">
                                                     <a href="<?php echo esc_url($permalink); ?>"
                                                         class="list_mark__action list_mark__action--visit" target="_blank">
                                                         <?php _e('Visit', 'launch-pad'); ?>
                                                     </a>
-                                                    <a href="#" class="list_mark__action list_mark__action--remove remove-bookmark"
+                                                    <a href="javascript:void(0);"
+                                                        class="list_mark__action list_mark__action--remove remove-bookmark"
                                                         data-id="<?php echo $post_id; ?>">
                                                         <?php _e('Remove', 'launch-pad'); ?>
                                                     </a>

@@ -1,16 +1,20 @@
 <?php
 $data = $args['flexible'];
 $accordion_item = $data['accordion_item'];
+$description = $data['description'] ?? [];
 $accordion_index = 0;
 ?>
 <div class="accordion" id="accordionExample">
+    <div class="editor mb-3">
+        <?php echo $description; ?>
+    </div>
     <?php foreach ($accordion_item as $item):
         $header = $item['accordion_header'] ?? '';
         $content = $item['accordion_content'] ?? '';
         $is_first = ($accordion_index === 0);
         $collapse_id = 'collapse' . $accordion_index;
         $heading_id = 'heading' . $accordion_index;
-    ?>
+        ?>
         <div class="accordion-item">
             <h2 class="accordion-header" id="<?php echo esc_attr($heading_id); ?>">
                 <button class="accordion-button <?php echo $is_first ? '' : 'collapsed'; ?>" type="button"
@@ -28,6 +32,6 @@ $accordion_index = 0;
                 </div>
             </div>
         </div>
-    <?php $accordion_index++;
+        <?php $accordion_index++;
     endforeach; ?>
 </div>
