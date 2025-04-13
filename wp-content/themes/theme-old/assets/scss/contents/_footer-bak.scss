@@ -1,0 +1,53 @@
+.footer {
+    background-color: $primary;
+    text-align: center;
+
+    &__inner {
+        padding: 24px 0px;
+    }
+
+    &__logo {
+        img {
+            width: auto;
+            height: 66px;
+
+            @include media-breakpoint-up(lg) {
+                height: 96px;
+            }
+        }
+    }
+
+    &__info {
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &__address {
+        margin-top: 20px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 24px;
+        }
+    }
+
+    &__email {
+        margin-top: 8px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 12px;
+        }
+    }
+
+    &__social {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

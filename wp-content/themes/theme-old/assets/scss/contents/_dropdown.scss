@@ -1,0 +1,103 @@
+div.dropdown {
+    position: relative;
+    z-index: 10;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 18px;
+        right: 30px;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 15C12.244 15 11.988 14.9021 11.793 14.7071L7.79301 10.7071C7.40201 10.3161 7.40201 9.68401 7.79301 9.29301C8.18401 8.90201 8.81607 8.90201 9.20707 9.29301L12.5 12.586L15.793 9.29301C16.184 8.90201 16.8161 8.90201 17.2071 9.29301C17.5981 9.68401 17.5981 10.3161 17.2071 10.7071L13.2071 14.7071C13.0121 14.9021 12.756 15 12.5 15Z' fill='%236E708F'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-size: cover;
+        transition: all 0.4s;
+    }
+
+    &.open {
+        &::after {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+div.dropdown>div.caption {
+    background-color: #ffffff;
+    padding: 16px 64px 16px 32px;
+    border-radius: 30px;
+    width: 260px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    color: $info;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.dropdown>div.list {
+    position: absolute;
+    background-color: #E6E0E7;
+    width: 100%;
+    border-radius: 0px 0px 30px 30px;
+    display: none;
+    padding: 16px 32px 24px 32px;
+}
+
+div.dropdown>div.list>div.item {
+    padding: 0px;
+    color: $info;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: start;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    &:hover {
+        color: $success;
+    }
+}
+
+div.dropdown>div.list>div.item.selected {
+    color: $primary;
+}
+
+div.dropdown>div.caption:hover,
+div.dropdown>div.list>div.item:hover {
+    transition: all 0.3s;
+    background-color: #E6E0E7;
+}
+
+div.dropdown.open>div.caption {
+    border-radius: 30px 30px 0px 0px;
+    color: $info;
+    background-color: #E6E0E7;
+}
+
+div.dropdown.open>div.list {
+    display: block;
+}
+
+.nav-item__select.active {
+
+    .caption,
+    div.dropdown.open>div.caption {
+        background-color: $primary !important;
+        color: #ffffff !important;
+    }
+
+    .dropdown {
+        &::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 15C11.744 15 11.488 14.9021 11.293 14.7071L7.29301 10.7071C6.90201 10.3161 6.90201 9.68401 7.29301 9.29301C7.68401 8.90201 8.31607 8.90201 8.70707 9.29301L12 12.586L15.293 9.29301C15.684 8.90201 16.3161 8.90201 16.7071 9.29301C17.0981 9.68401 17.0981 10.3161 16.7071 10.7071L12.7071 14.7071C12.5121 14.9021 12.256 15 12 15Z' fill='white'/%3E%3C/svg%3E%0A");
+        }
+    }
+}

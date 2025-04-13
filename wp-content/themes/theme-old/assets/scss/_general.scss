@@ -1,0 +1,329 @@
+body {
+    font-family: Inter, serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $body;
+    font-size: 14px;
+
+    @include media-breakpoint-down(md) {
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    }
+}
+
+//----------- Add height main -------------
+.mainContent {
+    min-height: 80vh;
+}
+
+//---------- Typography -----------
+h6,
+.h6 {
+    font-size: 16px;
+}
+
+h5,
+.h5 {
+    font-size: 18px;
+}
+
+h4,
+.h4 {
+    font-size: 20px;
+}
+
+h3,
+.h3 {
+    font-size: 28px;
+}
+
+h2,
+.h2 {
+    font-size: 32px;
+}
+
+h1,
+.h1 {
+    font-size: 40px;
+}
+
+@include media-breakpoint-up(lg) {
+
+    h6,
+    .h6 {
+        font-size: 18px;
+    }
+
+    h5,
+    .h5 {
+        font-size: 20px;
+    }
+
+    h4,
+    .h4 {
+        font-size: 28px;
+    }
+
+    h3,
+    .h3 {
+        font-size: 32px;
+    }
+
+    h2,
+    .h2 {
+        font-size: 40px;
+    }
+
+    h1,
+    .h1 {
+        font-size: 48px;
+    }
+}
+
+.pointer-events {
+    pointer-events: none !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+// -------------- Picture frame -------------
+.imgGroup {
+    display: block;
+    z-index: 5;
+    position: relative;
+    height: 0px;
+    padding-bottom: 70%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%) scale(1);
+        object-fit: cover;
+        transition: all 0.3s;
+    }
+
+    @include media-breakpoint-up(lg) {
+        &:hover {
+            img {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+    }
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 6;
+    }
+}
+
+// ---------- line ------------
+@mixin line-clamp($lines) {
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.line-1 {
+    @include line-clamp(1);
+}
+
+.line-2 {
+    @include line-clamp(2);
+}
+
+.line-3 {
+    @include line-clamp(3);
+}
+
+// heading section
+.secHeading {
+    // margin-bottom: 40px;
+
+    &__title,
+    &__subTitle {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: Inter, serif;
+    }
+
+    &__title {
+        line-height: 1.4;
+        color: $primary;
+    }
+
+    &__subTitle {
+        color: $tertiary;
+        margin-bottom: 4px;
+    }
+
+    &--center {
+        text-align: center;
+    }
+
+    &--light {
+        .secHeading {
+
+            &__title,
+            &__subTitle {
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+// -------------- space -------------
+$space_sp: 40px;
+$space_pc: 80px;
+
+.space {
+    padding: $space_sp 0px;
+
+    @include media-breakpoint-up(lg) {
+        padding: $space_pc 0px;
+    }
+
+    &--top {
+        padding-top: $space_sp;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: $space_pc;
+        }
+    }
+
+    &--bottom {
+        padding-bottom: $space_sp;
+
+        @include media-breakpoint-up(lg) {
+            padding-bottom: $space_pc;
+        }
+    }
+}
+
+// button video
+.btnVideo {
+    display: inline-flex;
+    padding: 16px 18px;
+    background: #FFFFFF;
+    border-radius: 80px;
+    color: $primary !important;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none !important;
+    align-items: center;
+    font-family: Inter, serif;
+    text-transform: uppercase;
+    line-height: 20px;
+    border: none;
+    position: relative;
+    transition: all 0.3s;
+
+    &::before {
+        content: '';
+        height: 16px;
+        width: 16px;
+        margin-right: 10px;
+        background-position: center center;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 3.25938V12.7406C4 12.9406 4.20312 13.0656 4.36562 12.9656L11.8813 8.225C12.0406 8.125 12.0406 7.87812 11.8813 7.77812L4.36562 3.0375C4.20312 2.93438 4 3.05938 4 3.25938Z' fill='%2363154A'/%3E%3C/svg%3E%0A");
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 80px;
+        width: calc(100% + 3px);
+        height: calc(100% + 3px);
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(180deg, rgba(176, 91, 149, 1) 0%, rgba(201, 201, 247, 1) 100%);
+        z-index: -1;
+    }
+
+    &:hover {
+        transition: all 0.3s;
+        background: $light;
+    }
+}
+
+.btnAdvise {
+    font-family: Inter, serif;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none !important;
+    line-height: 18px;
+    transition: all 0.3s;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+.btnContact{
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-flex;    
+    color: #FFFFFF;
+    text-decoration: none;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        background: linear-gradient(180deg, #F6B082 0%, #F3D0CB 100%);
+        z-index: 1;
+        border-radius: 50px;
+    }
+    span{
+        position: relative;
+        z-index: 2;
+        background: $success;
+        border-radius: 50px;
+        padding: 16px 46px;
+        transition: all 0.3s;
+    }
+    @include media-breakpoint-up(lg){
+        &:hover {
+            text-decoration: none;
+            color: #FFFFFF;
+            span{
+                background: #C57039;
+            }
+        }
+    }
+}
+
+.btnLink{
+    color: $body;
+    &:hover{
+        color: $body;
+        text-decoration: none;
+        @include media-breakpoint-up(lg){
+            color: $primary;
+        }
+    }
+}
+
+[id] {
+    scroll-margin-top: 70px;
+}

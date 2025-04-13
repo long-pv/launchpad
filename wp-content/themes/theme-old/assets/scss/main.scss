@@ -1,0 +1,25 @@
+/**
+ * Global reset
+ */
+@import 'fonts';
+@import 'mixins';
+@import 'variables';
+@import 'bootstrap/bootstrap';
+
+// Animated
+@import 'animate';
+
+// Slick
+@import 'slick/slick';
+@import 'contents/slick';
+
+// General
+@import 'general';
+@import 'contents/header';
+@import 'contents/footer';
+@import 'contents/editor';
+
+// Component
+@import 'contents/block/banner';
+@import 'contents/block/portal';
+@import 'contents/block/news';
