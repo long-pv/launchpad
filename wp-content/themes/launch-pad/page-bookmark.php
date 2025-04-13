@@ -31,46 +31,50 @@ get_header();
                         if (!empty($_COOKIE['bookmarked_pages'])) {
                             $ids = json_decode(stripslashes($_COOKIE['bookmarked_pages']), true);
 
-                            $query = new WP_Query([
-                                'post_type' => ['page', 'clubs'],
-                                'post__in' => $ids,
-                                'orderby' => 'post__in'
-                            ]);
+                            if ($ids) {
+                                $query = new WP_Query([
+                                    'post_type' => ['page', 'clubs'],
+                                    'post__in' => $ids,
+                                    'orderby' => 'post__in'
+                                ]);
 
-                            if ($query->have_posts()) {
-                                ?>
-                                <div class="list_mark">
-                                    <div class="list_mark__intro">
-                                        <?php _e('All your bookmarks are listed here:', 'launch-pad'); ?>
-                                    </div>
-
-                                    <?php
-                                    $index = 1;
-                                    while ($query->have_posts()):
-                                        $query->the_post();
-                                        $post_id = get_the_ID();
-                                        $post_title = get_the_title();
-                                        $permalink = get_permalink($post_id);
-                                        ?>
-                                        <div class="list_mark__item" data-id="<?php echo $post_id; ?>">
-                                            <div class="list_mark__content">
-                                                <span class="list_mark__index"><?php echo $index++; ?>.</span>
-                                                <span class="list_mark__title"><?php echo esc_html($post_title); ?></span>
-                                            </div>
-                                            <div class="list_mark__actions">
-                                                <a href="<?php echo esc_url($permalink); ?>"
-                                                    class="list_mark__action list_mark__action--visit" target="_blank">
-                                                    <?php _e('Visit', 'launch-pad'); ?>
-                                                </a>
-                                                <a href="#" class="list_mark__action list_mark__action--remove remove-bookmark"
-                                                    data-id="<?php echo $post_id; ?>">
-                                                    <?php _e('Remove', 'launch-pad'); ?>
-                                                </a>
-                                            </div>
+                                if ($query->have_posts()) {
+                                    ?>
+                                    <div class="list_mark">
+                                        <div class="list_mark__intro">
+                                            <?php _e('All your bookmarks are listed here:', 'launch-pad'); ?>
                                         </div>
-                                    <?php endwhile; ?>
-                                </div>
-                                <?php
+
+                                        <?php
+                                        $index = 1;
+                                        while ($query->have_posts()):
+                                            $query->the_post();
+                                            $post_id = get_the_ID();
+                                            $post_title = get_the_title();
+                                            $permalink = get_permalink($post_id);
+                                            ?>
+                                            <div class="list_mark__item" data-id="<?php echo $post_id; ?>">
+                                                <div class="list_mark__content">
+                                                    <span class="list_mark__index"><?php echo $index++; ?>.</span>
+                                                    <span class="list_mark__title"><?php echo esc_html($post_title); ?></span>
+                                                </div>
+                                                <div class="list_mark__actions">
+                                                    <a href="<?php echo esc_url($permalink); ?>"
+                                                        class="list_mark__action list_mark__action--visit" target="_blank">
+                                                        <?php _e('Visit', 'launch-pad'); ?>
+                                                    </a>
+                                                    <a href="#" class="list_mark__action list_mark__action--remove remove-bookmark"
+                                                        data-id="<?php echo $post_id; ?>">
+                                                        <?php _e('Remove', 'launch-pad'); ?>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        <?php endwhile; ?>
+                                    </div>
+                                    <?php
+                                } else {
+                                    echo '<div>No pages have been bookmarked yet.</div>';
+                                }
                             } else {
                                 echo '<div>No pages have been bookmarked yet.</div>';
                             }
