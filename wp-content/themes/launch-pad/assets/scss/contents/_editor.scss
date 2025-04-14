@@ -8,8 +8,7 @@
         }
     }
 
-    b,
-    strong,
+
     h1,
     h2,
     h3,
@@ -19,6 +18,11 @@
         font-weight: 700 !important;
         line-height: 1.5;
         color: $primary !important;
+    }
+
+    b,
+    strong {
+        color: #000000 !important;
     }
 
     a {
