@@ -3,8 +3,15 @@ function register_cpt_post_types()
 {
     $cpt_list = [
         'clubs' => [
-            'labels' => __('Clubs', 'basetheme'),
+            'labels' => __('Clubs', 'launch-pad'),
             'slug' => 'clubs',
+            'cap' => false,
+            'hierarchical' => false,
+            'position' => false
+        ],
+        'link' => [
+            'labels' => __('Link', 'launch-pad'),
+            'slug' => 'link',
             'cap' => false,
             'hierarchical' => false,
             'position' => false
@@ -13,10 +20,16 @@ function register_cpt_post_types()
 
     $cpt_tax = [
         'clubs_category' => [
-            'labels' => __('Clubs category', 'basetheme'),
+            'labels' => __('Clubs category', 'launch-pad'),
             'slug' => 'clubs-category',
             'cap' => false,
             'post_type' => ['clubs']
+        ],
+        'category_link' => [
+            'labels' => __('Category link', 'launch-pad'),
+            'slug' => 'clubs-category',
+            'cap' => false,
+            'post_type' => ['link']
         ],
     ];
 
@@ -43,20 +56,20 @@ function register_cpt($post_type, $data = [])
     ];
 
     $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'has_archive'        => true,
-        'rewrite'            => array(
-            'slug'           => $data['slug'] ?? $post_type,
-            'with_front'     => false,
-            'hierarchical'   => true,
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array(
+            'slug' => $data['slug'] ?? $post_type,
+            'with_front' => false,
+            'hierarchical' => true,
         ),
-        'supports'           => array('title', 'editor', 'thumbnail', 'revisions', 'author', $attributes),
-        'show_in_nav_menus'  => true,
-        'show_ui'            => true,
-        'menu_icon'          => 'dashicons-admin-post',
-        'archive_title'      => $data['labels'],
-        'menu_position'      => $position,
+        'supports' => array('title', 'editor', 'thumbnail', 'revisions', 'author', $attributes),
+        'show_in_nav_menus' => true,
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-admin-post',
+        'archive_title' => $data['labels'],
+        'menu_position' => $position,
     );
 
     if (!empty($data['tax'])) {
@@ -91,15 +104,15 @@ function register_ctx($ctx, $data)
     ];
 
     $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
         'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array(
-            'slug'          => $data['slug'] ?? $ctx,
-            'with_front'    => false,
-            'hierarchical'  => true,
+        'query_var' => true,
+        'rewrite' => array(
+            'slug' => $data['slug'] ?? $ctx,
+            'with_front' => false,
+            'hierarchical' => true,
         ),
     );
 
