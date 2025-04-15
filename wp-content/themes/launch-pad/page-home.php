@@ -126,11 +126,11 @@ get_header();
                                                         <div class="col-6 col-lg-3">
                                                             <a href="<?php echo $item_2['url'] ?: 'javascript:void(0);' ?>"
                                                                 class="handbook">
-                                                                <div class="handbook__image">
+                                                                <div class="handbook__image handbook_img_home">
                                                                     <img src="<?php echo $item_2['image'] ?? '' ?>"
                                                                         alt="International Student Handbook">
                                                                 </div>
-                                                                <h3 class="handbook__title">
+                                                                <h3 class="handbook__title handbook__title_home">
                                                                     <?php echo $item_2['title'] ?? '' ?>
                                                                 </h3>
                                                             </a>

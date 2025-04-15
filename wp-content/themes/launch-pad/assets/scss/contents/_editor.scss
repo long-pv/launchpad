@@ -100,8 +100,16 @@
 
     table {
         border-collapse: collapse;
-        width: 100%;
+        width: 100% !important;
         height: auto !important;
+        overflow: scroll;
+        table-layout: fixed;
+        -webkit-overflow-scrolling: touch;
+        display: block;
+
+        @include media-breakpoint-up(md) {
+            display: table;
+        }
 
         tbody {
             border: none;
