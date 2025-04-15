@@ -724,3 +724,20 @@
 	// border-top: 1px solid #cdcfd5;
 	border-bottom: 1px solid #cdcfd5;
 }
+
+/*  */
+table {
+	display: block;
+	overflow: scroll;
+}
+
+/*  */
+.search_icon_close {
+	background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 26L26 6M26 26L6 6' stroke='%232E548A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	@include bg_cover;
+}
+
+/*  */

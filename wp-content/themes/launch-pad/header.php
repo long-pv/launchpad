@@ -91,6 +91,8 @@
 
 						<div class="search_icon">
 						</div>
+						<div class="search_icon_close d-none">
+						</div>
 					</div>
 				</div>
 			</div>

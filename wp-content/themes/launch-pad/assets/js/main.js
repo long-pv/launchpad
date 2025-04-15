@@ -1,8 +1,8 @@
 (function ($, window) {
 	//...................longpv
-	$(".search_icon").on("click", function () {
-		$("#popup_search").modal("toggle");
-	});
+	// $(".search_icon").on("click", function () {
+	// 	$("#popup_search").modal("toggle");
+	// });
 	$(".item_menu").on("click", function () {
 		$("#popup_menu").modal("toggle");
 		$(this).addClass("active");
@@ -37,7 +37,10 @@
 			function (response) {
 				if (response.success && response.data.status === "added") {
 					$el.addClass("active");
-				} else if (response.success && response.data.status === "removed") {
+				} else if (
+					response.success &&
+					response.data.status === "removed"
+				) {
 					$el.removeClass("active");
 				}
 			}
@@ -68,4 +71,30 @@
 	//
 	//
 	//
+	// Khi click vào biểu tượng tìm kiếm
+	$(".search_icon").on("click", function () {
+		// Ẩn search icon và bookmark icon
+		$(".search_icon, .bookmark_icon").addClass("d-none");
+
+		// Hiện icon đóng
+		$(".search_icon_close").removeClass("d-none");
+
+		// Mở popup
+		$("#popup_search").modal("show");
+	});
+
+	// Khi click vào biểu tượng đóng
+	$(".search_icon_close").on("click", function () {
+		// Đóng popup
+		$("#popup_search").modal("hide");
+	});
+
+	// Khi popup đóng thì reset lại giao diện
+	$("#popup_search").on("hidden.bs.modal", function () {
+		// Hiện lại search icon và bookmark
+		$(".search_icon, .bookmark_icon").removeClass("d-none");
+
+		// Ẩn icon đóng
+		$(".search_icon_close").addClass("d-none");
+	});
 })(jQuery, window);
