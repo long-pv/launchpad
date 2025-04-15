@@ -54,8 +54,8 @@ get_header();
                     <div class="page_mark <?php echo $class_page_mark; ?>" data-id="<?php echo get_the_ID(); ?>"></div>
                 </h1>
 
-                <div class="page_body">
-                    <div class="page_scroll">
+                <div class="page_body_block">
+                    <div class="page_scroll page_scroll_block">
                         <?php
                         get_template_part('template-parts/content-flexible');
                         ?>

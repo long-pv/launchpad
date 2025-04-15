@@ -111,6 +111,9 @@ if (is_page_template('page-home.php')) {
                     var headerHeight = $('.banner').outerHeight(true) || 0;
                     var titleHeight = $('.sec_title').outerHeight(true) || 0;
                     var otherPadding = 180; // tuỳ chỉnh theo giao diện
+                    if ($('.page_scroll').hasClass('page_scroll_block')) {
+                        otherPadding = 100;
+                    }
                     var usedHeight = headerHeight + titleHeight + otherPadding;
                     var availableHeight = windowHeight - usedHeight;
 
@@ -130,6 +133,9 @@ if (is_page_template('page-home.php')) {
                     });
                 }
             }
+
+            $('.page_section.sectionTab').prev().addClass('sectionTab_prev');
+            $('.page_section.sectionTab').next().addClass('sectionTab_next');
         });
     </script>
 <?php } ?>
