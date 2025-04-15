@@ -22,7 +22,6 @@ get_header();
         <div class="page_inner">
             <?php
             $banner = get_field('banner') ?? '';
-            var_dump($banner['social_network']);
             if ($banner['image']):
                 ?>
                 <div class="banner" style="background-image: url('<?php echo $banner['image']; ?>');">
@@ -51,7 +50,7 @@ get_header();
                 <?php
                 $title_block = get_field('title_block') ?: get_the_title();
                 ?>
-                <h1 class="sec_title">
+                <h1 class="sec_title sec_title__line">
                     <?php echo $title_block; ?>
                 </h1>
 

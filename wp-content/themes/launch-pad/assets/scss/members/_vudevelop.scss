@@ -36,7 +36,7 @@
 	font-weight: 400 !important;
 	font-size: 16px;
 	text-align: center;
-	color: #2E548A !important;
+	color: #2e548a !important;
 	margin-top: 0px;
 	margin-bottom: 0px;
 	text-decoration: none !important;
@@ -261,7 +261,6 @@
 		}
 	}
 }
-
 
 /* Form Search */
 .inner_form {
@@ -682,7 +681,6 @@
 	}
 }
 
-
 .card_club {
 	&__image-wrapper {
 		position: relative;
@@ -719,4 +717,10 @@
 			text-decoration: underline;
 		}
 	}
+}
+
+/*  */
+.sec_title__line {
+	// border-top: 1px solid #cdcfd5;
+	border-bottom: 1px solid #cdcfd5;
 }
