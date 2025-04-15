@@ -109,6 +109,13 @@
                 "operator": "==",
                 "value": "page-club.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-resource.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -120,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744541640
+    "modified": 1744733862
 }
