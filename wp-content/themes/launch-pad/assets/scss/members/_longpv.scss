@@ -493,11 +493,19 @@
     }
 
     .sectionTab_prev {
-        border-radius: 0px 0px 8px 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
     }
 
     .sectionTab_next {
-        border-radius: 8px 8px 0px 0px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .page_section {
+        &:last-child {
+            margin-bottom: 0px !important;
+        }
     }
 }
 
