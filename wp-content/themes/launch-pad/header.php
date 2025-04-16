@@ -277,3 +277,6 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="wpo365OpenIdRedirect" class="wpo365-mssignin-wrapper">
+		</div>
