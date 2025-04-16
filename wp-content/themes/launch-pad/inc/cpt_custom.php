@@ -27,7 +27,7 @@ function register_cpt_post_types()
         ],
         'category_link' => [
             'labels' => __('Category link', 'launch-pad'),
-            'slug' => 'clubs-category',
+            'slug' => 'category_link',
             'cap' => false,
             'post_type' => ['link']
         ],

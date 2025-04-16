@@ -172,3 +172,4 @@ add_action('wp_enqueue_scripts', 'launch_pad_scripts');
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/auto_active_plugin.php';
 require get_template_directory() . '/inc/cpt_custom.php';
+require get_template_directory() . '/inc/count-click.php';

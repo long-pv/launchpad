@@ -68,9 +68,24 @@
 							</a>
 						<?php } ?>
 
-						<a class=" menu_item menu_item_login" href="javascript:void(0);">
-							<?php _e('Login', 'launch-pad'); ?>
-						</a>
+						<?php
+						$current_user = wp_get_current_user();
+						$hasUser = $current_user->exists();
+						if ($hasUser):
+							?>
+							<a class="menu_item menu_item_login" href="<?php echo wp_logout_url(home_url()); ?>">
+								<?php _e('Logout', 'launch-pad'); ?>
+							</a>
+							<?php
+						else:
+							?>
+							<a class="menu_item menu_item_login" href="javascript:void(0);"
+								onclick="window.wpo365.pintraRedirect.toMsOnline('', location.href, '', '', false, document.getElementById('selectedTenant') ? document.getElementById('selectedTenant').value : null); return false;">
+								<?php _e('Login', 'launch-pad'); ?>
+							</a>
+							<?php
+						endif;
+						?>
 					</div>
 				</div>
 			</div>
@@ -168,22 +183,48 @@
 						</a>
 					<?php } ?>
 
-					<a href="javascript:void(0);" class="item item_logout">
-						<div class="icon">
-							<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path opacity="0.4"
-									d="M11.2599 2.72729C10.7799 2.72729 10.3999 3.10729 10.3999 3.58729V21.8773C10.3999 22.3473 10.7799 22.7373 11.2599 22.7373C17.1499 22.7373 21.2599 18.6273 21.2599 12.7373C21.2599 6.84729 17.1399 2.72729 11.2599 2.72729Z"
-									fill="#2E2E2E" />
-								<path
-									d="M16.4002 12.2674L13.5602 9.41741C13.4191 9.27793 13.2287 9.19971 13.0302 9.19971C12.8318 9.19971 12.6414 9.27793 12.5002 9.41741C12.2102 9.70741 12.2102 10.1874 12.5002 10.4774L14.0602 12.0374H4.49023C4.08023 12.0374 3.74023 12.3774 3.74023 12.7874C3.74023 13.1974 4.08023 13.5374 4.49023 13.5374H14.0602L12.5002 15.1074C12.2102 15.3974 12.2102 15.8774 12.5002 16.1674C12.6502 16.3174 12.8402 16.3874 13.0302 16.3874C13.2202 16.3874 13.4102 16.3174 13.5602 16.1674L16.4002 13.3174C16.7002 13.0274 16.7002 12.5574 16.4002 12.2674Z"
-									fill="#2E2E2E" />
-							</svg>
-						</div>
-						<div class="title">
-							<?php _e('Login', 'launch-pad'); ?>
-						</div>
-					</a>
+					<?php
+					if ($hasUser):
+						?>
+						<a href="<?php echo wp_logout_url(home_url()); ?>" class="item item_logout">
+							<div class="icon">
+								<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.4"
+										d="M11.2599 2.72729C10.7799 2.72729 10.3999 3.10729 10.3999 3.58729V21.8773C10.3999 22.3473 10.7799 22.7373 11.2599 22.7373C17.1499 22.7373 21.2599 18.6273 21.2599 12.7373C21.2599 6.84729 17.1399 2.72729 11.2599 2.72729Z"
+										fill="#2E2E2E" />
+									<path
+										d="M16.4002 12.2674L13.5602 9.41741C13.4191 9.27793 13.2287 9.19971 13.0302 9.19971C12.8318 9.19971 12.6414 9.27793 12.5002 9.41741C12.2102 9.70741 12.2102 10.1874 12.5002 10.4774L14.0602 12.0374H4.49023C4.08023 12.0374 3.74023 12.3774 3.74023 12.7874C3.74023 13.1974 4.08023 13.5374 4.49023 13.5374H14.0602L12.5002 15.1074C12.2102 15.3974 12.2102 15.8774 12.5002 16.1674C12.6502 16.3174 12.8402 16.3874 13.0302 16.3874C13.2202 16.3874 13.4102 16.3174 13.5602 16.1674L16.4002 13.3174C16.7002 13.0274 16.7002 12.5574 16.4002 12.2674Z"
+										fill="#2E2E2E" />
+								</svg>
+							</div>
+							<div class="title">
+								<?php _e('Logout', 'launch-pad'); ?>
+							</div>
+						</a>
+						<?php
+					else:
+						?>
+						<a href="javascript:void(0);" class="item item_logout"
+							onclick="window.wpo365.pintraRedirect.toMsOnline('', location.href, '', '', false, document.getElementById('selectedTenant') ? document.getElementById('selectedTenant').value : null); return false;">
+							<div class="icon">
+								<svg width="25" height="25" viewBox="0 0 25 25" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path opacity="0.4"
+										d="M11.2599 2.72729C10.7799 2.72729 10.3999 3.10729 10.3999 3.58729V21.8773C10.3999 22.3473 10.7799 22.7373 11.2599 22.7373C17.1499 22.7373 21.2599 18.6273 21.2599 12.7373C21.2599 6.84729 17.1399 2.72729 11.2599 2.72729Z"
+										fill="#2E2E2E" />
+									<path
+										d="M16.4002 12.2674L13.5602 9.41741C13.4191 9.27793 13.2287 9.19971 13.0302 9.19971C12.8318 9.19971 12.6414 9.27793 12.5002 9.41741C12.2102 9.70741 12.2102 10.1874 12.5002 10.4774L14.0602 12.0374H4.49023C4.08023 12.0374 3.74023 12.3774 3.74023 12.7874C3.74023 13.1974 4.08023 13.5374 4.49023 13.5374H14.0602L12.5002 15.1074C12.2102 15.3974 12.2102 15.8774 12.5002 16.1674C12.6502 16.3174 12.8402 16.3874 13.0302 16.3874C13.2202 16.3874 13.4102 16.3174 13.5602 16.1674L16.4002 13.3174C16.7002 13.0274 16.7002 12.5574 16.4002 12.2674Z"
+										fill="#2E2E2E" />
+								</svg>
+							</div>
+							<div class="title">
+								<?php _e('Login', 'launch-pad'); ?>
+							</div>
+						</a>
+						<?php
+					endif;
+					?>
 
 					<a href="javascript:void(0);" class="item item_menu">
 						<div class="icon">

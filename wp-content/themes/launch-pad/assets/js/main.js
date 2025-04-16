@@ -37,10 +37,7 @@
 			function (response) {
 				if (response.success && response.data.status === "added") {
 					$el.addClass("active");
-				} else if (
-					response.success &&
-					response.data.status === "removed"
-				) {
+				} else if (response.success && response.data.status === "removed") {
 					$el.removeClass("active");
 				}
 			}
@@ -64,6 +61,43 @@
 			}
 		);
 	});
+
+	// Logic only show 5 records (initial)
+	$(".portal__listItem").each(function () {
+		$(this).find("li:gt(4)").hide();
+	});
+
+	// Click "View more"
+	$(".portal__view--more").click(function (event) {
+		$(this).closest(".portal__item").find(".portal__listItem li").show();
+		$(this).parent().find(".portal__view--less").show();
+		$(this).hide();
+
+		checkMatchHeight(event);
+	});
+
+	// Click "View less"
+	$(".portal__view--less").click(function (event) {
+		$(this).closest(".portal__item").find(".portal__listItem li:gt(4)").hide();
+		$(this).parent().find(".portal__view--more").show();
+		$(this).hide();
+
+		checkMatchHeight(event);
+	});
+
+	// Check match height, don't change scroll top
+	function checkMatchHeight(event) {
+		event.stopPropagation();
+
+		let scrollPosition = $(window).scrollTop();
+
+		$('[data-mh="categoryItem"]').matchHeight(true, {
+			byRow: true,
+			remove: true,
+		});
+
+		$(window).scrollTop(scrollPosition);
+	}
 	//
 	//
 	//

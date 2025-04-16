@@ -114,6 +114,10 @@ if (is_page_template('page-home.php')) {
                     if ($('.page_scroll').hasClass('page_scroll_block')) {
                         otherPadding = 100;
                     }
+                    if ($('.page_scroll').hasClass('page_scroll_resource')) {
+                        otherPadding = 120;
+                    }
+
                     var usedHeight = headerHeight + titleHeight + otherPadding;
                     var availableHeight = windowHeight - usedHeight;
 
