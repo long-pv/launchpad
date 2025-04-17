@@ -55,10 +55,12 @@ get_header();
                 </h1>
 
                 <div class="page_body_block">
-                    <div class="page_scroll page_scroll_block">
-                        <?php
-                        get_template_part('template-parts/content-flexible');
-                        ?>
+                    <div class="page_body_inner">
+                        <div class="page_scroll page_scroll_block">
+                            <?php
+                            get_template_part('template-parts/content-flexible');
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -112,7 +112,7 @@ if (is_page_template('page-home.php')) {
                     var titleHeight = $('.sec_title').outerHeight(true) || 0;
                     var otherPadding = 180; // tuỳ chỉnh theo giao diện
                     if ($('.page_scroll').hasClass('page_scroll_block')) {
-                        otherPadding = 100;
+                        otherPadding = 80;
                     }
                     if ($('.page_scroll').hasClass('page_scroll_resource')) {
                         otherPadding = 120;
@@ -125,7 +125,7 @@ if (is_page_template('page-home.php')) {
                         'max-height': availableHeight + 'px',
                         'min-height': availableHeight + 'px',
                         'overflow-y': 'auto',
-                        'overflow-x': 'hidden',
+                        'overflow-x': 'visible',
                     }).filter('.page_scroll_club_single').css('min-height', 'unset');
                 } else {
                     // Reset lại để không giới hạn chiều cao khi nhỏ hơn 1200
