@@ -32,11 +32,11 @@ get_header();
                                 array(
                                     'taxonomy' => 'category_link',
                                     'hide_empty' => false,
-                                    'terms' => array('name', 'count'),
+                                    // 'terms' => array('name', 'count'),
                                 )
                             );
 
-                            if (!empty($categories)):
+                            if (!is_wp_error($categories)):
                                 ?>
                                 <div class="portal">
                                     <div class="container_xx">
